@@ -1,6 +1,6 @@
 part of '../views/pages.dart';
 
-final Color primaryColor = Color(0XFF00C036);
+final Color primaryColor = Color(0XFF1c9fe2);
 final Color secondaryColor = Color(0XFFFF8E00);
 
 final TextTheme myTextTheme = TextTheme(

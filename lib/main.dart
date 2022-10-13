@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:meal_kit_flutter/views/Informasi_Pengiriman.dart';
 import 'package:meal_kit_flutter/views/pages.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 
@@ -26,7 +31,10 @@ class MyApp extends StatelessWidget {
       routes: {
         LoginPage.routeName: (context) => LoginPage(),
         HomePage.routeName: (context) => HomePage(),
-        RegisterPage.routeName: (context) => RegisterPage()
+        RegisterPage.routeName: (context) => RegisterPage(),
+        InformasiPengirimanPage.routeName: (context) =>
+            InformasiPengirimanPage(),
+        PreferensiPage.routeName: (context) => PreferensiPage()
       },
     );
   }
