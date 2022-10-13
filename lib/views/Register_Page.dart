@@ -41,10 +41,7 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Flexible(
-                  child:
-                      // color: Colors.amber,
-                      // padding: const EdgeInsets.only(top: 20),
-                      Container(
+                  child: Container(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -223,35 +220,37 @@ class _RegisterPageState extends State<RegisterPage> {
                                     ])),
                           ],
                         )),
-                        InkWell(
-                          child: Container(
-                            padding: const EdgeInsets.all(5),
-                            height: 54.08,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text("Daftar",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyLarge!
-                                        .copyWith(color: Colors.white))
-                              ],
+                        Ink(
+                          decoration: BoxDecoration(
+                              color: primaryColor,
+                              borderRadius: BorderRadius.circular(8),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey,
+                                    spreadRadius: 0.1,
+                                    blurRadius: 0.1,
+                                    offset: Offset(0, 0.8))
+                              ]),
+                          child: InkWell(
+                            splashColor: Colors.lightBlue,
+                            child: Container(
+                              padding: const EdgeInsets.all(5),
+                              height: 54.08,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text("Daftar",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge!
+                                          .copyWith(color: Colors.white))
+                                ],
+                              ),
                             ),
-                            decoration: BoxDecoration(
-                                color: primaryColor,
-                                borderRadius: BorderRadius.circular(8),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey,
-                                      spreadRadius: 0.1,
-                                      blurRadius: 0.1,
-                                      offset: Offset(0, 0.8))
-                                ]),
+                            onTap: () {
+                              Navigator.push(context, AnimationPageRoute());
+                            },
                           ),
-                          onTap: () {
-                            Navigator.pushNamed(
-                                context, InformasiPengirimanPage.routeName);
-                          },
                         ),
                       ],
                     ),
@@ -261,5 +260,18 @@ class _RegisterPageState extends State<RegisterPage> {
             )),
       ),
     );
+  }
+}
+
+class AnimationPageRoute extends CupertinoPageRoute {
+  AnimationPageRoute()
+      : super(builder: (BuildContext context) => new InformasiPengirimanPage());
+
+  // OPTIONAL IF YOU WISH TO HAVE SOME EXTRA ANIMATION WHILE ROUTING
+  @override
+  Widget buildPage(BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation) {
+    return new FadeTransition(
+        opacity: animation, child: new InformasiPengirimanPage());
   }
 }

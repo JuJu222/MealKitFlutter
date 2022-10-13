@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal_kit_flutter/views/Informasi_Pengiriman.dart';
+
 import 'package:meal_kit_flutter/views/pages.dart';
 import 'package:flutter/services.dart';
 
@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'MealKit',
       theme: ThemeData(
 

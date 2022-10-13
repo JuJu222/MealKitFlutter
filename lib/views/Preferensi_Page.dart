@@ -18,7 +18,7 @@ class _PreferensiPageState extends State<PreferensiPage> {
           style: Theme.of(context)!
               .textTheme
               .headline6!
-              .copyWith(fontWeight: FontWeight.w600),
+              .copyWith(fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
         iconTheme: IconThemeData(color: primaryColor),

@@ -299,16 +299,19 @@ class _LoginPageState extends State<LoginPage> {
                                   MaterialPageRoute(builder: ((context) {
                                 return RegisterPage();
                               }))),
-                              child: Container(
-                                child: Text(
-                                  "Daftar di sini",
-                                  style: Theme.of(context)!
-                                      .textTheme
-                                      .subtitle2!
-                                      .copyWith(
-                                          color: Color(0xff171930)
-                                              .withOpacity(0.5),
-                                          decoration: TextDecoration.underline),
+                              child: Ink(
+                                child: Container(
+                                  child: Text(
+                                    "Daftar di sini",
+                                    style: Theme.of(context)!
+                                        .textTheme
+                                        .subtitle2!
+                                        .copyWith(
+                                            color: Color(0xff171930)
+                                                .withOpacity(0.5),
+                                            decoration:
+                                                TextDecoration.underline),
+                                  ),
                                 ),
                               ),
                             )

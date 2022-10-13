@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:meal_kit_flutter/views/pages.dart';
+part of 'pages.dart';
 
 class InformasiPengirimanPage extends StatefulWidget {
   static const routeName = "/InformasiPengiriman";
@@ -412,48 +409,40 @@ class _InformasiPengirimanPageState extends State<InformasiPengirimanPage> {
                             SizedBox(
                               height: 52,
                             ),
-                            Container(
-                              color: Colors.yellow,
-                              child: Container(
-                                child: GestureDetector(
-                                  child: Flexible(
-                                    child: Container(
-                                      padding: const EdgeInsets.all(5),
-                                      height: 54.08,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text("Selanjutnya",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .bodyMedium!
-                                                  .copyWith(
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.w700))
-                                        ],
-                                      ),
-                                      decoration: BoxDecoration(
-                                          color: primaryColor,
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: Colors.grey,
-                                                spreadRadius: 0.1,
-                                                blurRadius: 0.1,
-                                                offset: Offset(0, 0.8))
-                                          ]),
-                                    ),
+                            Ink(
+                              decoration: BoxDecoration(
+                                  color: primaryColor,
+                                  borderRadius: BorderRadius.circular(8),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.grey,
+                                        spreadRadius: 0.1,
+                                        blurRadius: 0.1,
+                                        offset: Offset(0, 0.8))
+                                  ]),
+                              child: InkWell(
+                                child: Container(
+                                  padding: const EdgeInsets.all(5),
+                                  height: 54.08,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text("Selanjutnya",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyMedium!
+                                              .copyWith(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.w700))
+                                    ],
                                   ),
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, PreferensiPage.routeName);
-                                  },
                                 ),
+                                onTap: () {
+                                  Navigator.push(
+                                      context, AnimationPageRoute2());
+                                },
                               ),
-                            )
+                            ),
                           ]),
                     ),
                   ),
@@ -462,5 +451,16 @@ class _InformasiPengirimanPageState extends State<InformasiPengirimanPage> {
         ),
       ),
     );
+  }
+}
+
+class AnimationPageRoute2 extends CupertinoPageRoute {
+  AnimationPageRoute2()
+      : super(builder: (BuildContext context) => new PreferensiPage());
+
+  @override
+  Widget buildPage(BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation) {
+    return new FadeTransition(opacity: animation, child: new PreferensiPage());
   }
 }
