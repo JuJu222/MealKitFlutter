@@ -16,27 +16,26 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'MealKit',
-      theme: ThemeData(
+    return MaterialApp(debugShowCheckedModeBanner: false, home: DetailMenuPage()
+        // title: 'MealKit',
+        // theme: ThemeData(
 
-          //Pergantian Warna dan Text pada bar
-          colorScheme: Theme.of(context).colorScheme.copyWith(
-              primary: primaryColor,
-              onPrimary: secondaryColor,
-              secondary: secondaryColor),
-          appBarTheme: AppBarTheme(elevation: 0),
-          textTheme: myTextTheme),
-      initialRoute: LoginPage.routeName,
-      routes: {
-        LoginPage.routeName: (context) => LoginPage(),
-        HomePage.routeName: (context) => HomePage(),
-        RegisterPage.routeName: (context) => RegisterPage(),
-        InformasiPengirimanPage.routeName: (context) =>
-            InformasiPengirimanPage(),
-        PreferensiPage.routeName: (context) => PreferensiPage()
-      },
-    );
+        //     //Pergantian Warna dan Text pada bar
+        //     colorScheme: Theme.of(context).colorScheme.copyWith(
+        //         primary: primaryColor,
+        //         onPrimary: secondaryColor,
+        //         secondary: secondaryColor),
+        //     appBarTheme: AppBarTheme(elevation: 0),
+        //     textTheme: myTextTheme),
+        // initialRoute: LoginPage.routeName,
+        // routes: {
+        //   LoginPage.routeName: (context) => LoginPage(),
+        //   HomePage.routeName: (context) => HomePage(),
+        //   RegisterPage.routeName: (context) => RegisterPage(),
+        //   InformasiPengirimanPage.routeName: (context) =>
+        //       InformasiPengirimanPage(),
+        //   PreferensiPage.routeName: (context) => PreferensiPage()
+        // },
+        );
   }
 }
