@@ -4,16 +4,39 @@ class Resep {
   String? nama;
   Color? color;
 
-  Resep({required this.nama, required this.color});
+  String? images;
+  Resep({required this.nama, required this.color, required this.images});
 }
 
 var listResep = [
-  Resep(nama: "Daging & Sayur", color: Color(0XFFFCEAB2)),
-  Resep(nama: "Sayur", color: Color(0XFFF8D1B7)),
-  Resep(nama: "Produk Susu", color: Color(0XFFF6D5FB)),
-  Resep(nama: "Cepat & Mudah", color: Color(0XFFD2F5FF)),
-  Resep(nama: "Roti", color: Color(0XFFC6F0D7)),
-  Resep(nama: "Protein Tinggi", color: Color(0XFFF8CDD5)),
-  Resep(nama: "Makanan Laut", color: Color(0xffDFFCFB)),
-  Resep(nama: "Menu Diet", color: Color(0XFFD9E8FB))
+  Resep(
+      nama: "Daging & Sayur",
+      color: Color(0XFFFCEAB2),
+      images: "assets/images/daging&sayur.png"),
+  Resep(
+      nama: "Sayur",
+      color: Color(0XFFF8D1B7),
+      images: "assets/images/salad.png"),
+  Resep(
+      nama: "Produk Susu",
+      color: Color(0XFFF6D5FB),
+      images: "assets/images/produksusu.png"),
+  Resep(
+      nama: "Cepat & Mudah",
+      color: Color(0XFFD2F5FF),
+      images: "assets/images/fastfood.png"),
+  Resep(
+      nama: "Roti", color: Color(0XFFC6F0D7), images: "assets/images/roti.png"),
+  Resep(
+      nama: "Protein Tinggi",
+      color: Color(0XFFF8CDD5),
+      images: "assets/images/meat.png"),
+  Resep(
+      nama: "Makanan Laut",
+      color: Color(0xffDFFCFB),
+      images: "assets/images/seafood.png"),
+  Resep(
+      nama: "Menu Diet",
+      color: Color(0XFFD9E8FB),
+      images: "assets/images/diet.png")
 ];
