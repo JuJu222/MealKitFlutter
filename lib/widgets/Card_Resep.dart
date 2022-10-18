@@ -1,21 +1,72 @@
 import 'package:flutter/material.dart';
 
-class CardResepLandscape extends StatelessWidget {
-  String? getNama;
-  Color? getColor;
+import '../model/Resep.dart';
 
-  String? getImages;
-  CardResepLandscape(
-      {super.key,
-      required this.getColor,
-      required this.getImages,
-      required this.getNama});
+class CardResep extends StatefulWidget {
+  final Resep resep;
+  final ValueChanged<bool> onSelected;
+
+  CardResep({
+    super.key,
+    required this.resep,
+    required this.onSelected,
+  });
 
   @override
+  State<CardResep> createState() => _CardResepState();
+}
+
+class _CardResepState extends State<CardResep> {
+  @override
   Widget build(BuildContext context) {
+    return Center(
+        child: widget.resep.nama == "Makanan Laut" ||
+                widget.resep.nama == "Menu Diet"
+            ? _buildLandScape(context)
+            : _buildPortrait(context));
+  }
+
+  Widget _buildPortrait(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      color: getColor,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          side: BorderSide(color: Color(0XFF1C9FE2), width: 3)),
+      color: widget.resep.color,
+      child: Container(
+        width: 93,
+        height: 151,
+        child: Stack(children: [
+          Container(
+            padding: const EdgeInsets.all(8),
+            child: Text(
+              "${widget.resep.nama}",
+              style: Theme.of(context)!
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(fontWeight: FontWeight.bold),
+            ),
+          ),
+          Positioned(
+              top: 49,
+              child: Container(
+                width: 102,
+                height: 102,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("${widget.resep.images}"),
+                        fit: BoxFit.cover)),
+              )),
+        ]),
+      ),
+    );
+  }
+
+  Widget _buildLandScape(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          side: BorderSide(color: Color(0XFF1C9FE2), width: 3)),
+      color: widget.resep.color,
       child: Container(
           width: 147,
           height: 88,
@@ -28,7 +79,7 @@ class CardResepLandscape extends StatelessWidget {
                     Expanded(
                         child: Container(
                       child: Text(
-                        "${getNama}",
+                        "${widget.resep.nama}",
                         style: Theme.of(context)!
                             .textTheme
                             .bodyMedium!
@@ -46,55 +97,10 @@ class CardResepLandscape extends StatelessWidget {
                   height: 100,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("${getImages}"),
+                          image: AssetImage("${widget.resep.images}"),
                           fit: BoxFit.cover)),
                 )),
           ])),
-    );
-  }
-}
-
-class CardResepPortrait extends StatelessWidget {
-  String? getNama;
-  Color? getColor;
-
-  String? getImages;
-  CardResepPortrait(
-      {super.key,
-      required this.getColor,
-      required this.getNama,
-      required this.getImages});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      color: getColor,
-      child: Container(
-        width: 93,
-        height: 151,
-        child: Stack(children: [
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: Text(
-              "${getNama}",
-              style: Theme.of(context)!
-                  .textTheme
-                  .bodyMedium!
-                  .copyWith(fontWeight: FontWeight.bold),
-            ),
-          ),
-          Positioned(
-              top: 49,
-              child: Container(
-                width: 102,
-                height: 102,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("${getImages}"), fit: BoxFit.cover)),
-              )),
-        ]),
-      ),
     );
   }
 }

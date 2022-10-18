@@ -249,7 +249,7 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: 50,
                         ),
-                        GestureDetector(
+                        InkWell(
                           child: Container(
                             padding: const EdgeInsets.all(5),
                             height: 54.08,

@@ -90,13 +90,9 @@ class _PreferensiPageState extends State<PreferensiPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            for (var i = 0; i < 3; i++) ...[
-                              CardResepPortrait(
-                                getColor: listResep[i].color,
-                                getNama: listResep[i].nama,
-                                getImages: listResep[i].images,
-                              )
-                            ]
+                            // for (var i = 0; i < 3; i++) ...[
+                            //   CardResep(resep: ,)
+                            // ]
                           ],
                         ),
                         SizedBox(
@@ -105,13 +101,13 @@ class _PreferensiPageState extends State<PreferensiPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            for (var i = 3; i < 6; i++) ...[
-                              CardResepPortrait(
-                                getColor: listResep[i].color,
-                                getNama: listResep[i].nama,
-                                getImages: listResep[i].images,
-                              ),
-                            ]
+                            // for (var i = 3; i < 6; i++) ...[
+                            //   CardResep(
+                            //     getColor: listResep[i].color,
+                            //     getNama: listResep[i].nama,
+                            //     getImages: listResep[i].images,
+                            //   ),
+                            // ]
                           ],
                         ),
                         SizedBox(
@@ -120,13 +116,13 @@ class _PreferensiPageState extends State<PreferensiPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            for (var i = 6; i < 8; i++) ...[
-                              CardResepLandscape(
-                                getColor: listResep[i].color,
-                                getNama: listResep[i].nama,
-                                getImages: listResep[i].images,
-                              ),
-                            ]
+                            // for (var i = 6; i < 8; i++) ...[
+                            //   CardResep(
+                            //     getColor: listResep[i].color,
+                            //     getNama: listResep[i].nama,
+                            //     getImages: listResep[i].images,
+                            //   ),
+                            // ]
                           ],
                         )
                       ]),
