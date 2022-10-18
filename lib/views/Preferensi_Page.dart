@@ -2,6 +2,7 @@ part of 'pages.dart';
 
 class PreferensiPage extends StatefulWidget {
   static const routeName = "/PreferensiPage";
+
   const PreferensiPage({super.key});
 
   @override
@@ -9,7 +10,7 @@ class PreferensiPage extends StatefulWidget {
 }
 
 class _PreferensiPageState extends State<PreferensiPage> {
-  bool? isSelected;
+  List<Resep> _pickedItems = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,9 +91,21 @@ class _PreferensiPageState extends State<PreferensiPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            // for (var i = 0; i < 3; i++) ...[
-                            //   CardResep(resep: ,)
-                            // ]
+                            ...List.generate(
+                                3,
+                                ((index) => CardResep(
+                                    resep: listResep[index],
+                                    onSelected: ((bool value) {
+                                      if (value) {
+                                        _pickedItems.add(listResep[index]);
+                                      } else {
+                                        _pickedItems.remove(listResep[index]);
+                                      }
+
+                                      setState(() {
+                                        //kosong
+                                      });
+                                    }))))
                           ],
                         ),
                         SizedBox(
@@ -101,13 +114,20 @@ class _PreferensiPageState extends State<PreferensiPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            // for (var i = 3; i < 6; i++) ...[
-                            //   CardResep(
-                            //     getColor: listResep[i].color,
-                            //     getNama: listResep[i].nama,
-                            //     getImages: listResep[i].images,
-                            //   ),
-                            // ]
+                            for (var i = 3; i < 6; i++) ...[
+                              CardResep(
+                                  resep: listResep[i],
+                                  onSelected: ((bool value) {
+                                    if (value) {
+                                      _pickedItems.add(listResep[i]);
+                                    } else {
+                                      _pickedItems.remove(listResep[i]);
+                                    }
+                                    setState(() {
+                                      //kosong
+                                    });
+                                  }))
+                            ]
                           ],
                         ),
                         SizedBox(
@@ -116,15 +136,25 @@ class _PreferensiPageState extends State<PreferensiPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            // for (var i = 6; i < 8; i++) ...[
-                            //   CardResep(
-                            //     getColor: listResep[i].color,
-                            //     getNama: listResep[i].nama,
-                            //     getImages: listResep[i].images,
-                            //   ),
-                            // ]
+                            for (var i = 6; i < 8; i++) ...[
+                              CardResep(
+                                  resep: listResep[i],
+                                  onSelected: ((bool value) {
+                                    if (value) {
+                                      _pickedItems.add(listResep[i]);
+                                    } else {
+                                      _pickedItems.remove(listResep[i]);
+                                    }
+                                    setState(() {
+                                      //kosong
+                                    });
+                                  }))
+                            ]
                           ],
-                        )
+                        ),
+                        //debug array pickedItems Length
+
+                        // Text("${_pickedItems.length}"),
                       ]),
                     ),
                   ),
