@@ -12,8 +12,7 @@ import 'package:flutter/services.dart';
 import 'package:email_validator/email_validator.dart';
 import 'dart:ui';
 import 'package:flutter/animation.dart';
-import 'package:meal_kit_flutter/model/resep.dart';
-
+import 'package:meal_kit_flutter/model/Resep.dart';
 import 'package:meal_kit_flutter/widgets/Card_Resep.dart';
 
 part 'Home.dart';

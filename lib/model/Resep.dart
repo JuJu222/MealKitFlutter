@@ -8,7 +8,7 @@ class Resep {
   Resep({required this.nama, required this.color, required this.images});
 }
 
-var listResep = [
+List<Resep> listResep = [
   Resep(
       nama: "Daging & Sayur",
       color: Color(0XFFFCEAB2),
