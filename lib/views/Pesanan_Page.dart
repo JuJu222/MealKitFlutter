@@ -29,8 +29,8 @@ class PesananPage extends StatelessWidget {
               child: Container(
                 child: Column(children: [
                   CardPesananParent(),
-                  CardPesananParent(),
-                  CardPesananParent(),
+                  // CardPesananParent(),
+                  // CardPesananParent(),
                 ]),
               ),
             ))

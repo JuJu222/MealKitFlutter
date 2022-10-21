@@ -14,13 +14,13 @@ class _HomePageState extends State<HomePage> {
   List<BottomNavigationBarItem> _bottomNavBarItems = [
     BottomNavigationBarItem(
         icon: Icon(
-          Icons.flatware_outlined,
+          Icons.list,
         ),
         label: MenuPage.pageName),
     BottomNavigationBarItem(
-        icon: Icon(Icons.timeline), label: RencanaPage.pageName),
+        icon: Icon(Icons.calendar_month), label: RencanaPage.pageName),
     BottomNavigationBarItem(
-        icon: Icon(Icons.person), label: PesananPage.pageName),
+        icon: Icon(Icons.note_alt), label: PesananPage.pageName),
     BottomNavigationBarItem(
         icon: Icon(Icons.person), label: ProfilePage.pageName),
   ];

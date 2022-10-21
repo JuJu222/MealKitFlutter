@@ -58,22 +58,24 @@ class CardPesanan extends StatelessWidget {
                         childAspectRatio: 1 / 1,
                         crossAxisSpacing: 8,
                         children: [
-                          // Container(
-                          //   child: Image.asset(
-                          //     "assets/images/imagefood1.png",
-                          //   ),
-                          // ),
-                          // Container(
-                          //   child: Image.asset(
-                          //     "assets/images/imagefood2.png",
-                          //   ),
-                          // ),
-                          // Container(
-                          //   child: Image.asset("assets/images/imagefood3.png"),
-                          // ),
-                          // Container(
-                          //   child: Image.asset("assets/images/imagefood4.png"),
-                          // )
+                          Container(
+                            child: Image.asset(
+                              "assets/images/foods/imagefood1.png",
+                            ),
+                          ),
+                          Container(
+                            child: Image.asset(
+                              "assets/images/foods/imagefood2.png",
+                            ),
+                          ),
+                          Container(
+                            child: Image.asset(
+                                "assets/images/foods/imagefood3.png"),
+                          ),
+                          Container(
+                            child: Image.asset(
+                                "assets/images/foods/imagefood4.png"),
+                          )
                         ],
                       ),
                     )),
