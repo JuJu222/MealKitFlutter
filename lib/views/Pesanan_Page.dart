@@ -22,7 +22,19 @@ class PesananPage extends StatelessWidget {
         child: Container(
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [CardPesananParent(), CardPesananParent()],
+          children: [
+            Expanded(
+                child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
+              child: Container(
+                child: Column(children: [
+                  CardPesananParent(),
+                  CardPesananParent(),
+                  CardPesananParent(),
+                ]),
+              ),
+            ))
+          ],
         )),
       ),
     );

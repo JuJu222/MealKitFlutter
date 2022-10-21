@@ -16,7 +16,9 @@ class CardPesananParent extends StatelessWidget {
               .headline6!
               .copyWith(color: primaryColor, fontWeight: FontWeight.w700),
         ),
-        Divider(),
+        Divider(
+          thickness: 2,
+        ),
         SizedBox(
           height: 20,
         ),
