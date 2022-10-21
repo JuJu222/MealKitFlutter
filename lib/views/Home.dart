@@ -18,10 +18,11 @@ class _HomePageState extends State<HomePage> {
         ),
         label: MenuPage.pageName),
     BottomNavigationBarItem(
-        icon: Icon(Icons.shopping_bag), label: RencanaPage.pageName),
+        icon: Icon(Icons.timeline), label: RencanaPage.pageName),
     BottomNavigationBarItem(
         icon: Icon(Icons.person), label: PesananPage.pageName),
-    BottomNavigationBarItem(icon: Icon(Icons.abc), label: ProfilePage.pageName),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.person), label: ProfilePage.pageName),
   ];
 
   List<Widget> _listPageWidget = [

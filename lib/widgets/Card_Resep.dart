@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../model/Resep.dart';
+part of 'widgets.dart';
 
 class CardResep extends StatefulWidget {
   final Resep resep;
