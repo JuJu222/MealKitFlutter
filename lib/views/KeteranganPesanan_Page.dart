@@ -184,7 +184,7 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Checkout",
+                                  "Keterangan Pesanan",
                                   style: Theme.of(context)
                                       .textTheme
                                       .headline5!
