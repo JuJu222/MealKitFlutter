@@ -21,6 +21,7 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import '../utils/loading.dart';
 import '../widgets/widgets.dart';
 
+part 'BerhasilPembayaran_Page.dart';
 part 'Home.dart';
 part 'Login_Page.dart';
 part '../utils/style.dart';
