@@ -37,9 +37,10 @@ class MyApp extends StatelessWidget {
                 secondary: secondaryColor),
             appBarTheme: AppBarTheme(elevation: 0),
             textTheme: myTextTheme),
-        initialRoute: BerhasilPembayaranPage.routeName,
+        initialRoute: KeteranganPesananPage.routeName,
         routes: {
-          BerhasilPembayaranPage.routeName: (context)=> BerhasilPembayaranPage(),
+          KeteranganPesananPage.routeName: (context) => KeteranganPesananPage(),
+          BerhasilPembayaranPage.routeName: (context) => BerhasilPembayaranPage(),
           Wrapper.routeName: (context) => Wrapper(),
           CheckoutPage.routeName: (context) => CheckoutPage(),
           LoginPage.routeName: (context) => LoginPage(),
