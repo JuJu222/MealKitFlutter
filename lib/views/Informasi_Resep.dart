@@ -20,15 +20,40 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
       children: [
         Column(children: [
           Flexible(
-              flex: 4,
-              child: Container(
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.8), BlendMode.dstATop),
-                image: AssetImage('assets/images/detail_bg.png'),
-              )))),
+            flex: 4,
+            child: Stack(
+              children: [
+                Container(
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.8), BlendMode.dstATop),
+                  image: AssetImage('assets/images/detail_bg.png'),
+                ))),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      // border: Border.all(color: darkblue, width: 8),
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    margin: EdgeInsets.only(top: 48, left: 24),
+                    child: FloatingActionButton(
+                      backgroundColor: Colors.white,
+                      onPressed: () {
+                        setState(() {
+                          // liked = !liked;
+                        });
+                      },
+                      child: Icon(Icons.arrow_back, color: blue),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
           //kosong
           Flexible(flex: 6, child: Container())
         ]),
