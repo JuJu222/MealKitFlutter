@@ -9,6 +9,9 @@ class InformasiResepPage extends StatefulWidget {
 }
 
 class _InformasiResepPageState extends State<InformasiResepPage> {
+  Color blue = Color(0xFF1C9FE2);
+  Color light_gray = Color(0xFFF6F8FA);
+  String bullet = "\u2022 ";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,12 +62,151 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                       fontSize: 24,
                                       fontWeight: FontWeight.bold)))),
                     ]),
-                    Row(children: [
-                      Flexible(
-                          flex: 2,
-                          child: Center(child: Text("Grilled Salmon"))),
-                      Flexible(flex: 2, child: Center(child: Text("Rp40.000"))),
-                    ]),
+                    Row(
+                        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Flexible(
+                              flex: 2,
+                              child: Container(
+                                  padding: EdgeInsets.only(left: 40),
+                                  child: Text(
+                                    "Daging dan Sayur",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                        color: blue),
+                                  ))),
+                          SizedBox(width: 90),
+                          Flexible(
+                              flex: 2,
+                              child: Container(
+                                  padding: EdgeInsets.only(left: 36),
+                                  child: Text("/2 Porsi",
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                          // color: Colors.grey,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400)))),
+                        ]),
+                    Flexible(
+                      flex: 1,
+                      child: Container(
+                          margin: EdgeInsets.only(top: 12, left: 0, bottom: 0),
+                          child: Text(
+                            "Di samping menjadi salah satu sumber protein yang\nberkualitas tinggi, ikan salmon juga kaya akan asam\nlemak omega-3. Asam lemak omega-3 sangat berguna\nbagi kesehatan jantung, otak, dan organ tubuh lainnya.\nSelain itu rasanya lezat dan mudah diolah.",
+                            style: TextStyle(fontSize: 12),
+                            // textAlign: TextAlign.justify,
+                          )),
+                    ),
+                    Flexible(
+                        flex: 1,
+                        child: ListView(
+                          padding:
+                              EdgeInsets.only(top: 12, left: 40, bottom: 0),
+                          children: [
+                            Text("Bahan",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                )),
+                            SizedBox(height: 8),
+                            Text(
+                                "${bullet} 4 potong (@ 200 g) fillet ikan salmon",
+                                style: TextStyle(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                )),
+                            Text("${bullet} 1 sdt garam",
+                                style: TextStyle(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                )),
+                            Text(
+                                "${bullet} 1 sdt merica hitam butiran, gerus kasar",
+                                style: TextStyle(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                )),
+                            Text("${bullet} 2 sdm minyak zaitun",
+                                style: TextStyle(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                )),
+                            Text("${bullet} 2 sdm mentega",
+                                style: TextStyle(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                )),
+                            Text("${bullet} 4 siung bawang putih, iris tipis",
+                                style: TextStyle(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                )),
+                            Text("${bullet} 4 sdm air jeruk lemon",
+                                style: TextStyle(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                )),
+                          ],
+                        )),
+                    Flexible(
+                        flex: 1,
+                        child: ListView(
+                          padding: EdgeInsets.only(top: 12, left: 40),
+                          children: [
+                            Text("Alat yang dibutuhkan",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                )),
+                            SizedBox(height: 8),
+                            Text("${bullet} Pisau",
+                                style: TextStyle(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                )),
+                            Text("${bullet} Wajan datar",
+                                style: TextStyle(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                )),
+                            Text("${bullet} Gelas ukur",
+                                style: TextStyle(
+                                  // fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                )),
+                          ],
+                        )),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Flexible(
+                              flex: 2,
+                              child: Container(
+                                  padding: EdgeInsets.only(left: 40),
+                                  child: Text("Review",
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold)))),
+                          SizedBox(width: 90),
+                          Flexible(
+                              flex: 2,
+                              child: Container(
+                                  padding: EdgeInsets.only(right: 40),
+                                  decoration: BoxDecoration(
+                                    color: light_gray,
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Icon(Icons.star),
+                                      Text(" ", style: TextStyle(fontSize: 16)),
+                                      Text("4.5",
+                                          style: TextStyle(fontSize: 16)),
+                                    ],
+                                  ))),
+                        ]),
                   ])))
         ]),
       ],
