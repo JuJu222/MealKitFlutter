@@ -19,4 +19,4 @@ part '../utils/style.dart';
 part 'Register_Page.dart';
 part 'Preferensi_Page.dart';
 part 'Informasi_Pengiriman.dart';
-part 'Detail_Menu.dart';
+part 'Informasi_Resep.dart';
