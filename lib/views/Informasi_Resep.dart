@@ -37,7 +37,7 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
           Flexible(flex: 3, child: Container()),
           //card
           Flexible(
-              flex: 7,
+              flex: 6,
               child: Container(
                   width: double.infinity,
                   height: double.infinity,
