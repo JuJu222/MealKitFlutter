@@ -28,6 +28,7 @@ part '../utils/style.dart';
 part 'Register_Page.dart';
 part 'Preferensi_Page.dart';
 part 'Informasi_Pengiriman.dart';
+part 'Informasi_Resep.dart';
 part 'Menu_Page.dart';
 part 'Rencana_Page.dart';
 part 'Pesanan_Page.dart';
@@ -35,3 +36,4 @@ part 'Profile_Page.dart';
 part 'Checkout_Page.dart';
 part 'Resetpassword_Page.dart';
 part 'KeteranganPesanan_Page.dart';
+

@@ -48,6 +48,7 @@ class MyApp extends StatelessWidget {
           RegisterPage.routeName: (context) => RegisterPage(),
           InformasiPengirimanPage.routeName: (context) => InformasiPengirimanPage(),
           PreferensiPage.routeName: (context) => PreferensiPage(),
+          InformasiResepPage.routeName: (context) => InformasiResepPage(),
         },
       ),
     );
