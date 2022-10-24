@@ -2,6 +2,7 @@ part of 'pages.dart';
 
 class PreferensiPage extends StatefulWidget {
   static const routeName = "/PreferensiPage";
+
   const PreferensiPage({super.key});
 
   @override
@@ -9,6 +10,7 @@ class PreferensiPage extends StatefulWidget {
 }
 
 class _PreferensiPageState extends State<PreferensiPage> {
+  List<Resep> _pickedItems = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +27,174 @@ class _PreferensiPageState extends State<PreferensiPage> {
         backgroundColor: Colors.transparent,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(21),
+        padding: const EdgeInsets.all(18),
         child: Container(
             child: Column(
-          children: [Text("Test")],
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+                child: Container(
+              child: Column(children: [
+                Flexible(
+                    child: Container(
+                  child: Column(children: [
+                    Text(
+                      "Resep Seperti Apa Yang",
+                      style: Theme.of(context)!
+                          .textTheme
+                          .headline5!
+                          .copyWith(fontWeight: FontWeight.w700),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      "Anda Sukai?",
+                      style: Theme.of(context)!
+                          .textTheme
+                          .headline5!
+                          .copyWith(fontWeight: FontWeight.w700),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Container(
+                      child: Column(children: [
+                        Text(
+                          "Pilihlah jenis resep yang anda sukai. Anda masih",
+                          textAlign: TextAlign.center,
+                          style:
+                              Theme.of(context)!.textTheme.bodyMedium!.copyWith(
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.black.withOpacity(0.4),
+                                  ),
+                        ),
+                        Text(
+                          "memiliki akses ke semua resep setiap minggu.",
+                          style: Theme.of(context)!
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black.withOpacity(0.4)),
+                        )
+                      ]),
+                    ),
+                  ]),
+                )),
+                Flexible(
+                  flex: 3,
+                  child: SingleChildScrollView(
+                    child: Container(
+                      padding: EdgeInsets.all(5),
+                      child: Column(children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ...List.generate(
+                                3,
+                                ((index) => CardResep(
+                                    resep: listResep[index],
+                                    onSelected: ((bool value) {
+                                      if (value) {
+                                        _pickedItems.add(listResep[index]);
+                                      } else {
+                                        _pickedItems.remove(listResep[index]);
+                                      }
+
+                                      setState(() {
+                                        //kosong
+                                      });
+                                    }))))
+                          ],
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            for (var i = 3; i < 6; i++) ...[
+                              CardResep(
+                                  resep: listResep[i],
+                                  onSelected: ((bool value) {
+                                    if (value) {
+                                      _pickedItems.add(listResep[i]);
+                                    } else {
+                                      _pickedItems.remove(listResep[i]);
+                                    }
+                                    setState(() {
+                                      //kosong
+                                    });
+                                  }))
+                            ]
+                          ],
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            for (var i = 6; i < 8; i++) ...[
+                              CardResep(
+                                  resep: listResep[i],
+                                  onSelected: ((bool value) {
+                                    if (value) {
+                                      _pickedItems.add(listResep[i]);
+                                    } else {
+                                      _pickedItems.remove(listResep[i]);
+                                    }
+                                    setState(() {
+                                      //kosong
+                                    });
+                                  }))
+                            ]
+                          ],
+                        ),
+                        //debug array pickedItems Length
+
+                        // Text("${_pickedItems.length}"),
+                      ]),
+                    ),
+                  ),
+                ),
+              ]),
+            )),
+            Ink(
+              decoration: BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey,
+                        spreadRadius: 0.1,
+                        blurRadius: 0.1,
+                        offset: Offset(0, 0.8))
+                  ]),
+              child: InkWell(
+                child: Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 54.08,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Selanjutnya",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700))
+                    ],
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(context, AnimationPageRoute2());
+                },
+              ),
+            ),
+          ],
         )),
       ),
     );
