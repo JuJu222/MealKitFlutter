@@ -44,7 +44,7 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                       backgroundColor: Colors.white,
                       onPressed: () {
                         setState(() {
-                          // liked = !liked;
+                          Navigator.of(context).pop();
                         });
                       },
                       child: Icon(Icons.arrow_back, color: blue),
@@ -137,7 +137,8 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                       child: Container(
                           width: double.infinity,
                           alignment: Alignment.topLeft,
-                          margin: EdgeInsets.only(top: 12, left: 24, right: 24,bottom: 0),
+                          margin: EdgeInsets.only(
+                              top: 12, left: 24, right: 24, bottom: 0),
                           child: Text(
                             "Di samping menjadi salah satu sumber protein yang berkualitas tinggi, ikan salmon juga kaya akan asam lemak omega-3. Asam lemak omega-3 sangat berguna bagi kesehatan jantung, otak, dan organ tubuh lainnya. Selain itu rasanya lezat dan mudah diolah.",
                             textAlign: TextAlign.justify,
@@ -286,10 +287,10 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                           child: FloatingActionButton.extended(
                             backgroundColor: blue,
                             onPressed: () {
-                              // Navigator.push(
-                              //     context,
-                              // MaterialPageRoute(
-                              //     builder: (context) => FormPage()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => TambahResepPage()));
                             },
                             label: Text("Tambah ke Rencana",
                                 style: TextStyle(
