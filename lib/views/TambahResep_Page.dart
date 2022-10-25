@@ -53,7 +53,7 @@ class _TambahResepPageState extends State<TambahResepPage> {
                       backgroundColor: Colors.white,
                       onPressed: () {
                         setState(() {
-                          // liked = !liked;
+                          Navigator.of(context).pop();
                         });
                       },
                       child: Icon(Icons.arrow_back, color: blue),
