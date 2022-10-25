@@ -12,7 +12,13 @@ class _TambahResepPageState extends State<TambahResepPage> {
   Color blue = Color(0xFF1C9FE2);
   Color light_gray = Color(0xFFF6F8FA);
   Color yellow = Color(0xFFF8E545);
+  Color gray = Color(0xFFBFBFBF);
+  Color line_gray = Color(0xFFD9D9D9);
+
   String bullet = "\u2022 ";
+
+  bool selected_first = false;
+  bool selected_second = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,14 +95,15 @@ class _TambahResepPageState extends State<TambahResepPage> {
                     Flexible(
                       flex: 1,
                       child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Flexible(
                                 flex: 2,
                                 child: Container(
+                                    margin: EdgeInsets.only(top: 4),
                                     padding: EdgeInsets.only(left: 24),
                                     child: Text(
-                                      "Daging dan Sayur",
+                                      "Jumlah Porsi",
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
                                           fontSize: 14,
@@ -104,158 +111,162 @@ class _TambahResepPageState extends State<TambahResepPage> {
                                           fontFamily: 'Quicksand',
                                           color: blue),
                                     ))),
-                            // SizedBox(width: 90),
-                            Flexible(
-                                flex: 2,
-                                child: Container(
-                                    padding: EdgeInsets.only(right: 56),
-                                    child: Text("/2 Porsi",
-                                        // textAlign: TextAlign.right,
-                                        style: TextStyle(
-                                          // color: Colors.grey,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                          fontFamily: 'Quicksand',
-                                        )))),
                           ]),
                     ),
                     Flexible(
-                      flex: 2,
+                      flex: 1,
                       child: Container(
-                          width: double.infinity,
-                          alignment: Alignment.topLeft,
                           margin: EdgeInsets.only(
-                              top: 12, left: 24, right: 24, bottom: 0),
-                          child: Text(
-                            "Di samping menjadi salah satu sumber protein yang berkualitas tinggi, ikan salmon juga kaya akan asam lemak omega-3. Asam lemak omega-3 sangat berguna bagi kesehatan jantung, otak, dan organ tubuh lainnya. Selain itu rasanya lezat dan mudah diolah.",
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontFamily: 'Quicksand',
-                            ),
-
-                            // textAlign: TextAlign.justify,
+                            left: 24,
+                            right: 24,
+                            top: 6,
+                          ),
+                          width: double.infinity,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: GestureDetector(
+                                    onTap: () {
+                                      setState(() {});
+                                    },
+                                    child: Container(
+                                      child: Center(
+                                          child: Text("2",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 25,
+                                                fontFamily: 'QuickSand',
+                                              ))),
+                                      decoration: BoxDecoration(
+                                          border: Border.all(color: gray)),
+                                    )),
+                              ),
+                              Expanded(
+                                child: GestureDetector(
+                                    onTap: () {
+                                      setState(() {});
+                                    },
+                                    child: Container(
+                                      child: Center(
+                                          child: Text("4",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 25,
+                                                fontFamily: 'QuickSand',
+                                              ))),
+                                      decoration: BoxDecoration(
+                                          border: Border.all(color: gray)),
+                                    )),
+                              ),
+                            ],
                           )),
                     ),
                     Flexible(
-                        flex: 3,
-                        child: ListView(
-                          padding: EdgeInsets.only(top: 0, left: 24, bottom: 0),
-                          children: [
-                            Text("Bahan",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  fontFamily: 'Quicksand',
-                                )),
-                            SizedBox(height: 8),
-                            Text(
-                                "${bullet} 4 potong (@ 200 g) fillet ikan salmon",
-                                style: TextStyle(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: 12, fontFamily: 'Quicksand',
-                                )),
-                            Text("${bullet} 1 sdt garam",
-                                style: TextStyle(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: 12, fontFamily: 'Quicksand',
-                                )),
-                            Text(
-                                "${bullet} 1 sdt merica hitam butiran, gerus kasar",
-                                style: TextStyle(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: 12, fontFamily: 'Quicksand',
-                                )),
-                            Text("${bullet} 2 sdm minyak zaitun",
-                                style: TextStyle(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: 12, fontFamily: 'Quicksand',
-                                )),
-                            Text("${bullet} 2 sdm mentega",
-                                style: TextStyle(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: 12, fontFamily: 'Quicksand',
-                                )),
-                            Text("${bullet} 4 siung bawang putih, iris tipis",
-                                style: TextStyle(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: 12, fontFamily: 'Quicksand',
-                                )),
-                            Text("${bullet} 4 sdm air jeruk lemon",
-                                style: TextStyle(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: 12, fontFamily: 'Quicksand',
-                                )),
-                          ],
-                        )),
-                    Flexible(
-                        flex: 2,
-                        child: ListView(
-                          padding: EdgeInsets.only(top: 0, left: 24),
-                          children: [
-                            Text("Alat yang dibutuhkan",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  fontFamily: 'Quicksand',
-                                )),
-                            SizedBox(height: 8),
-                            Text("${bullet} Pisau",
-                                style: TextStyle(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: 12, fontFamily: 'Quicksand',
-                                )),
-                            Text("${bullet} Wajan datar",
-                                style: TextStyle(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: 12, fontFamily: 'Quicksand',
-                                )),
-                            Text("${bullet} Gelas ukur",
-                                style: TextStyle(
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  fontFamily: 'Quicksand',
-                                )),
-                          ],
-                        )),
-                    Flexible(
                       flex: 1,
                       child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Flexible(
-                                flex: 4,
-                                child: Container(
-                                    padding: EdgeInsets.only(left: 24),
-                                    child: Text("Review",
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'Quicksand',
-                                        )))),
-                            SizedBox(width: 90),
                             Flexible(
                                 flex: 2,
                                 child: Container(
-                                    margin: EdgeInsets.only(right: 24),
-                                    decoration: BoxDecoration(
-                                      color: light_gray,
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(Icons.star, color: yellow),
-                                        // Text(" ", style: TextStyle(fontSize: 16)),
-                                        Text("4.5",
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.bold,
-                                              fontFamily: 'Quicksand',
-                                            )),
-                                      ],
+                                    margin: EdgeInsets.only(top: 16),
+                                    padding: EdgeInsets.only(left: 24),
+                                    child: Text(
+                                      "Tanggal",
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'Quicksand',
+                                          color: blue),
                                     ))),
                           ]),
+                    ),
+                    Flexible(
+                        flex: 1,
+                        child: Container(
+                          margin: EdgeInsets.only(top: 8, left: 24, right: 24),
+                          height: double.infinity,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            border: Border.all(color: gray),
+                          ),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                    padding: EdgeInsets.only(left: 24),
+                                    child: Text("3 Oktober 2022")),
+                                Container(
+                                  padding: EdgeInsets.only(right: 24),
+                                  child: Icon(Icons.calendar_today),
+                                ),
+                              ]),
+                        )),
+                    Flexible(
+                      flex: 2,
+                      child: Container(
+                        margin: EdgeInsets.only(top: 16, left: 24, right: 24),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: gray),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Center(
+                                child: Text("2 Porsi Grilled Salmon",
+                                    style: TextStyle(
+                                      color: blue,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Quicksand",
+                                    ))),
+                            Center(
+                                child: Text("Minggu, 3 Oktober 2022",
+                                    style: TextStyle(
+                                      color: blue,
+                                      fontSize: 12,
+                                      fontFamily: "Quicksand",
+                                      // fontWeight: FontWeight.bold,
+                                    ))),
+                            Center(
+                              child: Divider(
+                                color: line_gray,
+                                thickness: 1,
+                                indent: 24,
+                                endIndent: 24,
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.only(left: 24),
+                                  child: Text("Total",
+                                      style: TextStyle(
+                                        color: blue,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                        fontFamily: "Quicksand",
+                                      )),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.only(right: 24),
+                                  child: Text("Rp40.000",
+                                      style: TextStyle(
+                                        color: blue,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                        fontFamily: "Quicksand",
+                                      )),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                     Flexible(
                       flex: 1,
@@ -264,6 +275,7 @@ class _TambahResepPageState extends State<TambahResepPage> {
                         child: Container(
                           margin: EdgeInsets.only(top: 18, left: 24, right: 24),
                           width: double.infinity,
+                          height: double.infinity,
                           decoration: BoxDecoration(
                             // border: Border.all(color: Colors.transparent),
                             borderRadius: BorderRadius.all(Radius.circular(8)),
@@ -273,12 +285,7 @@ class _TambahResepPageState extends State<TambahResepPage> {
                           // margin: EdgeInsets.all(4),
                           child: FloatingActionButton.extended(
                             backgroundColor: blue,
-                            onPressed: () {
-                              // Navigator.push(
-                              //     context,
-                              // MaterialPageRoute(
-                              //     builder: (context) => FormPage()));
-                            },
+                            onPressed: () {},
                             label: Text("Tambah ke Rencana",
                                 style: TextStyle(
                                   color: Colors.white,
