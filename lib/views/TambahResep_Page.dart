@@ -127,7 +127,10 @@ class _TambahResepPageState extends State<TambahResepPage> {
                               Expanded(
                                 child: GestureDetector(
                                     onTap: () {
-                                      setState(() {});
+                                      setState(() {
+                                        selected_first = true;
+                                        selected_second = false;
+                                      });
                                     },
                                     child: Container(
                                       child: Center(
@@ -136,15 +139,24 @@ class _TambahResepPageState extends State<TambahResepPage> {
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 25,
                                                 fontFamily: 'QuickSand',
+                                                color: selected_first
+                                                    ? Colors.white
+                                                    : blue,
                                               ))),
                                       decoration: BoxDecoration(
+                                          color: selected_first
+                                              ? blue
+                                              : Colors.white,
                                           border: Border.all(color: gray)),
                                     )),
                               ),
                               Expanded(
                                 child: GestureDetector(
                                     onTap: () {
-                                      setState(() {});
+                                      setState(() {
+                                        selected_first = false;
+                                        selected_second = true;
+                                      });
                                     },
                                     child: Container(
                                       child: Center(
@@ -153,8 +165,14 @@ class _TambahResepPageState extends State<TambahResepPage> {
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 25,
                                                 fontFamily: 'QuickSand',
+                                                color: selected_second
+                                                    ? Colors.white
+                                                    : blue,
                                               ))),
                                       decoration: BoxDecoration(
+                                          color: selected_second
+                                              ? blue
+                                              : Colors.white,
                                           border: Border.all(color: gray)),
                                     )),
                               ),
