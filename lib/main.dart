@@ -37,18 +37,21 @@ class MyApp extends StatelessWidget {
                 secondary: secondaryColor),
             appBarTheme: AppBarTheme(elevation: 0),
             textTheme: myTextTheme),
-        initialRoute: KeteranganPesananPage.routeName,
+        initialRoute: DaftarResepPage.routeName,
         routes: {
           KeteranganPesananPage.routeName: (context) => KeteranganPesananPage(),
-          BerhasilPembayaranPage.routeName: (context) => BerhasilPembayaranPage(),
+          BerhasilPembayaranPage.routeName: (context) =>
+              BerhasilPembayaranPage(),
           Wrapper.routeName: (context) => Wrapper(),
           CheckoutPage.routeName: (context) => CheckoutPage(),
           LoginPage.routeName: (context) => LoginPage(),
           HomePage.routeName: (context) => HomePage(),
           RegisterPage.routeName: (context) => RegisterPage(),
-          InformasiPengirimanPage.routeName: (context) => InformasiPengirimanPage(),
+          InformasiPengirimanPage.routeName: (context) =>
+              InformasiPengirimanPage(),
           PreferensiPage.routeName: (context) => PreferensiPage(),
           InformasiResepPage.routeName: (context) => InformasiResepPage(),
+          DaftarResepPage.routeName: (context) => DaftarResepPage(),
         },
       ),
     );
