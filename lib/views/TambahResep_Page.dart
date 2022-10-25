@@ -210,17 +210,32 @@ class _TambahResepPageState extends State<TambahResepPage> {
                             borderRadius: BorderRadius.all(Radius.circular(5)),
                             border: Border.all(color: gray),
                           ),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                    padding: EdgeInsets.only(left: 24),
-                                    child: Text("3 Oktober 2022")),
-                                Container(
-                                  padding: EdgeInsets.only(right: 24),
-                                  child: Icon(Icons.calendar_today),
-                                ),
-                              ]),
+                          child: GestureDetector(
+                            onTap: () async {
+                              await showDatePicker(
+                                context: context,
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime(DateTime.now().year),
+                                lastDate: DateTime(DateTime.now().year + 1),
+                              );
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              height: double.infinity,
+                              child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                        padding: EdgeInsets.only(left: 24),
+                                        child: Text("3 Oktober 2022")),
+                                    Container(
+                                      padding: EdgeInsets.only(right: 24),
+                                      child: Icon(Icons.calendar_today),
+                                    ),
+                                  ]),
+                            ),
+                          ),
                         )),
                     Flexible(
                       flex: 2,
