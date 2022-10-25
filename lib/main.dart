@@ -37,6 +37,8 @@ class MyApp extends StatelessWidget {
                 secondary: secondaryColor),
             appBarTheme: AppBarTheme(elevation: 0),
             textTheme: myTextTheme),
+
+
         initialRoute: Wrapper.routeName,
         routes: {
           KeteranganPesananPage.routeName: (context) => KeteranganPesananPage(),
@@ -51,6 +53,7 @@ class MyApp extends StatelessWidget {
               InformasiPengirimanPage(),
           PreferensiPage.routeName: (context) => PreferensiPage(),
           InformasiResepPage.routeName: (context) => InformasiResepPage(),
+          DaftarResepPage.routeName: (context) => DaftarResepPage(),
         },
       ),
     );
