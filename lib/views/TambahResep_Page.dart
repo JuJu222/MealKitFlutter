@@ -17,6 +17,9 @@ class _TambahResepPageState extends State<TambahResepPage> {
 
   String bullet = "\u2022 ";
 
+  DateFormat dateFormat = DateFormat("y MMMM d");
+  DateTime? _dateTime = DateTime.now();
+
   bool selected_first = false;
   bool selected_second = false;
   @override
@@ -215,9 +218,13 @@ class _TambahResepPageState extends State<TambahResepPage> {
                               await showDatePicker(
                                 context: context,
                                 initialDate: DateTime.now(),
-                                firstDate: DateTime(DateTime.now().year),
+                                firstDate: DateTime.now(),
                                 lastDate: DateTime(DateTime.now().year + 1),
-                              );
+                              ).then((date) {
+                                setState(() {
+                                  _dateTime = date;
+                                });
+                              });
                             },
                             child: Container(
                               width: double.infinity,
@@ -228,7 +235,8 @@ class _TambahResepPageState extends State<TambahResepPage> {
                                   children: [
                                     Container(
                                         padding: EdgeInsets.only(left: 24),
-                                        child: Text("3 Oktober 2022")),
+                                        child: Text(dateFormat
+                                            .format(_dateTime as DateTime))),
                                     Container(
                                       padding: EdgeInsets.only(right: 24),
                                       child: Icon(Icons.calendar_today),
