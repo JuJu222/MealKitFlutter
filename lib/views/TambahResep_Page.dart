@@ -70,34 +70,21 @@ class _TambahResepPageState extends State<TambahResepPage> {
                       borderRadius: BorderRadius.all(Radius.circular(26)),
                       color: Colors.white,
                       shape: BoxShape.rectangle),
-                  padding: EdgeInsets.only(top: 24),
+                  padding: EdgeInsets.only(top: 8),
                   child: Column(children: [
                     Flexible(
                       flex: 1,
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Flexible(
-                                flex: 2,
-                                child: Container(
-                                    padding: EdgeInsets.only(left: 24),
-                                    child: Text("Grilled Salmon",
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'Quicksand',
-                                        )))),
-                            Flexible(
-                                flex: 2,
-                                child: Container(
-                                    padding: EdgeInsets.only(right: 24),
-                                    child: Text("Rp40.000",
-                                        style: TextStyle(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'Quicksand',
-                                        )))),
-                          ]),
+                      child: Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        child: Center(
+                            child: Text("Grilled Salmon",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Quicksand",
+                                ))),
+                      ),
                     ),
                     Flexible(
                       flex: 1,
