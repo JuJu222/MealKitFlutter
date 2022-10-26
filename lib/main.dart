@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
                 secondary: secondaryColor),
             appBarTheme: AppBarTheme(elevation: 0),
             textTheme: myTextTheme),
-        initialRoute: BerhasilPembayaranPage.routeName,
+        initialRoute: Wrapper.routeName,
         routes: {
           ResetPasswordPage.routeName: (context) => ResetPasswordPage(),
           BerandaPage.routeName: (context) => BerandaPage(),

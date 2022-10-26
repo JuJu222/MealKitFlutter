@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   ];
 
   List<Widget> _listPageWidget = [
-    MenuPage(),
+    BerandaPage(),
     RencanaPage(),
     PesananPage(),
     ProfilePage()

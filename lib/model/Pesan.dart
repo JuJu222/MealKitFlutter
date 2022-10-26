@@ -16,9 +16,9 @@ class Pesan {
 List<Pesan> listPesan = [
   Pesan(
     date: "3 Oktober 2022",
-    menuName: "Hot Grilled Salmon",
+    menuName: "Berry & Apple Oatmeal",
     menuPrice: "50.000",
-    images: "assets/images/foods/imagefood1.png",
+    images: "assets/images/foods/imagefood4.png",
     numberOfPeople: "4",
   ),
   Pesan(

@@ -30,6 +30,36 @@ class _RencanaPageState extends State<RencanaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        title: Container(
+          
+                  padding: EdgeInsets.all(15),
+                  child: Row(
+                    children: [
+                      Text(
+                        "3-9 Oktober 2022",
+                        style: Theme.of(context).textTheme.headline5!.copyWith(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22,
+                            fontFamily: "Quicksand"),
+                      ),
+                      const SizedBox(width: 5),
+                      PopupMenuButton(
+                        child: const Icon(Icons.keyboard_arrow_down, size: 32, color: Colors.black),
+                        itemBuilder: (context) {
+                          return cardRencana
+                              .map((item) => PopupMenuItem(
+                                    value: item,
+                                    child: Text(item.date),
+                                  ))
+                              .toList();
+                        },
+                      )
+                    ],
+                  ),
+                ),
+      ),
         body: SlidingUpPanel(
       maxHeight: 100,
       boxShadow: [BoxShadow(blurRadius: 10, color: Color(0xF000000))],
@@ -84,35 +114,7 @@ class _RencanaPageState extends State<RencanaPage> {
           height: double.infinity,
           child: Flexible(
             child: SingleChildScrollView(
-              child: Column(children: [
-                Container(
-                  margin: const EdgeInsets.only(top: 30),
-                  child: Row(
-                    children: [
-                      Text(
-                        "3-9 Oktober 2022",
-                        style: Theme.of(context).textTheme.headline5!.copyWith(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22,
-                            fontFamily: "Quicksand"),
-                      ),
-                      const SizedBox(width: 5),
-                      PopupMenuButton(
-                        child: const Icon(Icons.keyboard_arrow_down, size: 32),
-                        itemBuilder: (context) {
-                          return cardRencana
-                              .map((item) => PopupMenuItem(
-                                    value: item,
-                                    child: Text(item.date),
-                                  ))
-                              .toList();
-                        },
-                      )
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 25),
-                //asMap turns list into a Map, get the key and values of the map, item is the index, value is the key
+              child: Column(children: [                //asMap turns list into a Map, get the key and values of the map, item is the index, value is the key
                 Row(
                     children: cardRencana.mapIndexed((index, item) {
                   return CardRencana(
