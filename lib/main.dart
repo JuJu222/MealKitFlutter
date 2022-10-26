@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
         InformasiPengirimanPage.routeName: (context) =>
             InformasiPengirimanPage(),
         PreferensiPage.routeName: (context) => PreferensiPage(),
+        ProfilePage.routeName: (context) => ProfilePage(),
       },
     );
   }
