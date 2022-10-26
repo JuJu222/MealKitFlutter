@@ -17,21 +17,42 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final AuthService _auth = AuthService();
 
-  // void initState() {
-  //   WidgetsFlutterBinding.ensureInitialized();
-  //   SystemChrome.setPreferredOrientations([
-  //     DeviceOrientation.landscapeLeft,
-  //     DeviceOrientation.landscapeRight,
-  //   ]);
-  //   super.initState();
-  // }
+  void _scaleDialog() {
+    showGeneralDialog(
+      context: context,
+      pageBuilder: (ctx, a1, a2) {
+        return Container();
+      },
+      transitionBuilder: (ctx, a1, a2, child) {
+        var curve = Curves.easeInOut.transform(a1.value);
+        return Transform.scale(
+          scale: curve,
+          child: _dialog(ctx),
+        );
+      },
+      transitionDuration: const Duration(milliseconds: 300),
+    );
+  }
 
-  // @override
-  // void dispose() {
-  //   SystemChrome.setPreferredOrientations(
-  //       [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
-  //   super.dispose();
-  // }
+  Widget _dialog(BuildContext context) {
+    return AlertDialog(
+      title: Text("Pemberitahuan!"),
+      content: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
+          children: [Text("Email/Password tidak ditemukan")]),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      actions: <Widget>[
+        Center(
+          child: TextButton(
+              onPressed: (() {
+                Navigator.pop(context);
+              }),
+              child: Text("Kembali")),
+        )
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -349,6 +370,8 @@ class _LoginPageState extends State<LoginPage> {
                                         error = resultWithSignIn;
                                         isLoading = false;
                                       });
+
+                                      return _scaleDialog();
                                     }
                                   }
                                 },

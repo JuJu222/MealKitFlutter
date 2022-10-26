@@ -42,15 +42,19 @@ class MyApp extends StatelessWidget {
           ResetPasswordPage.routeName: (context) => ResetPasswordPage(),
           BerandaPage.routeName: (context) => BerandaPage(),
           KeteranganPesananPage.routeName: (context) => KeteranganPesananPage(),
-          BerhasilPembayaranPage.routeName: (context) => BerhasilPembayaranPage(),
+          BerhasilPembayaranPage.routeName: (context) =>
+              BerhasilPembayaranPage(),
           Wrapper.routeName: (context) => Wrapper(),
           CheckoutPage.routeName: (context) => CheckoutPage(),
           LoginPage.routeName: (context) => LoginPage(),
           HomePage.routeName: (context) => HomePage(),
           RegisterPage.routeName: (context) => RegisterPage(),
-          InformasiPengirimanPage.routeName: (context) => InformasiPengirimanPage(),
+          InformasiPengirimanPage.routeName: (context) =>
+              InformasiPengirimanPage(),
           PreferensiPage.routeName: (context) => PreferensiPage(),
           InformasiResepPage.routeName: (context) => InformasiResepPage(),
+          DaftarResepPage.routeName: (context) => DaftarResepPage(),
+          TambahResepPage.routeName: (context) => TambahResepPage(),
         },
       ),
     );

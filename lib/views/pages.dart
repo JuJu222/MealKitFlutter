@@ -15,6 +15,7 @@ import 'package:email_validator/email_validator.dart';
 import 'dart:ui';
 import 'package:flutter/animation.dart';
 import 'package:meal_kit_flutter/model/Pesan.dart';
+import 'package:intl/intl.dart';
 import 'package:meal_kit_flutter/model/Resep.dart';
 import 'package:meal_kit_flutter/services/Auth.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -22,7 +23,7 @@ import 'package:lottie/lottie.dart';
 
 import '../utils/loading.dart';
 import '../widgets/widgets.dart';
-
+part 'DaftarResep_Page.dart';
 part 'BerhasilPembayaran_Page.dart';
 part "Beranda_Page.dart";
 part 'Home.dart';
@@ -39,4 +40,4 @@ part 'Profile_Page.dart';
 part 'Checkout_Page.dart';
 part 'Resetpassword_Page.dart';
 part 'KeteranganPesanan_Page.dart';
-
+part 'TambahResep_Page.dart';

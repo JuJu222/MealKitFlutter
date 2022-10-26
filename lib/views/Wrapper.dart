@@ -12,7 +12,7 @@ class Wrapper extends StatelessWidget {
     final user = Provider.of<CustomUser?>(context);
     //return either home or authenticate widget based on the changed state
     if (user != null) {
-      return const MenuPage();
+      return const HomePage();
     }
     return const LoginPage();
   }

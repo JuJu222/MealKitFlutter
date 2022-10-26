@@ -2,7 +2,9 @@ part of 'pages.dart';
 
 class MenuPage extends StatefulWidget {
   static const pageName = "Menu";
-  const MenuPage({super.key});
+  MenuPage({
+    super.key,
+  });
 
   @override
   State<MenuPage> createState() => _MenuPageState();
@@ -22,6 +24,7 @@ class _MenuPageState extends State<MenuPage> {
                     setState(() {
                       isLoading = true;
                     });
+
                     await Future.delayed(const Duration(seconds: 2));
                     await AuthService().signOutApp();
                     await AuthService().googleSignOutApp();
