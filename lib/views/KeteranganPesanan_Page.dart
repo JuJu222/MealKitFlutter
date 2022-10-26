@@ -12,9 +12,20 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        centerTitle: true,
+        title: Text(
+          "Rincian Pesanan",
+          style: Theme.of(context).textTheme.headline5!.copyWith(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              fontFamily: "Quicksand"),
+        ),
+      ),
       body: SlidingUpPanel(
-        minHeight: 230,
-        maxHeight: 260,
+        minHeight: 190,
+        maxHeight: 200,
         borderRadius: BorderRadius.circular(24),
         panel: Center(
           child: Container(
@@ -93,7 +104,7 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                SizedBox(height:10.0),
+                                SizedBox(height: 10.0),
                                 Text("Total",
                                     style: Theme.of(context)
                                         .textTheme
@@ -102,7 +113,6 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                                             fontWeight: FontWeight.bold,
                                             fontSize: 20,
                                             fontFamily: "Quicksand")),
-
                                 SizedBox(height: 5.0),
                                 Row(
                                   mainAxisAlignment:
@@ -175,27 +185,10 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      SizedBox(height: 10.0),
                       Container(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Keterangan Pesanan",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headline5!
-                                      .copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18,
-                                          fontFamily: "Quicksand"),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 25.0),
                             Text("Alamat Pengiriman",
                                 style: Theme.of(context)
                                     .textTheme
@@ -297,21 +290,13 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                             ],
                           ),
                           SizedBox(height: 5),
-                          CheckoutTile(
-                            menuName: "Pesto Pasta Chicken",
-                            menuPrice: "50.000",
-                            numberOfPeople: "4",
-                          ),
-                          CheckoutTile(
-                            menuName: "Nabe Veggie Udon",
-                            menuPrice: "50.000",
-                            numberOfPeople: "2",
-                          ),
-                          CheckoutTile(
-                            menuName: "Nabe Veggie Udon",
-                            menuPrice: "50.000",
-                            numberOfPeople: "2",
-                          ),
+                          ...listPesan.mapIndexed(
+                            (index, e) {
+                              return CheckoutTile(
+                                pesan: listPesan[index],
+                              );
+                            },
+                          )
                         ],
                       )),
                       SizedBox(height: 15.0),
@@ -424,41 +409,7 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20.0),
-                            Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text("Metode Pembayaran",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline5!
-                                            .copyWith(
-                                                fontWeight: FontWeight.bold,
-                                                color: Color(0xFF1C9FE2),
-                                                fontSize: 16,
-                                                fontFamily: "Quicksand")),
-                                  ],
-                                ),
-                                SizedBox(height: 10),
-                                Row(
-                                  children: [
-                                    CircleAvatar(
-                                      minRadius: 25,
-                                    ),
-                                    SizedBox(width: 16),
-                                    CircleAvatar(
-                                      minRadius: 25,
-                                    ),
-                                    SizedBox(width: 16),
-                                    CircleAvatar(
-                                      minRadius: 25,
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
+                            SizedBox(height: 270),
                           ],
                         ),
                       ),

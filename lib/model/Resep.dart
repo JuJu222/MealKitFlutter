@@ -30,7 +30,7 @@ List<Resep> listResep = [
   Resep(
       nama: "Protein Tinggi",
       color: Color(0XFFF8CDD5),
-      images: "assets/images/meat.png"),
+      images: "assets/images/meat01.png"),
   Resep(
       nama: "Makanan Laut",
       color: Color(0xffDFFCFB),
@@ -38,5 +38,7 @@ List<Resep> listResep = [
   Resep(
       nama: "Menu Diet",
       color: Color(0XFFD9E8FB),
-      images: "assets/images/diet.png")
+      images: "assets/images/almond.png")
 ];
+
+final reversedList = List.from(listResep.reversed);

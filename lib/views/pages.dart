@@ -10,18 +10,21 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/services.dart';
-
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:email_validator/email_validator.dart';
 import 'dart:ui';
 import 'package:flutter/animation.dart';
+import 'package:meal_kit_flutter/model/Pesan.dart';
 import 'package:meal_kit_flutter/model/Resep.dart';
 import 'package:meal_kit_flutter/services/Auth.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:lottie/lottie.dart';
 
 import '../utils/loading.dart';
 import '../widgets/widgets.dart';
 
 part 'BerhasilPembayaran_Page.dart';
+part "Beranda_Page.dart";
 part 'Home.dart';
 part 'Login_Page.dart';
 part '../utils/style.dart';

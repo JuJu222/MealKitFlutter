@@ -1,6 +1,7 @@
 part of "pages.dart";
 
 class ResetPasswordPage extends StatefulWidget {
+  static const routeName = "ResetPassword";
   const ResetPasswordPage({super.key});
 
   @override

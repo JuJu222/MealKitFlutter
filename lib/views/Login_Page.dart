@@ -279,10 +279,10 @@ class _LoginPageState extends State<LoginPage> {
                                 children: [
                                   InkWell(
                                     onTap: () {
-                                      Navigator.pop(context, MaterialPageRoute(
-                                        builder: (context) {
-                                          return ResetPasswordPage();
-                                        },
+                                      Navigator.push(context, MaterialPageRoute(
+                                      builder: (context) {
+                                        return ResetPasswordPage();
+                                      },
                                       ));
                                     },
                                     child: Text(

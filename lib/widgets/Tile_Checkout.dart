@@ -1,14 +1,8 @@
 part of '../widgets/widgets.dart';
 
 class CheckoutTile extends StatelessWidget {
-  final String menuName;
-  final String numberOfPeople;
-  final String menuPrice;
-  const CheckoutTile(
-      {super.key,
-      required this.menuName,
-      required this.numberOfPeople,
-      required this.menuPrice});
+  final Pesan pesan;
+  const CheckoutTile({super.key, required this.pesan});
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +13,14 @@ class CheckoutTile extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 3, horizontal: 0.0),
         avatar: ClipRRect(
           borderRadius: BorderRadius.circular(10.0),
-          child: Image.network('https://picsum.photos/250?image=9',
-              width: 79, height: 79),
+          child: Image.asset('${pesan.images}', width: 79, height: 79),
         ),
         title: Row(
           children: [
             Row(
               children: [
                 SizedBox(width: 5.0),
-                Text(menuName,
+                Text(pesan.menuName!,
                     style: Theme.of(context).textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
@@ -47,22 +40,35 @@ class CheckoutTile extends StatelessWidget {
                 SizedBox(width: 5.0),
                 Row(
                   children: [
-                    const Icon(Icons.verified_user, size: 22),
-                    Text("$numberOfPeople orang",
+                    const Icon(Icons.group, size: 22, color: Color(0xFF6A6A6A)),
+                    Text("${pesan.numberOfPeople} orang",
                         style: Theme.of(context).textTheme.headline5!.copyWith(
                             fontWeight: FontWeight.w500,
                             fontSize: 10,
+                            color: Color(0xFF6A6A6A),
                             fontFamily: "Quicksand")),
                   ],
                 ),
                 const SizedBox(width: 16.0),
+                Row(
+                  children: [
+                    const Icon(Icons.date_range_outlined,
+                        size: 22, color: Color(0xFF6A6A6A)),
+                    Text("${pesan.date}",
+                        style: Theme.of(context).textTheme.headline5!.copyWith(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 10,
+                            color: Color(0xFF6A6A6A),
+                            fontFamily: "Quicksand")),
+                  ],
+                ),
               ],
             ),
             const SizedBox(height: 4.0),
             Row(
               children: [
                 SizedBox(width: 5.0),
-                Text("Rp.$menuPrice",
+                Text("Rp.${pesan.menuPrice}",
                     style: Theme.of(context).textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.w500,
                         fontSize: 10,

@@ -12,6 +12,17 @@ class _CheckoutPageState extends State<CheckoutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        centerTitle: true,
+        title: Text(
+          "Checkout",
+          style: Theme.of(context).textTheme.headline5!.copyWith(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              fontFamily: "Quicksand"),
+        ),
+      ),
       body: SlidingUpPanel(
         minHeight: 195,
         maxHeight: 220,
@@ -141,13 +152,6 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      Text(
-                        "Checkout",
-                        style: Theme.of(context).textTheme.headline5!.copyWith(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            fontFamily: "Quicksand"),
-                      ),
                       SizedBox(height: 25.0),
                       Container(
                         child: Column(
@@ -254,21 +258,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
                             ],
                           ),
                           SizedBox(height: 5),
-                          CheckoutTile(
-                            menuName: "Pesto Pasta Chicken",
-                            menuPrice: "50.000",
-                            numberOfPeople: "4",
-                          ),
-                          CheckoutTile(
-                            menuName: "Nabe Veggie Udon",
-                            menuPrice: "50.000",
-                            numberOfPeople: "2",
-                          ),
-                          CheckoutTile(
-                            menuName: "Nabe Veggie Udon",
-                            menuPrice: "50.000",
-                            numberOfPeople: "2",
-                          ),
+                          ...listPesan.mapIndexed(
+                            (index, e) {
+                              return CheckoutTile(
+                                pesan: listPesan[index],
+                              );
+                            },
+                          )
                         ],
                       )),
                       SizedBox(height: 15.0),
@@ -382,41 +378,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                               ),
                             ),
                             SizedBox(height: 20.0),
-                            Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text("Metode Pembayaran",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline5!
-                                            .copyWith(
-                                                fontWeight: FontWeight.bold,
-                                                color: Color(0xFF1C9FE2),
-                                                fontSize: 16,
-                                                fontFamily: "Quicksand")),
-                                  ],
-                                ),
-                                SizedBox(height: 10),
-                                Row(
-                                  children: [
-                                    CircleAvatar(
-                                      minRadius: 25,
-                                    ),
-                                    SizedBox(width: 16),
-                                    CircleAvatar(
-                                      minRadius: 25,
-                                    ),
-                                    SizedBox(width: 16),
-                                    CircleAvatar(
-                                      minRadius: 25,
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                            Container(height: 300, width: double.infinity)
+                            Container(height: 260, width: double.infinity)
                           ],
                         ),
                       ),

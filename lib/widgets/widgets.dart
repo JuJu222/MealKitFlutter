@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:meal_kit_flutter/views/pages.dart';
+import '../model/Pesan.dart';
 import '../model/Resep.dart';
 import '../services/Auth.dart';
 import '../utils/loading.dart';
@@ -18,6 +19,8 @@ part 'Card_Pesanan.dart';
 part 'Card_Resep.dart';
 
 part 'Card_Rencana.dart';
+
+part 'Card_Beranda.dart';
 
 part 'Tile_Checkout.dart';
 
