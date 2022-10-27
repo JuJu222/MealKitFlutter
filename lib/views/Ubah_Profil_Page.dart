@@ -26,142 +26,201 @@ class _UbahProfilPageState extends State<UbahProfilPage> {
           child: Form(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  margin: const EdgeInsets.only(left: 10, bottom: 7),
-                  child: Text(
-                    "Nama",
-                    style: Theme.of(context)!
-                        .textTheme
-                        .subtitle2!
-                        .copyWith(color: Color(0xff171930).withOpacity(0.5)),
-                  ),
-                ),
-                TextFormField(
-                  style: Theme.of(context)!.textTheme.subtitle2,
-                  autofocus: false,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                      borderSide: BorderSide.none,
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[110],
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 10, bottom: 7),
-                  child: Text(
-                    "Email",
-                    style: Theme.of(context)!
-                        .textTheme
-                        .subtitle2!
-                        .copyWith(color: Color(0xff171930).withOpacity(0.5)),
-                  ),
-                ),
-                TextFormField(
-                  style: Theme.of(context)!.textTheme.subtitle2,
-                  autofocus: false,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                      borderSide: BorderSide.none,
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[110],
-                  ),
-                ),
-                ElevatedButton(
-                    onPressed: () async {
-                      // FilePickerResult? result =
-                      //     await FilePicker.platform.pickFiles();
-                      // if (result != null) {
-                      // } else {
-                      //   // User canceled the picker
-                      // }
-                    },
-                    child: Text("Profile Picture")),
-                Spacer(),
-                Ink(
-                  decoration: BoxDecoration(
-                      color: Color(0xFFA80000),
-                      borderRadius: BorderRadius.circular(8),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 0.1,
-                            blurRadius: 0.1,
-                            offset: Offset(0, 0.8))
-                      ]),
-                  child: InkWell(
-                    child: Container(
-                      padding: const EdgeInsets.all(5),
-                      height: 54.08,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Ganti Kata Sandi",
-                              style: Theme.of(context)
+                          Container(
+                            margin: const EdgeInsets.only(left: 10, bottom: 7),
+                            child: Text(
+                              "Nama",
+                              style: Theme.of(context)!
                                   .textTheme
-                                  .bodyMedium!
+                                  .subtitle2!
                                   .copyWith(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700))
-                        ],
+                                      color:
+                                          Color(0xff171930).withOpacity(0.5)),
+                            ),
+                          ),
+                          TextFormField(
+                            style: Theme.of(context)!.textTheme.subtitle2,
+                            autofocus: false,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.0),
+                                borderSide: BorderSide.none,
+                              ),
+                              filled: true,
+                              fillColor: Colors.grey[110],
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(left: 10, bottom: 7),
+                            child: Text(
+                              "Email",
+                              style: Theme.of(context)!
+                                  .textTheme
+                                  .subtitle2!
+                                  .copyWith(
+                                      color:
+                                          Color(0xff171930).withOpacity(0.5)),
+                            ),
+                          ),
+                          TextFormField(
+                            style: Theme.of(context)!.textTheme.subtitle2,
+                            autofocus: false,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.0),
+                                borderSide: BorderSide.none,
+                              ),
+                              filled: true,
+                              fillColor: Colors.grey[110],
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Container(
+                            width: double.infinity,
+                            child: Column(children: [
+                              Container(
+                                margin:
+                                    const EdgeInsets.only(left: 10, bottom: 7),
+                                child: Row(children: [
+                                  Text(
+                                    "Profile Page",
+                                    style: Theme.of(context)!
+                                        .textTheme
+                                        .subtitle2!
+                                        .copyWith(
+                                            color: Color(0xff171930)
+                                                .withOpacity(0.5)),
+                                  )
+                                ]),
+                              ),
+                              Container(
+                                width: double.infinity,
+                                height: 250,
+                                color: Colors.grey.shade200,
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.image_outlined,
+                                        size: 100,
+                                        color: Colors.grey,
+                                      ),
+                                    ]),
+                              )
+                            ]),
+                          ),
+                        ]),
+                  ),
+                ),
+                Flexible(
+                    child: Column(
+                  children: [
+                    Ink(
+                      decoration: BoxDecoration(
+                          color: Color(0xFFA80000),
+                          borderRadius: BorderRadius.circular(8),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey,
+                                spreadRadius: 0.1,
+                                blurRadius: 0.1,
+                                offset: Offset(0, 0.8))
+                          ]),
+                      child: InkWell(
+                        child: Container(
+                          padding: const EdgeInsets.all(5),
+                          height: 54.08,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Ganti Kata Sandi",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w700))
+                            ],
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.pushAndRemoveUntil<dynamic>(
+                              context,
+                              MaterialPageRoute<dynamic>(
+                                  builder: (context) => ProfilePage()),
+                              (route) => false);
+                        },
                       ),
                     ),
-                    onTap: () {
-                      Navigator.pushAndRemoveUntil<dynamic>(
-                          context,
-                          MaterialPageRoute<dynamic>(
-                              builder: (context) => ProfilePage()),
-                          (route) => false);
-                    },
-                  ),
-                ),
-                SizedBox(
-                  height: 12,
-                ),
-                Ink(
-                  decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.circular(8),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 0.1,
-                            blurRadius: 0.1,
-                            offset: Offset(0, 0.8))
-                      ]),
-                  child: InkWell(
-                    child: Container(
-                      padding: const EdgeInsets.all(5),
-                      height: 54.08,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Simpan",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700))
-                        ],
+                    SizedBox(
+                      height: 12,
+                    ),
+                    Ink(
+                      decoration: BoxDecoration(
+                          color: primaryColor,
+                          borderRadius: BorderRadius.circular(8),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey,
+                                spreadRadius: 0.1,
+                                blurRadius: 0.1,
+                                offset: Offset(0, 0.8))
+                          ]),
+                      child: InkWell(
+                        child: Container(
+                          padding: const EdgeInsets.all(5),
+                          height: 54.08,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Simpan",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w700))
+                            ],
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.of(context).pushNamedAndRemoveUntil(
+                              ProfilePage.routeName, (route) => false);
+                        },
                       ),
                     ),
-                    onTap: () {
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          ProfilePage.routeName, (route) => false);
-                    },
-                  ),
-                ),
+                  ],
+                ))
               ],
             ),
           ),
         ));
   }
 }
+
+
+// ElevatedButton(
+//                     onPressed: () async {
+//                       FilePickerResult? result =
+//                           await FilePicker.platform.pickFiles();
+//                       if (result != null) {
+//                       } else {
+//                         // User canceled the picker
+//                       }
+//                     },
+//                     child: Text("Profile Picture")),
+
+

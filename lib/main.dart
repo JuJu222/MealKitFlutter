@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return StreamProvider<CustomUser?>.value(
       initialData: null,
       catchError: (context, error) => null,
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
                 secondary: secondaryColor),
             appBarTheme: AppBarTheme(elevation: 0),
             textTheme: myTextTheme),
-        initialRoute: PreferensiPage.routeName,
+        initialRoute: HomePage.routeName,
         routes: {
           ResetPasswordPage.routeName: (context) => ResetPasswordPage(),
           BerandaPage.routeName: (context) => BerandaPage(),
