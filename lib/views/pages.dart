@@ -1,3 +1,4 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,9 @@ part 'Menu_Page.dart';
 part 'Rencana_Page.dart';
 part 'Pesanan_Page.dart';
 part 'Profile_Page.dart';
+part 'Ubah_Preferensi_Page.dart';
+part 'Ubah_Profil_Page.dart';
+part 'Ubah_Informasi_Pengiriman.dart';
 part 'Checkout_Page.dart';
 part 'Resetpassword_Page.dart';
 part 'KeteranganPesanan_Page.dart';
