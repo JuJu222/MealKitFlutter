@@ -190,7 +190,7 @@ class _PreferensiPageState extends State<PreferensiPage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.push(context, AnimationPageRoute2());
+                  Navigator.pushReplacementNamed(context, LoginPage.routeName);
                 },
               ),
             ),

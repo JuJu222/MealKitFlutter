@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../model/Resep.dart';
+part of 'widgets.dart';
 
 class CardResep extends StatefulWidget {
   final Resep resep;
@@ -43,6 +41,7 @@ class _CardResepState extends State<CardResep> {
                 : BorderSide(color: Colors.transparent, width: 0)),
         color: widget.resep.color,
         child: Container(
+          // color: Colors.red,
           width: 93,
           height: 151,
           child: Stack(children: [
