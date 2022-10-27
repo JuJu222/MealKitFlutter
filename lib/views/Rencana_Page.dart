@@ -76,13 +76,13 @@ class _RencanaPageState extends State<RencanaPage> {
                 Text("Total",
                     style: Theme.of(context).textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.w500,
-                        fontSize: 10,
+                        fontSize: 14,
                         fontFamily: "Quicksand",
                         color: Color(0xFF6A6A6A))),
                 Text("Rp100.000",
                     style: Theme.of(context).textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: 20,
                         fontFamily: "Quicksand"))
               ],
             ),
@@ -90,6 +90,7 @@ class _RencanaPageState extends State<RencanaPage> {
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10.0),
                       backgroundColor: Color(0xFF1C9FE2),
                       elevation: 0.0,
                       shape: RoundedRectangleBorder(
