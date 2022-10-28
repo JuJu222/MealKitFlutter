@@ -16,8 +16,6 @@
 
 ## Tech
 
-Dillinger uses a number of open source projects to work properly:
-
 - [Dart SDK version: 2.17.6]
 - [Flutter 3.3.5] - Multiplatform Mobile Apps
 - [sqlite] - Local Database
