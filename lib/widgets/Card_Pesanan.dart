@@ -10,7 +10,7 @@ class CardPesanan extends StatelessWidget {
         //using argument cause of by index
       }),
       child: Container(
-        height: 202,
+        height: 210,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(14),
@@ -93,11 +93,12 @@ class CardPesanan extends StatelessWidget {
                             Wrap(
                               children: [
                                 Text(
-                                  "1x Salmon Rice",
+                                  "Salmon Rice",
                                   style: Theme.of(context)!.textTheme.subtitle2,
                                 ),
-                                Text("1x Blueberry Oatmeal"),
-                                Text("1x Nabe Veggie Udonnnn"),
+                                Text("Blueberry Oatmeal"),
+                                Text("Nabe Veggie Udonnnn"),
+                                //if index more that 3 print below
                                 Text("...")
                               ],
                             ),
@@ -156,7 +157,7 @@ class CardPesanan extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Container(
               child: Row(children: [
                 Flexible(
@@ -167,7 +168,7 @@ class CardPesanan extends StatelessWidget {
                     color: Colors.black,
                   ),
                 )),
-                Expanded(
+                Flexible(
                     flex: 7,
                     child: Container(
                       margin: const EdgeInsets.only(

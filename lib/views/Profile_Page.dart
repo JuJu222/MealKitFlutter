@@ -1,10 +1,15 @@
 part of 'pages.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   static const pageName = "Profile";
   static final routeName = "/ProfilePage";
   const ProfilePage({super.key});
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -284,11 +289,17 @@ class ProfilePage extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            onTap: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute<dynamic>(
-                                      builder: (context) => LoginPage()));
+                            onTap: () async {
+                              // Navigator.pushReplacement(
+                              //     context,
+                              //     MaterialPageRoute<dynamic>(
+                              //         builder: (context) => LoginPage()));
+                              setState(() {
+                                // isLoading = true;
+                              });
+                              await Future.delayed(const Duration(seconds: 2));
+                              await AuthService().signOutApp();
+                              await AuthService().googleSignOutApp();
                             },
                           ),
                         ),

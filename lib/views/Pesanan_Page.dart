@@ -29,6 +29,15 @@ class PesananPage extends StatelessWidget {
               child: Container(
                 child: Column(children: [
                   CardPesananParent(),
+                  // ElevatedButton(
+                  //     onPressed: (() {
+                  //       Navigator.pushNamed(
+                  //           context, PembayaranBerhasil.routeName);
+                  //     }),
+                  //     child: Text(
+                  //       "lottie test",
+                  //       style: TextStyle(color: Colors.white),
+                  //     ))
                   // CardPesananParent(),
                   // CardPesananParent(),
                 ]),
