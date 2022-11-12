@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:meal_kit_flutter/views/pages.dart';
 import '../model/Pesan.dart';
-import '../model/Resep.dart';
+import '../model/Preferensi.dart';
 import '../services/Auth.dart';
 import '../utils/loading.dart';
 import 'package:fluttertoast/fluttertoast.dart';

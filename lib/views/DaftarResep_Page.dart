@@ -58,10 +58,10 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
                   crossAxisCount: 2,
                   children: <Widget>[
                     GestureDetector(
-                      onTap: () => Navigator.push(context,
-                          MaterialPageRoute(builder: ((context) {
-                        return InformasiResepPage();
-                      }))),
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, InformasiResepPage.routeName);
+                      },
                       child: Column(
                         // mainAxisAlignment: Alignment.,
                         children: [

@@ -1,44 +1,44 @@
 import 'dart:ui';
 
-class Resep {
+class Preferensi {
   String? nama;
   Color? color;
 
   String? images;
-  Resep({required this.nama, required this.color, required this.images});
+  Preferensi({required this.nama, required this.color, required this.images});
 }
 
-List<Resep> listResep = [
-  Resep(
+List<Preferensi> listPreferensi = [
+  Preferensi(
       nama: "Daging & Sayur",
       color: Color(0XFFFCEAB2),
       images: "assets/images/daging&sayur.png"),
-  Resep(
+  Preferensi(
       nama: "Sayur",
       color: Color(0XFFF8D1B7),
       images: "assets/images/salad.png"),
-  Resep(
+  Preferensi(
       nama: "Produk Susu",
       color: Color(0XFFF6D5FB),
       images: "assets/images/produksusu.png"),
-  Resep(
+  Preferensi(
       nama: "Cepat & Mudah",
       color: Color(0XFFD2F5FF),
       images: "assets/images/fastfood.png"),
-  Resep(
+  Preferensi(
       nama: "Roti", color: Color(0XFFC6F0D7), images: "assets/images/roti.png"),
-  Resep(
+  Preferensi(
       nama: "Protein Tinggi",
       color: Color(0XFFF8CDD5),
       images: "assets/images/meat01.png"),
-  Resep(
+  Preferensi(
       nama: "Makanan Laut",
       color: Color(0xffDFFCFB),
       images: "assets/images/seafood.png"),
-  Resep(
+  Preferensi(
       nama: "Menu Diet",
       color: Color(0XFFD9E8FB),
       images: "assets/images/almond.png")
 ];
 
-final reversedList = List.from(listResep.reversed);
+final reversedList = List.from(listPreferensi.reversed);

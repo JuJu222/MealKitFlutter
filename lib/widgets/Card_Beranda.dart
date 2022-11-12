@@ -1,11 +1,11 @@
 part of 'widgets.dart';
 
 class CardBeranda extends StatefulWidget {
-  final Resep resep;
+  final Preferensi preferensi;
 
   CardBeranda({
     super.key,
-    required this.resep,
+    required this.preferensi,
   });
 
   @override
@@ -17,46 +17,51 @@ class _CardBerandaState extends State<CardBeranda> {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      color: widget.resep.color,
-      child: Container(
-        // color: Colors.red,
-        width: 190,
-        height: 200,
-        child: Stack(children: [
-          Container(
-            padding: const EdgeInsets.all(15),
-            child: Text(
-              "${widget.resep.nama}",
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 28,
-                  fontFamily: "Quicksand",
-                  color: Colors.black),
+      color: widget.preferensi.color,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, DaftarResepPage.routeName);
+        },
+        child: Container(
+          // color: Colors.red,
+          width: 190,
+          height: 200,
+          child: Stack(children: [
+            Container(
+              padding: const EdgeInsets.all(15),
+              child: Text(
+                "${widget.preferensi.nama}",
+                style: Theme.of(context).textTheme.headline5!.copyWith(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 28,
+                    fontFamily: "Quicksand",
+                    color: Colors.black),
+              ),
             ),
-          ),
-          Positioned(
-              top: 49,
-              left: 50,
-              child: Container(
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("${widget.resep.images}"),
-                        fit: BoxFit.cover)),
-              )),
-        ]),
+            Positioned(
+                top: 49,
+                left: 50,
+                child: Container(
+                  width: 150,
+                  height: 150,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("${widget.preferensi.images}"),
+                          fit: BoxFit.cover)),
+                )),
+          ]),
+        ),
       ),
     );
   }
 }
 
 class CardBerandaLong extends StatefulWidget {
-  final Resep resep;
+  final Preferensi preferensi;
 
   CardBerandaLong({
     super.key,
-    required this.resep,
+    required this.preferensi,
   });
 
   @override
@@ -70,7 +75,7 @@ class _CardBerandaLongState extends State<CardBerandaLong> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      color: widget.resep.color,
+      color: widget.preferensi.color,
       child: Container(
         // color: Colors.red,
         width: 190,
@@ -84,13 +89,13 @@ class _CardBerandaLongState extends State<CardBerandaLong> {
                 height: 150,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("${widget.resep.images}"),
+                        image: AssetImage("${widget.preferensi.images}"),
                         fit: BoxFit.cover)),
               )),
           Container(
             padding: const EdgeInsets.all(15),
             child: Text(
-              "${widget.resep.nama}",
+              "${widget.preferensi.nama}",
               style: Theme.of(context).textTheme.headline5!.copyWith(
                   fontWeight: FontWeight.bold,
                   fontSize: 28,

@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:meal_kit_flutter/services/Auth.dart';
+import 'package:meal_kit_flutter/views/Pembayaran_Berhasil_Page.dart';
 import 'package:meal_kit_flutter/views/Wrapper.dart';
 import 'package:meal_kit_flutter/views/pages.dart';
 import 'package:flutter/services.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
                 secondary: secondaryColor),
             appBarTheme: AppBarTheme(elevation: 0),
             textTheme: myTextTheme),
-        initialRoute: HomePage.routeName,
+        initialRoute: Wrapper.routeName,
         routes: {
           ResetPasswordPage.routeName: (context) => ResetPasswordPage(),
           BerandaPage.routeName: (context) => BerandaPage(),
@@ -55,6 +56,7 @@ class MyApp extends StatelessWidget {
           InformasiResepPage.routeName: (context) => InformasiResepPage(),
           DaftarResepPage.routeName: (context) => DaftarResepPage(),
           TambahResepPage.routeName: (context) => TambahResepPage(),
+          PembayaranBerhasil.routeName: (context) => PembayaranBerhasil()
         },
       ),
     );

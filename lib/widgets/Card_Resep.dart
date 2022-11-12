@@ -1,12 +1,12 @@
 part of 'widgets.dart';
 
 class CardResep extends StatefulWidget {
-  final Resep resep;
+  final Preferensi preferensi;
   final ValueChanged<bool> onSelected;
 
   CardResep({
     super.key,
-    required this.resep,
+    required this.preferensi,
     required this.onSelected,
   });
 
@@ -19,8 +19,8 @@ class _CardResepState extends State<CardResep> {
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: widget.resep.nama == "Makanan Laut" ||
-                widget.resep.nama == "Menu Diet"
+        child: widget.preferensi.nama == "Makanan Laut" ||
+                widget.preferensi.nama == "Menu Diet"
             ? _buildLandScape(context)
             : _buildPortrait(context));
   }
@@ -39,7 +39,7 @@ class _CardResepState extends State<CardResep> {
             side: _isSelected
                 ? BorderSide(color: Color(0XFF1C9FE2), width: 3)
                 : BorderSide(color: Colors.transparent, width: 0)),
-        color: widget.resep.color,
+        color: widget.preferensi.color,
         child: Container(
           // color: Colors.red,
           width: 93,
@@ -48,7 +48,7 @@ class _CardResepState extends State<CardResep> {
             Container(
               padding: const EdgeInsets.all(8),
               child: Text(
-                "${widget.resep.nama}",
+                "${widget.preferensi.nama}",
                 style: Theme.of(context)!
                     .textTheme
                     .bodyMedium!
@@ -62,7 +62,7 @@ class _CardResepState extends State<CardResep> {
                   height: 102,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("${widget.resep.images}"),
+                          image: AssetImage("${widget.preferensi.images}"),
                           fit: BoxFit.cover)),
                 )),
           ]),
@@ -83,7 +83,7 @@ class _CardResepState extends State<CardResep> {
             side: _isSelected
                 ? BorderSide(color: Color(0XFF1C9FE2), width: 3)
                 : BorderSide(color: Colors.transparent, width: 0)),
-        color: widget.resep.color,
+        color: widget.preferensi.color,
         child: Container(
             width: 147,
             height: 88,
@@ -96,7 +96,7 @@ class _CardResepState extends State<CardResep> {
                       Expanded(
                           child: Container(
                         child: Text(
-                          "${widget.resep.nama}",
+                          "${widget.preferensi.nama}",
                           style: Theme.of(context)!
                               .textTheme
                               .bodyMedium!
@@ -114,7 +114,7 @@ class _CardResepState extends State<CardResep> {
                     height: 100,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage("${widget.resep.images}"),
+                            image: AssetImage("${widget.preferensi.images}"),
                             fit: BoxFit.cover)),
                   )),
             ])),
