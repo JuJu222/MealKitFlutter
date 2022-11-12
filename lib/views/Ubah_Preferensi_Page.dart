@@ -10,7 +10,7 @@ class UbahPreferensiPage extends StatefulWidget {
 }
 
 class _UbahPreferensiPageState extends State<UbahPreferensiPage> {
-  List<Resep> _pickedItems = [];
+  List<Preferensi> _pickedItems = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,12 +94,13 @@ class _UbahPreferensiPageState extends State<UbahPreferensiPage> {
                             ...List.generate(
                                 3,
                                 ((index) => CardResep(
-                                    resep: listResep[index],
+                                    preferensi: listPreferensi[index],
                                     onSelected: ((bool value) {
                                       if (value) {
-                                        _pickedItems.add(listResep[index]);
+                                        _pickedItems.add(listPreferensi[index]);
                                       } else {
-                                        _pickedItems.remove(listResep[index]);
+                                        _pickedItems
+                                            .remove(listPreferensi[index]);
                                       }
 
                                       setState(() {
@@ -116,12 +117,12 @@ class _UbahPreferensiPageState extends State<UbahPreferensiPage> {
                           children: [
                             for (var i = 3; i < 6; i++) ...[
                               CardResep(
-                                  resep: listResep[i],
+                                  preferensi: listPreferensi[i],
                                   onSelected: ((bool value) {
                                     if (value) {
-                                      _pickedItems.add(listResep[i]);
+                                      _pickedItems.add(listPreferensi[i]);
                                     } else {
-                                      _pickedItems.remove(listResep[i]);
+                                      _pickedItems.remove(listPreferensi[i]);
                                     }
                                     setState(() {
                                       //kosong
@@ -138,12 +139,12 @@ class _UbahPreferensiPageState extends State<UbahPreferensiPage> {
                           children: [
                             for (var i = 6; i < 8; i++) ...[
                               CardResep(
-                                  resep: listResep[i],
+                                  preferensi: listPreferensi[i],
                                   onSelected: ((bool value) {
                                     if (value) {
-                                      _pickedItems.add(listResep[i]);
+                                      _pickedItems.add(listPreferensi[i]);
                                     } else {
-                                      _pickedItems.remove(listResep[i]);
+                                      _pickedItems.remove(listPreferensi[i]);
                                     }
                                     setState(() {
                                       //kosong

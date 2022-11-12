@@ -131,8 +131,8 @@ class _BerandaPageState extends State<BerandaPage> {
                                 child: ListView(
                                   scrollDirection: Axis.horizontal,
                                   children:
-                                      listResep.mapIndexed((index, value) {
-                                    return CardBeranda(resep: value);
+                                      listPreferensi.mapIndexed((index, value) {
+                                    return CardBeranda(preferensi: value);
                                   }).toList(),
                                 ),
                               )
@@ -171,11 +171,11 @@ class _BerandaPageState extends State<BerandaPage> {
                                               index == 4 ||
                                               index == 7) {
                                             return CardBeranda(
-                                              resep: reversedList[index],
+                                              preferensi: reversedList[index],
                                             );
                                           } else {
                                             return CardBerandaLong(
-                                              resep: reversedList[index],
+                                              preferensi: reversedList[index],
                                             );
                                           }
                                         }))

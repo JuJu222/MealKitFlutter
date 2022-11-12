@@ -76,23 +76,21 @@ class _LoginPageState extends State<LoginPage> {
                             children: [
                               Row(
                                 children: [
-                                  Text(
-                                    "Login ke",
-                                    style: Theme.of(context)!
-                                        .textTheme
-                                        .headline5!
-                                        .copyWith(fontWeight: FontWeight.bold),
-                                  )
+                                  Text("Login ke",
+                                      style: TextStyle(
+                                          fontFamily: "Quicksand",
+                                          fontSize: 27,
+                                          fontWeight: FontWeight.w700))
                                 ],
                               ),
                               Row(
                                 children: [
                                   Text(
                                     "Kukoki",
-                                    style: Theme.of(context)!
-                                        .textTheme
-                                        .headline5!
-                                        .copyWith(fontWeight: FontWeight.bold),
+                                    style: TextStyle(
+                                        fontFamily: "Quicksand",
+                                        fontSize: 27,
+                                        fontWeight: FontWeight.w700),
                                   )
                                 ],
                               ),
