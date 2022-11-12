@@ -24,12 +24,18 @@ class _UbahInformasiPengirimanPageState
   bool? isCheckedProvinsi;
   bool? isCheckedTelepon;
 
-  TextEditingController alamatController = TextEditingController();
-  TextEditingController kelurahanController = TextEditingController();
-  TextEditingController kecamatanController = TextEditingController();
-  TextEditingController kotaController = TextEditingController();
-  TextEditingController provinsiController = TextEditingController();
-  TextEditingController teleponController = TextEditingController();
+  TextEditingController alamatController =
+      TextEditingController(text: listPengiriman[0].address.toString());
+  TextEditingController kelurahanController =
+      TextEditingController(text: listPengiriman[0].ward.toString());
+  TextEditingController kecamatanController =
+      TextEditingController(text: listPengiriman[0].district.toString());
+  TextEditingController kotaController =
+      TextEditingController(text: listPengiriman[0].city.toString());
+  TextEditingController provinsiController =
+      TextEditingController(text: listPengiriman[0].province.toString());
+  TextEditingController teleponController =
+      TextEditingController(text: listPengiriman[0].phone.toString());
   @override
   @override
   void dispose() {
@@ -41,6 +47,13 @@ class _UbahInformasiPengirimanPageState
     teleponController.dispose();
     super.dispose();
   }
+
+  String? address = listPengiriman[0].address.toString();
+  String? ward = listPengiriman[0].ward.toString();
+  String? district = listPengiriman[0].district.toString();
+  String? city = listPengiriman[0].city.toString();
+  String? province = listPengiriman[0].province.toString();
+  String? phone = listPengiriman[0].phone.toString();
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,6 +108,7 @@ class _UbahInformasiPengirimanPageState
                                             } else {
                                               isCheckedAlamat = true;
                                             }
+                                            address = value.toString();
                                           });
                                         }),
                                         autovalidateMode:
@@ -157,6 +171,7 @@ class _UbahInformasiPengirimanPageState
                                             } else {
                                               isCheckedKelurahan = true;
                                             }
+                                            ward = value.toString();
                                           });
                                         }),
                                         style: Theme.of(context)!
@@ -212,6 +227,7 @@ class _UbahInformasiPengirimanPageState
                                             } else {
                                               isCheckedKecamatan = true;
                                             }
+                                            district = value.toString();
                                           });
                                         }),
                                         style: Theme.of(context)!
@@ -267,6 +283,7 @@ class _UbahInformasiPengirimanPageState
                                             } else {
                                               isCheckedKota = true;
                                             }
+                                            city = value.toString();
                                           });
                                         }),
                                         style: Theme.of(context)!
@@ -325,6 +342,7 @@ class _UbahInformasiPengirimanPageState
                                             } else {
                                               isCheckedProvinsi = true;
                                             }
+                                            province = value.toString();
                                           });
                                         }),
                                         style: Theme.of(context)!
@@ -385,6 +403,7 @@ class _UbahInformasiPengirimanPageState
                                             } else {
                                               isCheckedTelepon = true;
                                             }
+                                            phone = value.toString();
                                           });
                                         }),
                                         keyboardType: TextInputType.number,
@@ -439,6 +458,12 @@ class _UbahInformasiPengirimanPageState
                                   ),
                                 ),
                                 onTap: () {
+                                  listPengiriman[0].address = address;
+                                  listPengiriman[0].ward = ward;
+                                  listPengiriman[0].district = district;
+                                  listPengiriman[0].city = city;
+                                  listPengiriman[0].province = province;
+                                  listPengiriman[0].phone = phone;
                                   Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute<dynamic>(

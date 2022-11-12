@@ -22,6 +22,7 @@ class ProfilePage extends StatelessWidget {
           child: Container(
             child: Column(
               children: [
+<<<<<<< Updated upstream
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Stack(children: [
@@ -96,6 +97,133 @@ class ProfilePage extends StatelessWidget {
                                 "Pesanan\nSelesai",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(color: Color(0xff1C9FE2)),
+||||||| constructed merge base
+                Flexible(
+                    flex: 7,
+                    child: Container(
+                      child: Column(children: [
+                        Container(
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 20),
+                                child: Stack(children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    width: 130,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(100)),
+                                        color: Colors.grey[300]),
+                                    child: Text("KJ",
+                                        style: TextStyle(
+                                            fontSize: 60,
+                                            color: Colors.grey[600])),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(top: 100, left: 35),
+                                    decoration: BoxDecoration(
+                                        color: primaryColor,
+                                        border: Border.all(
+                                            width: 5, color: Colors.white),
+                                        borderRadius:
+                                            BorderRadius.circular(100)),
+                                    child: IconButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute<dynamic>(
+                                                builder: (context) =>
+                                                    UbahProfilPage()));
+                                      },
+                                      icon: Icon(Icons.edit),
+                                    ),
+                                  ),
+                                ]),
+                              ),
+                              Container(
+                                width: double.infinity,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "Kenny Jinhiro",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Color(0xff1C9FE2),
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      "kenny@gmail.com",
+                                      textAlign: TextAlign.center,
+                                    )
+                                  ],
+                                ),
+=======
+                Flexible(
+                    flex: 7,
+                    child: Container(
+                      child: Column(children: [
+                        Container(
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 20),
+                                child: Stack(children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    width: 130,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(100)),
+                                        color: Colors.grey[300]),
+                                    child: Text("KJ",
+                                        style: TextStyle(
+                                            fontSize: 60,
+                                            color: Colors.grey[600])),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(top: 100, left: 35),
+                                    decoration: BoxDecoration(
+                                        color: primaryColor,
+                                        border: Border.all(
+                                            width: 5, color: Colors.white),
+                                        borderRadius:
+                                            BorderRadius.circular(100)),
+                                    child: IconButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute<dynamic>(
+                                                builder: (context) =>
+                                                    UbahProfilPage()));
+                                      },
+                                      icon: Icon(Icons.edit),
+                                    ),
+                                  ),
+                                ]),
+                              ),
+                              Container(
+                                width: double.infinity,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      listProfile[0].name.toString(),
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Color(0xff1C9FE2),
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      listProfile[0].email.toString(),
+                                      textAlign: TextAlign.center,
+                                    )
+                                  ],
+                                ),
+>>>>>>> Stashed changes
                               ),
                             ),
                             Padding(
