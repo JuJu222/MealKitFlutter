@@ -1,7 +1,8 @@
 import 'dart:ui';
 
 class Resep {
-  String? image;
+  int? menuId;
+  String? menuImage;
   String? menuName;
   String? menuPortion;
   String? menuPrice;
@@ -14,7 +15,8 @@ class Resep {
   List<String>? menuProcedure;
 
   Resep({
-    required this.image,
+    required this.menuId,
+    required this.menuImage,
     required this.menuName,
     required this.menuPortion,
     required this.menuPrice,
@@ -30,7 +32,8 @@ class Resep {
 
 List<Resep> listResep = [
   Resep(
-      image: 'assets/images/foods/imagefood1.png',
+      menuId: 0,
+      menuImage: 'assets/images/foods/imagefood1.png',
       menuName: 'Grilled Salmon',
       menuPortion: '2 Porsi',
       menuPrice: 'Rp40.000',
