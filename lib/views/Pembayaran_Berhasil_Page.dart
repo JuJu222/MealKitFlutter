@@ -6,9 +6,9 @@ import 'package:meal_kit_flutter/views/pages.dart';
 class PembayaranBerhasil extends StatelessWidget {
   static const routeName = "/PembayaranBerhasil";
   const PembayaranBerhasil({super.key});
-
   @override
   Widget build(BuildContext context) {
+    Map data =  ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -39,8 +39,10 @@ class PembayaranBerhasil extends StatelessWidget {
               SizedBox(
                 height: 12,
               ),
+
+              //final now = DateTime.now();
               Text(
-                "2 Oktober 2022, 16:40",
+                "${data["waktuTransaksi"].day} November ${data["waktuTransaksi"].year}, ${data["waktuTransaksi"].hour}:${data["waktuTransaksi"].minute}",
                 style: Theme.of(context)!
                     .textTheme
                     .bodyText1!
@@ -94,7 +96,7 @@ class PembayaranBerhasil extends StatelessWidget {
                                     const EdgeInsets.symmetric(horizontal: 4),
                                 // color: Colors.yellow,
                                 child: Text(
-                                  "110.000",
+                                  "${data["totalPembayaran"]}",
                                   style: Theme.of(context)!
                                       .textTheme
                                       .headline3!

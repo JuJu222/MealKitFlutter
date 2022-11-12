@@ -9,23 +9,23 @@ class RencanaPage extends StatefulWidget {
 }
 
 class _RencanaPageState extends State<RencanaPage> {
-  int? currentSelectedIndex;
+  int? currentSelectedIndex = 0;
   double totalPricing = 0;
   List<CardRencana> cardRencana = [
     CardRencana(
-        date: "3", day: "Sen", isSelected: false, onSelect: () {}, index: 0),
+        date: "16", day: "Rab", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
-        date: "4", day: "Sel", isSelected: false, onSelect: () {}, index: 0),
+        date: "17", day: "Kam", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
-        date: "5", day: "Rab", isSelected: false, onSelect: () {}, index: 0),
+        date: "18", day: "Jum", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
-        date: "6", day: "Kam", isSelected: false, onSelect: () {}, index: 0),
+        date: "19", day: "Sab", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
-        date: "7", day: "Jum", isSelected: false, onSelect: () {}, index: 0),
+        date: "20", day: "Min", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
-        date: "8", day: "Sab", isSelected: false, onSelect: () {}, index: 0),
+        date: "21", day: "Sen", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
-        date: "9", day: "Min", isSelected: false, onSelect: () {}, index: 0),
+        date: "22", day: "Sel", isSelected: false, onSelect: () {}, index: 0),
   ];
 
   @override
@@ -38,7 +38,7 @@ class _RencanaPageState extends State<RencanaPage> {
             child: Row(
               children: [
                 Text(
-                  "3-9 Oktober 2022",
+                  "${cardRencana[0].date}-${cardRencana[cardRencana.length-1].date} November 2022",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
@@ -82,9 +82,9 @@ class _RencanaPageState extends State<RencanaPage> {
                             fontFamily: "Quicksand",
                             color: const Color(0xFF6A6A6A))),
                     Text(
-                        (listPesan.isEmpty)
+                        (listKeranjang.isEmpty)
                             ? "0"
-                            : "Rp${totalPrice(listPesan).toString()}00",
+                            : "Rp${totalPrice(listKeranjang).toString()}00",
                         style: Theme.of(context).textTheme.headline5!.copyWith(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -113,9 +113,11 @@ class _RencanaPageState extends State<RencanaPage> {
                                   color: Colors.white,
                                   fontFamily: "Quicksand")),
                       onPressed: () {
-                        if (listPesan.isEmpty) {
+                        if (listKeranjang.isEmpty) {
+
                         } else {
                           //navigate to checkout
+                          Navigator.pushNamed(context, CheckoutPage.routeName);
                         }
                       },
                     ),
@@ -199,17 +201,17 @@ class _RencanaPageState extends State<RencanaPage> {
                       ),
                       const SizedBox(height: 15.0),
                       SingleChildScrollView(
-                          child: (listPesan.isEmpty)
+                          child: (listKeranjang.isEmpty)
                               ? const Align(
                                   alignment: Alignment.center,
                                   child: Text("Tidak ada meal kit dikeranjang"),
                                 )
                               : Column(
-                                  children: listPesan.mapIndexed(
+                                  children: listKeranjang.mapIndexed(
                                     (index, e) {
                                       return CheckoutTileWithIcon(
                                         onDelete: () => removeItem(index),
-                                        pesan: listPesan[index],
+                                        pesan: listKeranjang[index],
                                       );
                                     },
                                   ).toList(),
@@ -226,13 +228,13 @@ class _RencanaPageState extends State<RencanaPage> {
 
   void removeItem(int index) {
     setState(() {
-      listPesan.removeAt(index);
+      listKeranjang.removeAt(index);
     });
   }
 
-  double totalPrice(List<Pesan> listPesan) {
+  double totalPrice(List<Pesan> listKeranjang) {
     totalPricing = 0;
-    listPesan.forEach((e) {
+    listKeranjang.forEach((e) {
       setState(() {
         totalPricing += double.parse(e.menuPrice!);
       });
