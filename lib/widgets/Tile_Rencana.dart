@@ -46,7 +46,7 @@ class RencanaTile extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(width: 5.0),
+                  const SizedBox(width: 5.0),
                   Row(
                     children: [
                       const Icon(Icons.verified_user, size: 22),
@@ -79,18 +79,18 @@ class RencanaTile extends StatelessWidget {
               const SizedBox(height: 4.0),
               Row(
                 children: [
-                  SizedBox(width: 5.0),
+                  const SizedBox(width: 5.0),
                   Text("Rp.$menuPrice",
                       style: Theme.of(context).textTheme.headline5!.copyWith(
                           fontWeight: FontWeight.w500,
                           fontSize: 10,
                           fontFamily: "Quicksand",
-                          color: Color(0xFF1C9FE2))),
+                          color: const Color(0xFF1C9FE2))),
                 ],
               ),
             ],
           ),
-          icon: CircleAvatar(
+          icon: const CircleAvatar(
               backgroundColor: Colors.red,
               child: Icon(Icons.delete_outline_rounded, color: Colors.white))),
     );
@@ -114,8 +114,8 @@ class RencanaTileNoTrailing extends StatelessWidget {
     return Card(
       elevation: 0.0,
       child: GFListTile(
-        margin: EdgeInsets.all(5),
-        padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
+        margin: const EdgeInsets.all(5),
+        padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
         avatar: ClipRRect(
           borderRadius: BorderRadius.circular(10.0),
           child: Image.network('https://picsum.photos/250?image=9',
@@ -125,7 +125,7 @@ class RencanaTileNoTrailing extends StatelessWidget {
           children: [
             Row(
               children: [
-                SizedBox(width: 5.0),
+                const SizedBox(width: 5.0),
                 Text(menuName,
                     style: Theme.of(context).textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.bold,
@@ -143,7 +143,7 @@ class RencanaTileNoTrailing extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(width: 5.0),
+                const SizedBox(width: 5.0),
                 Row(
                   children: [
                     const Icon(Icons.verified_user, size: 22),
@@ -170,13 +170,13 @@ class RencanaTileNoTrailing extends StatelessWidget {
             const SizedBox(height: 4.0),
             Row(
               children: [
-                SizedBox(width: 5.0),
+                const SizedBox(width: 5.0),
                 Text("Rp.$menuPrice",
                     style: Theme.of(context).textTheme.headline5!.copyWith(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.bold,
                         fontSize: 10,
                         fontFamily: "Quicksand",
-                        color: Color(0xFF1C9FE2))),
+                        color: const Color(0xFF1C9FE2))),
               ],
             ),
           ],
