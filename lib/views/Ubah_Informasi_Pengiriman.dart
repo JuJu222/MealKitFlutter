@@ -24,12 +24,18 @@ class _UbahInformasiPengirimanPageState
   bool? isCheckedProvinsi;
   bool? isCheckedTelepon;
 
-  TextEditingController alamatController = TextEditingController();
-  TextEditingController kelurahanController = TextEditingController();
-  TextEditingController kecamatanController = TextEditingController();
-  TextEditingController kotaController = TextEditingController();
-  TextEditingController provinsiController = TextEditingController();
-  TextEditingController teleponController = TextEditingController();
+  TextEditingController alamatController =
+      TextEditingController(text: listPengiriman[0].address);
+  TextEditingController kelurahanController =
+      TextEditingController(text: listPengiriman[0].ward);
+  TextEditingController kecamatanController =
+      TextEditingController(text: listPengiriman[0].district);
+  TextEditingController kotaController =
+      TextEditingController(text: listPengiriman[0].city);
+  TextEditingController provinsiController =
+      TextEditingController(text: listPengiriman[0].province);
+  TextEditingController teleponController =
+      TextEditingController(text: listPengiriman[0].phone);
   @override
   @override
   void dispose() {
@@ -41,6 +47,13 @@ class _UbahInformasiPengirimanPageState
     teleponController.dispose();
     super.dispose();
   }
+
+  String? address = listPengiriman[0].address;
+  String? ward = listPengiriman[0].ward;
+  String? district = listPengiriman[0].district;
+  String? city = listPengiriman[0].city;
+  String? province = listPengiriman[0].province;
+  String? phone = listPengiriman[0].phone;
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,6 +108,7 @@ class _UbahInformasiPengirimanPageState
                                             } else {
                                               isCheckedAlamat = true;
                                             }
+                                            address = value.toString();
                                           });
                                         }),
                                         autovalidateMode:
@@ -157,6 +171,7 @@ class _UbahInformasiPengirimanPageState
                                             } else {
                                               isCheckedKelurahan = true;
                                             }
+                                            ward = value.toString();
                                           });
                                         }),
                                         style: Theme.of(context)!
@@ -212,6 +227,7 @@ class _UbahInformasiPengirimanPageState
                                             } else {
                                               isCheckedKecamatan = true;
                                             }
+                                            district = value.toString();
                                           });
                                         }),
                                         style: Theme.of(context)!
@@ -267,6 +283,7 @@ class _UbahInformasiPengirimanPageState
                                             } else {
                                               isCheckedKota = true;
                                             }
+                                            city = value.toString();
                                           });
                                         }),
                                         style: Theme.of(context)!
@@ -325,6 +342,7 @@ class _UbahInformasiPengirimanPageState
                                             } else {
                                               isCheckedProvinsi = true;
                                             }
+                                            province = value.toString();
                                           });
                                         }),
                                         style: Theme.of(context)!
@@ -385,6 +403,7 @@ class _UbahInformasiPengirimanPageState
                                             } else {
                                               isCheckedTelepon = true;
                                             }
+                                            phone = value.toString();
                                           });
                                         }),
                                         keyboardType: TextInputType.number,
@@ -439,10 +458,14 @@ class _UbahInformasiPengirimanPageState
                                   ),
                                 ),
                                 onTap: () {
-                                  Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute<dynamic>(
-                                          builder: (context) => ProfilePage()));
+                                  listPengiriman[0].address = address;
+                                  listPengiriman[0].ward = ward;
+                                  listPengiriman[0].district = district;
+                                  listPengiriman[0].city = city;
+                                  listPengiriman[0].province = province;
+                                  listPengiriman[0].phone = phone;
+                                  Navigator.of(context).pushNamedAndRemoveUntil(
+                                      ProfilePage.routeName, (route) => false);
                                 },
                               ),
                             ),
