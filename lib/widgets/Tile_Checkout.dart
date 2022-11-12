@@ -78,6 +78,12 @@ class CheckoutTile extends StatelessWidget {
             ),
           ],
         ),
+        icon: GestureDetector(
+            onTap: () {
+              // Navigator.pushNamed()
+            },
+            child: Icon(Icons.keyboard_arrow_right_rounded),
+          )
       ),
     );
   }

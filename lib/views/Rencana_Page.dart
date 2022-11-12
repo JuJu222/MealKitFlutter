@@ -38,7 +38,7 @@ class _RencanaPageState extends State<RencanaPage> {
             child: Row(
               children: [
                 Text(
-                  "${cardRencana[0].date}-${cardRencana[cardRencana.length-1].date} November 2022",
+                  "${cardRencana[0].date}-${cardRencana[cardRencana.length - 1].date} November 2022",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
@@ -114,7 +114,6 @@ class _RencanaPageState extends State<RencanaPage> {
                                   fontFamily: "Quicksand")),
                       onPressed: () {
                         if (listKeranjang.isEmpty) {
-
                         } else {
                           //navigate to checkout
                           Navigator.pushNamed(context, CheckoutPage.routeName);
@@ -179,10 +178,19 @@ class _RencanaPageState extends State<RencanaPage> {
                                 )
                               : Column(
                                   children: listPesan.mapIndexed(
-                                  (index, e) {
-                                    return CheckoutTile(
-                                      pesan: listPesan[index],
-                                    );
+                                  (index, item) {
+                                    print(item.date!.substring(0, 2));
+                                    print(cardRencana[currentSelectedIndex!]
+                                            .date);
+                                    if (item.date!.substring(0, 2) ==
+                                        cardRencana[currentSelectedIndex!]
+                                            .date) {
+                                      return CheckoutTile(
+                                        pesan: listPesan[index],
+                                      );
+                                    } else {
+                                      return Container();
+                                    }
                                   },
                                 ).toList())),
                       const SizedBox(height: 15.0),
@@ -208,7 +216,9 @@ class _RencanaPageState extends State<RencanaPage> {
                                 )
                               : Column(
                                   children: listKeranjang.mapIndexed(
-                                    (index, e) {
+                                    (index, item) {
+                                      //item yang datenya sama
+                                      //filter cuman date yang sama
                                       return CheckoutTileWithIcon(
                                         onDelete: () => removeItem(index),
                                         pesan: listKeranjang[index],
