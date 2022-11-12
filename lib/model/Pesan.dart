@@ -15,21 +15,21 @@ class Pesan {
 
 List<Pesan> listPesan = [
   Pesan(
-    date: "3 Oktober 2022",
+    date: "16 November 2022",
     menuName: "Berry & Apple Oatmeal",
     menuPrice: "50.000",
     images: "assets/images/foods/imagefood4.png",
     numberOfPeople: "4",
   ),
   Pesan(
-    date: "4 Oktober 2022",
+    date: "17 November 2022",
     menuName: "Nabe Veggie Udon",
     menuPrice: "50.000",
     images: "assets/images/foods/imagefood3.png",
     numberOfPeople: "2",
   ),
   Pesan(
-    date: "5 Oktober 2022",
+    date: "18 November 2022",
     menuName: "Veggie & Bone Broth Ramen",
     menuPrice: "45.000",
     images: "assets/images/foods/imagefood2.png",
@@ -39,21 +39,21 @@ List<Pesan> listPesan = [
 
 List<Pesan> listKeranjang = [
   Pesan(
-    date: "3 Oktober 2022",
+    date: "16 November 2022",
     menuName: "Berry & Apple Oatmeal",
     menuPrice: "50.000",
     images: "assets/images/foods/imagefood4.png",
     numberOfPeople: "4",
   ),
   Pesan(
-    date: "4 Oktober 2022",
+    date: "17 November 2022",
     menuName: "Nabe Veggie Udon",
     menuPrice: "50.000",
     images: "assets/images/foods/imagefood3.png",
     numberOfPeople: "2",
   ),
   Pesan(
-    date: "5 Oktober 2022",
+    date: "18 November 2022",
     menuName: "Veggie & Bone Broth Ramen",
     menuPrice: "45.000",
     images: "assets/images/foods/imagefood2.png",
