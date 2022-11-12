@@ -20,7 +20,8 @@ class _CardBerandaState extends State<CardBeranda> {
       color: widget.preferensi.color,
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, DaftarResepPage.routeName);
+          Navigator.pushNamed(context, DaftarResepPage.routeName,
+              arguments: widget.preferensi);
         },
         child: Container(
           // color: Colors.red,
