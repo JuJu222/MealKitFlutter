@@ -290,13 +290,14 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                             ],
                           ),
                           SizedBox(height: 5),
-                          ...listPesan.mapIndexed(
-                            (index, e) {
-                              return CheckoutTile(
-                                pesan: listPesan[index],
-                              );
-                            },
-                          )
+                          // ...listPesan.mapIndexed(
+                          //   (index, e) {
+                          //     return CheckoutTile(
+                          //       indexOfItem: index,
+                          //       pesan: listPesan[index],
+                          //     );
+                          //   },
+                          // )
                         ],
                       )),
                       SizedBox(height: 15.0),

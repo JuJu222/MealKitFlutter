@@ -26,4 +26,3 @@ part 'Tile_Checkout.dart';
 
 part 'Tile_Rencana.dart';
 
-part 'List_Rencana.dart';

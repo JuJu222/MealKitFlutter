@@ -261,6 +261,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                           ...listPesan.mapIndexed(
                             (index, e) {
                               return CheckoutTile(
+
                                 pesan: listPesan[index],
                               );
                             },
