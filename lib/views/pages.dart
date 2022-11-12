@@ -17,7 +17,7 @@ import 'dart:ui';
 import 'package:flutter/animation.dart';
 import 'package:meal_kit_flutter/model/Pesan.dart';
 import 'package:intl/intl.dart';
-import 'package:meal_kit_flutter/model/Resep.dart';
+import 'package:meal_kit_flutter/model/Preferensi.dart';
 import 'package:meal_kit_flutter/services/Auth.dart';
 import 'package:meal_kit_flutter/views/Pembayaran_Berhasil_Page.dart';
 import 'package:meal_kit_flutter/views/Wrapper.dart';
