@@ -11,9 +11,28 @@ class RencanaPage extends StatefulWidget {
 class _RencanaPageState extends State<RencanaPage> {
   int? currentSelectedIndex = 0;
   double totalPricing = 0;
-  List<CardRencana> cardRencana = [
+  late int isWeek = 2;
+
+  List<int> noWeek = [2, 3, 4];
+  List<String> week = ["Week 2", "Week 3", "Week 4"];
+  List<CardRencana> cardRencanaWeek2 = [
+    CardRencana(
+        date: "10", day: "Kam", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "11", day: "Jum", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "12", day: "Sab", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "13", day: "Min", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "14", day: "Sen", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "15", day: "Sel", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
         date: "16", day: "Rab", isSelected: false, onSelect: () {}, index: 0),
+  ];
+
+  List<CardRencana> cardRencanaWeek3 = [
     CardRencana(
         date: "17", day: "Kam", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
@@ -26,6 +45,25 @@ class _RencanaPageState extends State<RencanaPage> {
         date: "21", day: "Sen", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
         date: "22", day: "Sel", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "23", day: "Rab", isSelected: false, onSelect: () {}, index: 0),
+  ];
+
+  List<CardRencana> cardRencanaWeek4 = [
+    CardRencana(
+        date: "24", day: "Kam", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "25", day: "Jum", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "26", day: "Sab", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "27", day: "Min", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "28", day: "Sen", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "29", day: "Sel", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "30", day: "Rab", isSelected: false, onSelect: () {}, index: 0),
   ];
 
   @override
@@ -38,7 +76,7 @@ class _RencanaPageState extends State<RencanaPage> {
             child: Row(
               children: [
                 Text(
-                  "${cardRencana[0].date}-${cardRencana[cardRencana.length - 1].date} November 2022",
+                  "${checkWeek()[0].date}-${checkWeek()[checkWeek().length - 1].date} November 2022",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
@@ -46,13 +84,18 @@ class _RencanaPageState extends State<RencanaPage> {
                 ),
                 const SizedBox(width: 5),
                 PopupMenuButton(
+                  onSelected: (value) {
+                    setState(() {
+                      isWeek = value;
+                    });
+                  },
                   child: const Icon(Icons.keyboard_arrow_down,
                       size: 32, color: Colors.black),
                   itemBuilder: (context) {
-                    return cardRencana
-                        .map((item) => PopupMenuItem(
-                              value: item,
-                              child: Text(item.date),
+                    return week
+                        .mapIndexed((index, item) => PopupMenuItem(
+                              value: noWeek[index],
+                              child: Text(item),
                             ))
                         .toList();
                   },
@@ -134,7 +177,8 @@ class _RencanaPageState extends State<RencanaPage> {
                 child: Column(children: [
                   //asMap turns list into a Map, get the key and values of the map, item is the index, value is the key
                   Row(
-                      children: cardRencana.mapIndexed((index, item) {
+                      // ...ituberdasarkan
+                      children: checkWeek().mapIndexed((index, item) {
                     return CardRencana(
                         date: item.date,
                         day: item.day,
@@ -180,10 +224,11 @@ class _RencanaPageState extends State<RencanaPage> {
                                   children: listPesan.mapIndexed(
                                   (index, item) {
                                     print(item.date!.substring(0, 2));
-                                    print(cardRencana[currentSelectedIndex!]
+                                    print(
+                                        checkWeek()[currentSelectedIndex!]
                                             .date);
                                     if (item.date!.substring(0, 2) ==
-                                        cardRencana[currentSelectedIndex!]
+                                        checkWeek()[currentSelectedIndex!]
                                             .date) {
                                       return CheckoutTile(
                                         pesan: listPesan[index],
@@ -250,5 +295,17 @@ class _RencanaPageState extends State<RencanaPage> {
       });
     });
     return totalPricing;
+  }
+
+  List<CardRencana> checkWeek() {
+    List<CardRencana> temp = [];
+    if (isWeek == 2) {
+      temp = cardRencanaWeek2;
+    } else if (isWeek == 3) {
+      temp = cardRencanaWeek3;
+    } else if (isWeek == 4) {
+      temp = cardRencanaWeek4;
+    }
+    return temp;
   }
 }
