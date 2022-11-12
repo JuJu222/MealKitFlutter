@@ -24,6 +24,7 @@ import 'package:meal_kit_flutter/views/Wrapper.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:lottie/lottie.dart';
 
+import '../model/Resep.dart';
 import '../utils/loading.dart';
 import '../widgets/widgets.dart';
 part 'DaftarResep_Page.dart';
@@ -47,3 +48,4 @@ part 'Checkout_Page.dart';
 part 'Resetpassword_Page.dart';
 part 'KeteranganPesanan_Page.dart';
 part 'TambahResep_Page.dart';
+part 'Step_Masak_Page.dart';

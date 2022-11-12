@@ -54,4 +54,29 @@ List<Resep> listResep = [
       menuTools: ['Pisau', 'Wajan datar', 'Gelas ukur'],
       menuReview: '4,8',
       menuProcedure: ['1. Cuci Semua Sayur', '']),
+  // Resep(
+  //     menuId: 1,
+  //     menuImage: 'assets/images/foods/imagefood1.png',
+  //     menuName: 'Risotto Ayam dan Asparagus',
+  //     menuPortion: '2 Porsi',
+  //     menuPrice: 'Rp30.000',
+  //     menuPreference: 'Daging dan Sayur',
+  //     menuDuration: '25 min',
+  //     menuDescription:
+  //         'Di samping menjadi salah satu sumber protein yang berkualitas tinggi, ikan salmon juga kaya akan asam lemak omega-3. Asam lemak omega-3 sangat berguna bagi kesehatan jantung, otak, dan organ tubuh lainnya. Selain itu rasanya lezat dan mudah diolah.',
+  //     menuIngredients: [
+  //       '2 sdm minyak zaitun',
+  //       '1 batang daun bawang, iris halus',
+  //       '2 buah bacon, potong dadu',
+  //       '2 cangkir nasi Arborio',
+  //       '2 fillet ayam tanpa kulit, potong kecil-kecil',
+  //       '5 cangkir stok berkualitas baik',
+  //       '2 sdm Mentega Asli Western Star',
+  //       'Seperempat cangkir parut Perfect',
+  //       'bumbu dari 1 lemon',
+  //       'Garam dan merica'
+  //     ],
+  //     menuTools: ['Pisau', 'Wajan datar', 'Telenan'],
+  //     menuReview: '4,8',
+  //     menuProcedure: ['1. Cuci Semua Sayur', '']),
 ];
