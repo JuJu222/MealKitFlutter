@@ -9,19 +9,45 @@ class RencanaPage extends StatefulWidget {
 }
 
 class _RencanaPageState extends State<RencanaPage> {
-  int? currentSelectedIndex = 0;
+  int? currentSelectedIndex = 3;
   double totalPricing = 0;
-  late int isWeek = 2;
+  late int isWeek = 3;
 
-  List<int> noWeek = [2, 3, 4];
-  List<String> week = ["Week 2", "Week 3", "Week 4"];
+  List<int> noWeek = [1, 2, 3, 4, 5];
+  List<String> week = ["Week 1","Week 2", "Week 3", "Week 4", "Week 5"];
+
+
+  List<CardRencana> cardRencanaWeek1 = [
+    CardRencana(
+        date: "1", day: "Sel", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "2", day: "Rab", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "3", day: "Kam", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "4", day: "Jum", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "5", day: "Sab", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "6", day: "Min", isSelected: false, onSelect: () {}, index: 0),
+  ];
+
   List<CardRencana> cardRencanaWeek2 = [
+    CardRencana(
+        date: "7", day: "Sen", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "8", day: "Sel", isSelected: false, onSelect: () {}, index: 0),
+    CardRencana(
+        date: "9", day: "Rab", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
         date: "10", day: "Kam", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
         date: "11", day: "Jum", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
         date: "12", day: "Sab", isSelected: false, onSelect: () {}, index: 0),
+  ];
+
+  List<CardRencana> cardRencanaWeek3 = [
     CardRencana(
         date: "13", day: "Min", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
@@ -30,13 +56,13 @@ class _RencanaPageState extends State<RencanaPage> {
         date: "15", day: "Sel", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
         date: "16", day: "Rab", isSelected: false, onSelect: () {}, index: 0),
-  ];
-
-  List<CardRencana> cardRencanaWeek3 = [
     CardRencana(
         date: "17", day: "Kam", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
         date: "18", day: "Jum", isSelected: false, onSelect: () {}, index: 0),
+  ];
+
+  List<CardRencana> cardRencanaWeek4 = [
     CardRencana(
         date: "19", day: "Sab", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
@@ -47,11 +73,11 @@ class _RencanaPageState extends State<RencanaPage> {
         date: "22", day: "Sel", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
         date: "23", day: "Rab", isSelected: false, onSelect: () {}, index: 0),
-  ];
-
-  List<CardRencana> cardRencanaWeek4 = [
     CardRencana(
         date: "24", day: "Kam", isSelected: false, onSelect: () {}, index: 0),
+  ];
+
+  List<CardRencana> cardRencanaWeek5 = [
     CardRencana(
         date: "25", day: "Jum", isSelected: false, onSelect: () {}, index: 0),
     CardRencana(
@@ -140,7 +166,7 @@ class _RencanaPageState extends State<RencanaPage> {
                       style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 15, vertical: 10.0),
-                          backgroundColor: (listPesan.isEmpty)
+                          backgroundColor: (listKeranjang.isEmpty)
                               ? Colors.grey
                               : const Color(0xFF1C9FE2),
                           elevation: 0.0,
@@ -299,12 +325,16 @@ class _RencanaPageState extends State<RencanaPage> {
 
   List<CardRencana> checkWeek() {
     List<CardRencana> temp = [];
-    if (isWeek == 2) {
+    if (isWeek == 1) {
+      temp = cardRencanaWeek1;
+    } else if (isWeek == 2) {
       temp = cardRencanaWeek2;
     } else if (isWeek == 3) {
       temp = cardRencanaWeek3;
     } else if (isWeek == 4) {
       temp = cardRencanaWeek4;
+    } else if (isWeek == 5) {
+      temp = cardRencanaWeek5;
     }
     return temp;
   }
