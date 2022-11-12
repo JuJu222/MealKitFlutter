@@ -50,6 +50,7 @@ class _TambahResepPageState extends State<TambahResepPage> {
                     ),
                     margin: EdgeInsets.only(top: 48, left: 24),
                     child: FloatingActionButton(
+                      heroTag: "btn1",
                       backgroundColor: Colors.white,
                       onPressed: () {
                         setState(() {
@@ -204,47 +205,48 @@ class _TambahResepPageState extends State<TambahResepPage> {
                           ]),
                     ),
                     Flexible(
-                        flex: 1,
-                        child: Container(
-                          margin: EdgeInsets.only(top: 8, left: 24, right: 24),
-                          height: double.infinity,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
-                            border: Border.all(color: gray),
-                          ),
-                          child: GestureDetector(
-                            onTap: () async {
-                              await showDatePicker(
-                                context: context,
-                                initialDate: DateTime.now(),
-                                firstDate: DateTime.now(),
-                                lastDate: DateTime(DateTime.now().year + 1),
-                              ).then((date) {
-                                setState(() {
-                                  _dateTime = date;
-                                });
+                      flex: 1,
+                      child: Container(
+                        margin: EdgeInsets.only(top: 8, left: 24, right: 24),
+                        height: double.infinity,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          border: Border.all(color: gray),
+                        ),
+                        child: GestureDetector(
+                          onTap: () async {
+                            await showDatePicker(
+                              context: context,
+                              initialDate: DateTime.now(),
+                              firstDate: DateTime.now(),
+                              lastDate: DateTime(DateTime.now().year + 1),
+                            ).then((date) {
+                              setState(() {
+                                _dateTime = date;
                               });
-                            },
-                            child: Container(
-                              width: double.infinity,
-                              height: double.infinity,
-                              child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                        padding: EdgeInsets.only(left: 24),
-                                        child: Text(dateFormat
-                                            .format(_dateTime as DateTime))),
-                                    Container(
-                                      padding: EdgeInsets.only(right: 24),
-                                      child: Icon(Icons.calendar_today),
-                                    ),
-                                  ]),
-                            ),
+                            });
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            height: double.infinity,
+                            child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                      padding: EdgeInsets.only(left: 24),
+                                      child: Text(dateFormat
+                                          .format(_dateTime as DateTime))),
+                                  Container(
+                                    padding: EdgeInsets.only(right: 24),
+                                    child: Icon(Icons.calendar_today),
+                                  ),
+                                ]),
                           ),
-                        )),
+                        ),
+                      ),
+                    ),
                     Flexible(
                       flex: 2,
                       child: Container(
@@ -325,6 +327,7 @@ class _TambahResepPageState extends State<TambahResepPage> {
                           ),
                           // margin: EdgeInsets.all(4),
                           child: FloatingActionButton.extended(
+                            heroTag: "btn2",
                             backgroundColor: blue,
                             onPressed: () {},
                             label: Text("Tambah ke Rencana",
