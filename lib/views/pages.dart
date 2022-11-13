@@ -25,6 +25,7 @@ import 'package:meal_kit_flutter/views/Pembayaran_Berhasil_Page.dart';
 import 'package:meal_kit_flutter/views/Wrapper.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../model/Resep.dart';
 import '../utils/loading.dart';

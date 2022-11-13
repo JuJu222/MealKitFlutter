@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
 class MenuPage extends StatefulWidget {
-  static const pageName = "Menu";
+  static const pageName = "Beranda";
   MenuPage({
     super.key,
   });

@@ -78,6 +78,7 @@ flutter:
     - assets/logo/
     - assets/images/foods/
     - assets/lottie/
+    - assets/icons/
     - assets/images/payments/
     - assets/images/foods/resep/
   #   - images/a_dot_burr.jpeg
