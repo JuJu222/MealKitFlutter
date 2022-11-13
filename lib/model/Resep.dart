@@ -1443,4 +1443,236 @@ List<Resep> listResep = [
         "5. Masukkan rajungan, kemudian masukkan kocokan telur agar bumbu mengental, masak dengan api kecil beberapa menit hingga bumbu meresap ke rajungan.",
         "6. Matikan api, lalu masukkan air jeruk nipis."
       ]),
+  Resep(
+      menuId: 42,
+      menuImage: 'assets/images/foods/resep/menudiet0.png',
+      menuName: 'Sayur Bayam Kecambah',
+      menuPortion: '1 Porsi',
+      menuPrice: 'Rp20.000',
+      menuPreference: 'Menu Diet',
+      menuDuration: '15 min',
+      menuDescription:
+          'Sayur Bayam Kecambah menu andalanmu ketika anda ingin mencari gaya hidup sehat yang baru. Sayur bayam kecamah manis direbus dan ditumis dengan bumbu khas Manado.',
+      menuIngredients: [
+        '1/2 ikat bayam',
+        'sejumput kecambah',
+        'bawang merah secukupnya',
+        'bawang putih secukupnya',
+        'cabai secukupnya',
+        '1 sendok teh garam',
+        '1/2 sendok teh minyak zaitun untuk menumis',
+      ],
+      menuTools: [
+        "Spatula",
+        "Ulekan",
+        'Pisau',
+        'Wajan datar',
+        'Gelas ukur',
+        'Panci'
+      ],
+      menuReview: '4,7',
+      menuProcedure: [
+        '1. Tumis bawang dan cabai.',
+        '2. Masukkan daun bayam, masak sampai layu.',
+        '3. Tambahkan kecambah. Beri sedikit garam. Dan siap disajikan.',
+      ]),
+
+  Resep(
+      menuId: 43,
+      menuImage: 'assets/images/foods/resep/menudiet1.png',
+      menuName: 'Ayam Pedas Manis',
+      menuPortion: '1 Porsi',
+      menuPrice: 'Rp34.000',
+      menuPreference: 'Menu Diet',
+      menuDuration: '35 min',
+      menuDescription:
+          'Ayam Pedas Manus paduan ayam cincang dengan saus pedas khas Surabaya. Rasa asin dan gurih yang nampol dan nagih.',
+      menuIngredients: [
+        '1 ayam dada fillet seberat 100 gram',
+        '1 siung bawang putih cincang',
+        'daun bawang, ambil bagian putihnya secukupnya',
+        'perasan lemon',
+        '1 buah tomat potong dadu',
+        '1/2 sendok teh garam',
+        '1 sendok makan pasta tomat',
+        "1 sendok makan kecap manis"
+      ],
+      menuTools: [
+        "Ulekan",
+        "Spatula",
+        'Gelas ukur',
+        'Wajan datar',
+        'Pisau',
+        'Panci'
+      ],
+      menuReview: '4,9',
+      menuProcedure: [
+        '1. Rendam ayam dengan semua bumbu kecuali tomat selama 10 menit.',
+        '2. Panaskan pan, masukkan rendaman ayam.',
+        '3. Beri sedikit air, masak hingga matang.',
+        "4. Masukkan tomat, masak sebentar. Dan siap disajikan."
+      ]),
+
+  Resep(
+      menuId: 44,
+      menuImage: 'assets/images/foods/resep/menudiet2.png',
+      menuName: 'Ramen Diet',
+      menuPortion: '1 Porsi',
+      menuPrice: 'Rp36.000',
+      menuPreference: 'Menu Diet',
+      menuDuration: '45 min',
+      menuDescription:
+          'Ramen yang dibuat khusus untuk orang yang ingin menurunkan berat badan. Rasanya tidak kalah dengan paduan kalori hanya 350 kalori per porsi.',
+      menuIngredients: [
+        ' 3 cm jahe iris kecil2',
+        '6 bawang merah',
+        "1 fillet dada ayam seberat 200 gram"
+            '4 bawang putih',
+        '5 cabai rawit kecil',
+        '2-4 sendok makan kecap asin',
+        '1/2 sendok teh garam',
+        '1 sendok teh gula pasir',
+        "1 sendok teh penyedap",
+        "1500 ml air",
+        "2 sendok makan fiber cream",
+        "1 bakul sawi",
+        "mie seberat 300 gram",
+        "2 wortel",
+        "2 jagung manus kuning",
+        "2 butir telur rebus"
+      ],
+      menuTools: [
+        "Sodet",
+        'Gelas ukur',
+        "Spatula",
+        'Wajan datar',
+        "Ulekan",
+        'Panci',
+        'Pisau'
+      ],
+      menuReview: '4,5',
+      menuProcedure: [
+        '1. Rebus air, masukkan dada ayam dan beri kecap asin.',
+        '2. Cacah bawang merah, bawang putih, dan cabai. Masukkan ke rebusan ayam.',
+        '3. Masukkan jahe, garam, gula pasir, dan penyedap. Masak kurang lebih 20 menit.',
+        "4. Tiriskan potongan ayam. Saring airnya, ambil bawang dan cabai lalu blender.",
+        "5. Masak lagi air kuahnya. Tambahkan bawang dan cabai blender.",
+        "6. Tuang fiber cream, aduk, dan hidangan siap disajikan."
+      ]),
+
+  Resep(
+      menuId: 45,
+      menuImage: 'assets/images/foods/resep/menudiet3.png',
+      menuName: 'Cream Soup',
+      menuPortion: '1 Porsi',
+      menuPrice: 'Rp32.000',
+      menuPreference: 'Menu Diet',
+      menuDuration: '25 min',
+      menuDescription:
+          'Cream soup sederhana dengan perpaduan kuah yang creamy dan campuran sayur yang renyah, manis, dan sehat.',
+      menuIngredients: [
+        '200 gram ayam fillet',
+        '1 buah wortel, potong dadu kecil',
+        "2 siung bawang putih dicincang halus"
+            '300 ml susu cair',
+        '400 ml air',
+        '1/2 bawang bombay, potong dadu',
+        '4 buah bakso, potong dadu',
+        '4 sdm tepung terigu + 100 ml air',
+        "1 sdt lada bubuk",
+        "garam secukupnya",
+        "minyak goreng secukupnya",
+        "2 roti tawar panggang",
+      ],
+      menuTools: [
+        "Spatula",
+        "Sendok",
+        "Sodet",
+        "Ulekan",
+        'Gelas ukur',
+        'Wajan datar',
+        'Pisau',
+        'Panci'
+      ],
+      menuReview: '4,5',
+      menuProcedure: [
+        '1. Rebus ayam sampai empuk, angkat dan tiriskan. Potong sesuai selera.',
+        '2. Rebus wortel sampai empuk di kuah ayam.',
+        '3. Tumis bawang putih dan bawang bombay. Masukkan susu cair, garam, dan lada. Masak sampai mendidih.',
+        "4. Campur ke dalam panci kuah rebusan ayam, masukkan lagi ayam. Beri bakso, aduk rata.",
+        "5. Tambahkan campuran terigu, masak sampai agak kental. Dan siap disajikan",
+      ]),
+
+  Resep(
+      menuId: 46,
+      menuImage: 'assets/images/foods/resep/menudiet4.png',
+      menuName: 'Steak Tempe',
+      menuPortion: '1 Porsi',
+      menuPrice: 'Rp20.000',
+      menuPreference: 'Menu Diet',
+      menuDuration: '15 min',
+      menuDescription:
+          'Steak Tempe, menu inovasi baru yang menggabungkan tempe panggang yang amat gurih dengan campuran aneka sayur dan bumbu barbeque yang lezat dan manis.',
+      menuIngredients: [
+        '1/2 papan tempe',
+        '2 sendok makan tepung gluten free',
+        "1/2 sendok teh lada putih"
+            'himsalt secukupnya',
+        'minyak kelapa',
+        '6 siung bawang putih, potong kecil',
+        '1/2 siung bombay, iris sesuai selera',
+        '2 buah tomat, haluskan',
+        "kecap manis organic secukupnya",
+        "lada hitam utuh, ulek kasar",
+        "gula aren sesuai selera",
+        "1 sendok makan minyak kelapa",
+        "air secukupnya"
+      ],
+      menuTools: [
+        "Sendok",
+        "Sodet",
+        "Ulekan",
+        'Gelas ukur',
+        'Wajan datar',
+        'Pisau'
+      ],
+      menuReview: '4,8',
+      menuProcedure: [
+        '1. Kukus tempe sampai matang. Kemudian haluskan.',
+        '2. Campur tempe dengan tepung, lada putih, dan garam.',
+        '3. Bentuk sesuai selera, masak dengan api kecil hingga matang. Angkat dan sisihkan.',
+        "4. Saus: tumis bawang putih sampai harum. Masukkan bawang bombay, aduk sampai layu.",
+        "5. Masukkan semua bahan lain kecuali garam. Masak sampai mendidih.",
+        "6. Matikan api, beri garam lalu aduk rata.",
+        "7. Tuang saus ke steak tempe.Dan siap disajikan."
+      ]),
+
+  Resep(
+      menuId: 47,
+      menuImage: 'assets/images/foods/resep/menudiet5.png',
+      menuName: 'Salad Caesar',
+      menuPortion: '1 Porsi',
+      menuPrice: 'Rp38.000',
+      menuPreference: 'Menu Diet',
+      menuDuration: '25 min',
+      menuDescription:
+          'Salad Caesar sehat perpaduan sayur segar dan manis dengan saus caesar yang cenderung manis dan gurih.',
+      menuIngredients: [
+        '100-120 gram selada romaine',
+        '20-40 gram telur rebus',
+        "60 gram keju parmesan"
+            '15-20 gram daging sapi iris tipis',
+        '20-25 roti tawar, potong dadu lalu panggang',
+        'lada secukupnya',
+        'garam secukupnya',
+        'saus salad kemasan',
+      ],
+      menuTools: ["Sendok", "Sodet", 'Mangkok Aduk', 'Pisau', "Gunting"],
+      menuReview: '4,9',
+      menuProcedure: [
+        '1. Potong selada romaine sesuai selera.',
+        '2. Goreng daging sapi dengan sedikit olive oil. Beri sedikit bumbu sesuai selera.',
+        '3. Potong roti tawar menjadi dadu. Beri bumbu seperti garam dan lada, lalu panggang.',
+        "4. Masukan bahan-bahan yang sudah jadi ke dalam satu mangkuk, lalu tuangkan saus. Aduk rata dan sajikan.",
+      ]),
 ];
