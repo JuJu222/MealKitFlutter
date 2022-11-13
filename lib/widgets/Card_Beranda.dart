@@ -25,7 +25,7 @@ class _CardBerandaState extends State<CardBeranda> {
         },
         child: Container(
           // color: Colors.red,
-          width: 190,
+          width: 170,
           height: 200,
           child: Stack(children: [
             Container(
@@ -41,14 +41,14 @@ class _CardBerandaState extends State<CardBeranda> {
             ),
             Positioned(
                 top: 49,
-                left: 50,
+                left: 20,
                 child: Container(
                   width: 150,
                   height: 150,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage("${widget.preferensi.images}"),
-                          fit: BoxFit.cover)),
+                          fit: BoxFit.fill)),
                 )),
           ]),
         ),
@@ -84,7 +84,7 @@ class _CardBerandaLongState extends State<CardBerandaLong> {
         child: Stack(children: [
           Positioned(
               top: 100,
-              left: 30,
+              left: 20,
               child: Container(
                 width: 150,
                 height: 150,

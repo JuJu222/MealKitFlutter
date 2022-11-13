@@ -123,7 +123,7 @@ class _RencanaPageState extends State<RencanaPage> {
                       fontFamily: "Quicksand"),
                 ),
                 const SizedBox(width: 5),
-                PopupMenuButton(
+                PopupMenuButton( 
                   onSelected: (value) {
                     setState(() {
                       isWeek = value;
@@ -154,7 +154,7 @@ class _RencanaPageState extends State<RencanaPage> {
         body: SlidingUpPanel(
           key: UniqueKey(),
           maxHeight: 100,
-          boxShadow: const [BoxShadow(blurRadius: 10, color: Color(0xF000000))],
+          boxShadow: const [BoxShadow(blurRadius: 10, color: Color(0x0f000000))],
           borderRadius: const BorderRadius.horizontal(
               left: Radius.circular(22), right: Radius.circular(22)),
           panel: Padding(
@@ -203,7 +203,7 @@ class _RencanaPageState extends State<RencanaPage> {
                                   color: Colors.white,
                                   fontFamily: "Quicksand")),
                       onPressed: () {
-                        if (!listKeranjang.isEmpty) {
+                        if (listKeranjang.isNotEmpty) {
                           for (var item in listKeranjang) {
                             if (item.date!.substring(0, 2) ==
                                 checkWeek()[currentSelectedIndex!].date) {
