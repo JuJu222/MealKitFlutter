@@ -68,7 +68,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                   .headline5!
                                   .copyWith(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 28,
+                                      fontSize: 24,
                                       fontFamily: "Quicksand",
                                       color: Colors.black)),
                           SizedBox(height: 15.0),
@@ -78,7 +78,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                   .headline5!
                                   .copyWith(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 18,
+                                      fontSize: 14,
                                       fontFamily: "Quicksand",
                                       color: Color(0xFF1C9FE2))),
                           SizedBox(height: 20.0),
@@ -102,7 +102,7 @@ class _BerandaPageState extends State<BerandaPage> {
                             suffixInsets: EdgeInsets.fromLTRB(0, 10, 15, 10),
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 16,
+                                fontSize: 12,
                                 fontFamily: "Quicksand",
                                 color: Colors.black),
                             placeholder: "Cari resep di sini",
@@ -122,7 +122,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                       .headline5!
                                       .copyWith(
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 22,
+                                          fontSize: 18,
                                           fontFamily: "Quicksand",
                                           color: Colors.black)),
                               SizedBox(height: 15.0),
@@ -150,7 +150,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                         .headline5!
                                         .copyWith(
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 22,
+                                            fontSize: 18,
                                             fontFamily: "Quicksand",
                                             color: Colors.black)),
                                 SizedBox(height: 15.0),

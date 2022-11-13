@@ -34,7 +34,7 @@ class _CardBerandaState extends State<CardBeranda> {
                 "${widget.preferensi.nama}",
                 style: Theme.of(context).textTheme.headline5!.copyWith(
                     fontWeight: FontWeight.bold,
-                    fontSize: 28,
+                    fontSize: 20,
                     fontFamily: "Quicksand",
                     color: Colors.black),
               ),
@@ -99,7 +99,7 @@ class _CardBerandaLongState extends State<CardBerandaLong> {
               "${widget.preferensi.nama}",
               style: Theme.of(context).textTheme.headline5!.copyWith(
                   fontWeight: FontWeight.bold,
-                  fontSize: 28,
+                  fontSize: 20,
                   fontFamily: "Quicksand",
                   color: Colors.black),
             ),
