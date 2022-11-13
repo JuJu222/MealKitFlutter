@@ -19,6 +19,7 @@ class _TambahResepPageState extends State<TambahResepPage> {
 
   DateFormat dateFormat = DateFormat("E, d MMMM y");
   DateTime? _dateTime = DateTime.now();
+  DateTime initialDate = DateTime.now().add(const Duration(days: 1));
 
   bool selected_first = false;
   bool selected_second = false;
@@ -218,11 +219,10 @@ class _TambahResepPageState extends State<TambahResepPage> {
                           onTap: () async {
                             await showDatePicker(
                               context: context,
-                              initialDate: DateTime.now(),
-                              firstDate: DateTime.now(),
-                              lastDate: DateTime.now().add(Duration(
-                                  days: DateTime.daysPerWeek -
-                                      DateTime.now().weekday)),
+                              initialDate: initialDate,
+                              firstDate: initialDate,
+                              lastDate: initialDate.add(
+                                  Duration(days: DateTime.now().weekday - 1)),
                             ).then((date) {
                               setState(() {
                                 _dateTime = date;
