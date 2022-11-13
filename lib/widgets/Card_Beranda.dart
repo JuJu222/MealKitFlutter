@@ -79,7 +79,7 @@ class _CardBerandaLongState extends State<CardBerandaLong> {
       color: widget.preferensi.color,
       child: Container(
         // color: Colors.red,
-        width: 190,
+        width: 170,
         height: 250,
         child: Stack(children: [
           Positioned(

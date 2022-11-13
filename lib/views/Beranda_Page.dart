@@ -134,7 +134,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                   children:[     
                                     ...listPreferensi.mapIndexed((index, value) {
                                     return Padding(
-                                      padding: const EdgeInsets.fromLTRB(0,0,13,0),
+                                      padding: const EdgeInsets.fromLTRB(0,0,12,0),
                                       child: CardBeranda(preferensi: value),
                                     );
                                   }),
