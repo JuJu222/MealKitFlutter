@@ -93,7 +93,7 @@ class _PreferensiPageState extends State<PreferensiPage> {
                           children: [
                             ...List.generate(
                                 3,
-                                ((index) => CardResep(
+                                ((index) => CardPreferensi(
                                     preferensi: listPreferensi[index],
                                     onSelected: ((bool value) {
                                       if (value) {
@@ -116,7 +116,7 @@ class _PreferensiPageState extends State<PreferensiPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             for (var i = 3; i < 6; i++) ...[
-                              CardResep(
+                              CardPreferensi(
                                   preferensi: listPreferensi[i],
                                   onSelected: ((bool value) {
                                     if (value) {
@@ -138,7 +138,7 @@ class _PreferensiPageState extends State<PreferensiPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             for (var i = 6; i < 8; i++) ...[
-                              CardResep(
+                              CardPreferensi(
                                   preferensi: listPreferensi[i],
                                   onSelected: ((bool value) {
                                     if (value) {

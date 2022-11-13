@@ -1,123 +1,105 @@
 part of 'widgets.dart';
 
-class CardResep extends StatefulWidget {
-  final Preferensi preferensi;
-  final ValueChanged<bool> onSelected;
+class CardResep extends StatelessWidget {
+  Resep? resep;
+  CardResep({super.key, required this.resep});
 
-  CardResep({
-    super.key,
-    required this.preferensi,
-    required this.onSelected,
-  });
-
-  @override
-  State<CardResep> createState() => _CardResepState();
-}
-
-class _CardResepState extends State<CardResep> {
-  bool _isSelected = false;
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: widget.preferensi.nama == "Makanan Laut" ||
-                widget.preferensi.nama == "Menu Diet"
-            ? _buildLandScape(context)
-            : _buildPortrait(context));
-  }
+    Color near_black = Color(0xFF2A2A2A);
+    Color blue = Color(0xFF1C9FE2);
 
-  Widget _buildPortrait(BuildContext context) {
     return GestureDetector(
-      onTap: (() {
-        setState(() {
-          _isSelected = !_isSelected;
-          widget.onSelected(_isSelected);
-        });
-      }),
-      child: Card(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-            side: _isSelected
-                ? BorderSide(color: Color(0XFF1C9FE2), width: 3)
-                : BorderSide(color: Colors.transparent, width: 0)),
-        color: widget.preferensi.color,
-        child: Container(
-          // color: Colors.red,
-          width: 93,
-          height: 151,
-          child: Stack(children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              child: Text(
-                "${widget.preferensi.nama}",
-                style: Theme.of(context)!
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(fontWeight: FontWeight.bold),
+      onTap: () {
+        Navigator.pushNamed(context, InformasiResepPage.routeName);
+      },
+      child: Column(
+        // mainAxisAlignment: Alignment.,
+        children: [
+          Expanded(
+            flex: 5,
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                  ),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage("${resep!.menuImage}"),
+                  )),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+              color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("${resep!.menuName}",
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Quicksand',
+                        color: near_black,
+                      )),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: Icon(Icons.kitchen, size: 10),
+                        ),
+                        TextSpan(
+                          text: "${resep!.menuDuration}",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: 'Quicksand',
+                            color: near_black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
-            Positioned(
-                top: 49,
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+                width: double.infinity,
+                height: 12,
                 child: Container(
-                  width: 102,
-                  height: 102,
+                  child: Center(
+                    child: Text("${resep!.menuPrice} /${resep!.menuPortion}",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 10,
+                        )),
+                  ),
                   decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("${widget.preferensi.images}"),
-                          fit: BoxFit.cover)),
-                )),
-          ]),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildLandScape(BuildContext context) {
-    return GestureDetector(
-      onTap: (() {
-        _isSelected = !_isSelected;
-        widget.onSelected(_isSelected);
-      }),
-      child: Card(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-            side: _isSelected
-                ? BorderSide(color: Color(0XFF1C9FE2), width: 3)
-                : BorderSide(color: Colors.transparent, width: 0)),
-        color: widget.preferensi.color,
-        child: Container(
-            width: 147,
-            height: 88,
-            child: Stack(children: [
-              Container(
-                  padding: const EdgeInsets.all(8),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                          child: Container(
-                        child: Text(
-                          "${widget.preferensi.nama}",
-                          style: Theme.of(context)!
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(fontWeight: FontWeight.bold),
-                        ),
-                      )),
-                      Expanded(child: Container())
-                    ],
-                  )),
-              Positioned(
-                  top: 12,
-                  left: 58,
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage("${widget.preferensi.images}"),
-                            fit: BoxFit.cover)),
-                  )),
-            ])),
+                    color: blue,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    ),
+                  ),
+                )
+                // padding: const EdgeInsets.symmetric(
+                // vertical: 12, horizontal: 8),
+                // color: Colors.teal[100],
+                // child: const Text(
+                // "He'd have you all unravel at the"),
+                ),
+          ),
+        ],
       ),
     );
   }

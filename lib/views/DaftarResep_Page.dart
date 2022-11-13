@@ -19,6 +19,7 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          iconTheme: IconThemeData(color: primaryColor),
           backgroundColor: Colors.transparent,
           centerTitle: true,
           title: Text(
@@ -60,104 +61,20 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
                   crossAxisCount: 2,
-                  children: widget.daftarResep.map((url) {
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(
-                            context, InformasiResepPage.routeName);
-                      },
-                      child: Column(
-                        // mainAxisAlignment: Alignment.,
-                        children: [
-                          Expanded(
-                            flex: 5,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    topRight: Radius.circular(10),
-                                  ),
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage("${url.menuImage}"),
-                                  )),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: Container(
-                              width: double.infinity,
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 8, horizontal: 8),
-                              color: Colors.white,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("${url.menuName}",
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'Quicksand',
-                                        color: near_black,
-                                      )),
-                                  RichText(
-                                    text: TextSpan(
-                                      children: [
-                                        WidgetSpan(
-                                          alignment:
-                                              PlaceholderAlignment.middle,
-                                          child: Icon(Icons.kitchen, size: 10),
-                                        ),
-                                        TextSpan(
-                                          text: " 40 min",
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: 'Quicksand',
-                                            color: near_black,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                                width: double.infinity,
-                                height: 12,
-                                child: Container(
-                                  child: Center(
-                                    child: Text(
-                                        "${url.menuPrice} /${url.menuPortion}",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 10,
-                                        )),
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: blue,
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(10),
-                                      bottomRight: Radius.circular(10),
-                                    ),
-                                  ),
-                                )
-                                // padding: const EdgeInsets.symmetric(
-                                // vertical: 12, horizontal: 8),
-                                // color: Colors.teal[100],
-                                // child: const Text(
-                                // "He'd have you all unravel at the"),
-                                ),
-                          ),
-                        ],
-                      ),
-                    );
-                  }).toList(),
+                  // children: widget.daftarResep.map((url) {
+                  //   return CardResep(resep: url);
+                  // }).toList(),
+                  children: [
+                    if (widget.preferensi.nama == "Daging & Sayur") ...[
+                      for (var i = 0; i < 6; i++) ...[
+                        CardResep(resep: widget.daftarResep[i])
+                      ]
+                    ] else if (widget.preferensi.nama == "Sayur") ...[
+                      for (var i = 6; i < 12; i++) ...[
+                        CardResep(resep: widget.daftarResep[i])
+                      ]
+                    ]
+                  ],
                 ),
               ))
         ],
@@ -165,3 +82,6 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
     );
   }
 }
+
+//sementara taruh sini widget card resepnya
+
