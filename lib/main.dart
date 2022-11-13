@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         title: 'MealKit',
         theme: ThemeData(
             //Pergantian Warna dan Text pada bar
-            scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+            canvasColor: const Color(0xFFFFFFFF),
             colorScheme: Theme.of(context).colorScheme.copyWith(
                 primary: primaryColor,
                 onPrimary: secondaryColor,
