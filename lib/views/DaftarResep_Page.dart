@@ -73,6 +73,26 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
                       for (var i = 6; i < 12; i++) ...[
                         CardResep(resep: widget.daftarResep[i])
                       ]
+                    ] else if (widget.preferensi.nama == "Produk Susu") ...[
+                      for (var i = 12; i < 18; i++) ...[
+                        CardResep(resep: widget.daftarResep[i])
+                      ]
+                    ] else if (widget.preferensi.nama == "Cepat & Mudah") ...[
+                      for (var i = 18; i < 24; i++) ...[
+                        CardResep(resep: widget.daftarResep[i])
+                      ]
+                    ] else if (widget.preferensi.nama == "Roti") ...[
+                      for (var i = 24; i < 30; i++) ...[
+                        CardResep(resep: widget.daftarResep[i])
+                      ]
+                    ] else if (widget.preferensi.nama == "Protein Tinggi") ...[
+                      for (var i = 30; i < 36; i++) ...[
+                        CardResep(resep: widget.daftarResep[i])
+                      ]
+                    ] else if (widget.preferensi.nama == "Makanan Laut") ...[
+                      for (var i = 36; i < 42; i++) ...[
+                        CardResep(resep: widget.daftarResep[i])
+                      ]
                     ]
                   ],
                 ),

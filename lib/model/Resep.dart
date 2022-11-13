@@ -373,10 +373,8 @@ List<Resep> listResep = [
       ]),
   Resep(
       menuId: 11,
-
       menuImage: 'assets/images/foods/resep/sayur5.png',
       menuName: 'Terong Balado',
-
       menuPortion: '1 Porsi',
       menuPrice: 'Rp18.000',
       menuPreference: 'Sayur',
@@ -407,7 +405,7 @@ List<Resep> listResep = [
   //Produk Susu
   Resep(
       menuId: 12,
-      menuImage: 'assets/images/foods/produksusu0.png',
+      menuImage: 'assets/images/foods/resep/produksusu0.png',
       menuName: 'Soto Betawi Susu',
       menuPortion: '1 Porsi',
       menuPrice: 'Rp32.000',
@@ -436,7 +434,7 @@ List<Resep> listResep = [
       ]),
   Resep(
       menuId: 13,
-      menuImage: 'assets/images/foods/produksusu1.png',
+      menuImage: 'assets/images/foods/resep/produksusu1.png',
       menuName: 'Spaghetti Brulee',
       menuPortion: '1 Porsi',
       menuPrice: 'Rp32.000',
@@ -464,7 +462,7 @@ List<Resep> listResep = [
       ]),
   Resep(
       menuId: 14,
-      menuImage: 'assets/images/foods/produksusu2.png',
+      menuImage: 'assets/images/foods/resep/produksusu2.png',
       menuName: 'Pancake Pizza',
       menuPortion: '1 Porsi',
       menuPrice: 'Rp32.000',
@@ -495,7 +493,7 @@ List<Resep> listResep = [
       ]),
   Resep(
       menuId: 15,
-      menuImage: 'assets/images/foods/produksusu3.png',
+      menuImage: 'assets/images/foods/resep/produksusu3.png',
       menuName: 'Pie Susu Renyah',
       menuPortion: '1 Porsi',
       menuPrice: 'Rp22.000',
@@ -524,7 +522,7 @@ List<Resep> listResep = [
       ]),
   Resep(
       menuId: 16,
-      menuImage: 'assets/images/foods/produksusu4.png',
+      menuImage: 'assets/images/foods/resep/produksusu4.png',
       menuName: 'Cream Soup',
       menuPortion: '1 Porsi',
       menuPrice: 'Rp32.000',
@@ -556,7 +554,7 @@ List<Resep> listResep = [
       ]),
   Resep(
       menuId: 17,
-      menuImage: 'assets/images/foods/produksusu5.png',
+      menuImage: 'assets/images/foods/resep/produksusu5.png',
       menuName: 'Mushroom Zuppa Soup',
       menuPortion: '1 Porsi',
       menuPrice: 'Rp28.000',
@@ -589,7 +587,7 @@ List<Resep> listResep = [
   //Cepat dan Mudah
   Resep(
       menuId: 18,
-      menuImage: 'assets/images/foods/cepatdanmudah0.png',
+      menuImage: 'assets/images/foods/resep/cepatdanmudah0.png',
       menuName: 'Sop Sayur Makaroni',
       menuPortion: '1 Porsi',
       menuPrice: 'Rp16.000',
@@ -623,7 +621,7 @@ List<Resep> listResep = [
       ]),
   Resep(
       menuId: 19,
-      menuImage: 'assets/images/foods/cepatdanmudah1.png',
+      menuImage: 'assets/images/foods/resep/cepatdanmudah1.png',
       menuName: 'Cap Cay Goreng',
       menuPortion: '1 Porsi',
       menuPrice: 'Rp13.000',
@@ -662,7 +660,7 @@ List<Resep> listResep = [
       ]),
   Resep(
       menuId: 20,
-      menuImage: 'assets/images/foods/cepatdanmudah2.png',
+      menuImage: 'assets/images/foods/resep/cepatdanmudah2.png',
       menuName: 'Sup Ayam Jagung',
       menuPortion: '1 Porsi',
       menuPrice: 'Rp18.000',
@@ -694,7 +692,7 @@ List<Resep> listResep = [
       ]),
   Resep(
       menuId: 21,
-      menuImage: 'assets/images/foods/cepatdanmudah3.png',
+      menuImage: 'assets/images/foods/resep/cepatdanmudah3.png',
       menuName: 'Sop Sayur Makaroni',
       menuPortion: '1 Porsi',
       menuPrice: 'Rp14.000',
@@ -728,7 +726,7 @@ List<Resep> listResep = [
       ]),
   Resep(
       menuId: 22,
-      menuImage: 'assets/images/foods/cepatdanmudah4.png',
+      menuImage: 'assets/images/foods/resep/cepatdanmudah4.png',
       menuName: 'Tahu Telor',
       menuPortion: '1 Porsi',
       menuPrice: 'Rp16.000',
@@ -756,7 +754,7 @@ List<Resep> listResep = [
       ]),
   Resep(
       menuId: 23,
-      menuImage: 'assets/images/foods/cepatdanmudah5.png',
+      menuImage: 'assets/images/foods/resep/cepatdanmudah5.png',
       menuName: 'Ayam Kare',
       menuPortion: '1 Porsi',
       menuPrice: 'Rp21.000',
@@ -1007,6 +1005,196 @@ List<Resep> listResep = [
         '5. Isi roti dengan tumisan tadi, beri saus sambal dan mayonaise kemudian gulung rapi.',
         '6. Panggang roti di pan antilengket hingga kecokelatan (gunakan api kecil saja).',
         '7. Kebab penuh siap disajikan.'
+      ]),
+
+  Resep(
+      menuId: 30,
+      menuImage: 'assets/images/foods/resep/tinggiprotein0.jpg',
+      menuName: 'Tumis Tempe',
+      menuPortion: '2 Porsi',
+      menuPrice: 'Rp15.000',
+      menuPreference: 'Protein Tinggi',
+      menuDuration: '15 min',
+      menuDescription:
+          'Resep tumis tempe ditambah dengan rahasia dari Kukoki akan tinggi protein yang tentu membantu anda tetap sehat tanpa kandungan pengawet',
+      menuIngredients: [
+        '250 gram tempe potong 3 cm',
+        '15 gram bawang putih iris tipis',
+        '25 gram bawang merah iris tipis',
+        '4 gram akar lengkuas segar (kira-kira 2 buah akar lengkuas)',
+        '2 daun salam',
+        '1 sdt Royco kaldu ayam',
+        '2 sendok makan kecap manis bango',
+        '4 sendok makan minyak goreng',
+        '200 ml air'
+      ],
+      menuTools: ['Pisau', 'Telenan', 'Gelas ukur', 'Panci'],
+      menuReview: '4,0',
+      menuProcedure: [
+        '1. Rebus jagung hingga air mendidih selama 5 menit',
+        '2. Masukkan bawang merah, temu kunci, dan Maggi Magic Lezat. Aduk rata, masak hingga jagung matang selamat 10 menit.',
+        '3. Masukkan tomat, masak sebentar hingga mendidih selama 5 menit.',
+        '4. Matikan api, masukkan bayam. Angkat. ⁣ Sajikan.',
+      ]),
+
+  Resep(
+      menuId: 31,
+      menuImage: 'assets/images/foods/resep/tinggiprotein1.png',
+      menuName: 'Sapo Tahu',
+      menuPortion: '2 Porsi',
+      menuPrice: 'Rp16.000',
+      menuPreference: 'Protein Tinggi',
+      menuDuration: '30 min',
+      menuDescription:
+          'Sapo Tahu menjadi salah satu menu oriental favorit di restoran. Jadi, kenapa nggak coba bikin sendiri di rumah dengan bahan sesuai budget belanja Ibu. Nggak ada ayam? Nggak masalah, kok. Ibu cukup pakai sayuran dan jamur. Supaya rasa gurih-manisnya beda, tambahkan Saus Tiram dan perasa  Rasa Ayam. Yuk, cek resepnya di bawah!',
+      menuIngredients: [
+        '50 gr Jamur Kuping',
+        '100 gr Jamur Merang, potong empat',
+        '50 gr Jagung keputren, iris serong',
+        '50 gr Wortel, iris serong',
+        '100 gr brokoli, potong kuncup',
+        '3 buah cabai merah, iris serong',
+        '100 gr sawi putih, potong',
+        '50 gr Kapri',
+        '200gr  pakcoi',
+        '3 gr bawang putih, cincang',
+        '2 buah cabai merah, iris',
+        '1/2 sdt gula pasir',
+        '2 bungkus tahu putih',
+        '1 sdt minyak wijen',
+        '250 ml air',
+        '2 sdm minyak goreng segar untuk menumis',
+      ],
+      menuTools: ['Pisau', 'Telenan', 'Gelas ukur', 'Sutil', 'Panci', 'wajan'],
+      menuReview: '4,7',
+      menuProcedure: [
+        '1. Panaskan minyak, tumis bawang putih masak hingga harum dengan api kecil',
+        '2. Masukkan jamur, jagung dan wortel, lalu masak hingga jamur berubah warna.',
+        '3. Masukkan Maggi Saus Tiram, Maggi Magic Lezat Rasa Ayam, gula, merica, dan cabai merah. Masukkan air. Masak hingga mendidih, lalu masukkan brokoli dan kapri. Masak lagi hingga mendidih.',
+        '4. Masukkan pakcoi dan sawi putih, beri larutan maizena ketika air sudah mendidih. Aduk hingga mengental',
+        '5. Masukkan tofu/tahu, kemudian taburi dengan bawang daun. Sajikan.'
+      ]),
+
+  Resep(
+      menuId: 32,
+      menuImage: 'assets/images/foods/resep/tinggiprotein2.jpg',
+      menuName: 'Kailan Cah Jamur',
+      menuPortion: '2 Porsi',
+      menuPrice: 'Rp15.000',
+      menuPreference: 'Protein Tinggi',
+      menuDuration: '15 min',
+      menuDescription:
+          'Siapa bilang bikin hidangan ala resto itu susah, ? kita sudah siapkan resep makanan simple pakai perasa khas dari Kukoki. Yuk, coba bikin Kailan Cah Jamur yang praktis, bergizi, dan lezatnya pastinya beda.',
+      menuIngredients: [
+        '1 buah bawang bombay sedang, iris memanjang',
+        '1 cm jahe, iris memanjang',
+        '3 siung bawang putih, cincang',
+        '2 sdm minyak goreng segar',
+        '50 gr jamur merang',
+        '50 gr Jamur Kuping',
+        '2 sdm gula pasir',
+        '1 sdt merica',
+        '150ml air',
+        '1 sdm tepung maizena, larutkan dengan sedikit air',
+        '2 buah cabai merah, iris',
+        '1/2 sdt gula pasir',
+        '2 bungkus tahu putih',
+        '1 sdt minyak wijen',
+        '250 ml air',
+        '2 sdm minyak goreng segar untuk menumis',
+      ],
+      menuTools: ['Pisau', 'Telenan', 'Gelas ukur', 'Sutil', 'Panci', 'wajan'],
+      menuReview: '4,7',
+      menuProcedure: [
+        '1. Potong kailan, lalu kupas batang yang tua, rebus sebentar dalam air mendidih selama 30 detik. Angkat dan tiriskan.',
+        '2. Tumis bawang bombay, jahe, dan bawang putih sampai harum.',
+        '3. Masukkan jamur merang dan jamur kuping. Tambahkan Maggi Saus Tiram, gula pasir, merica, dan Maggi Magic Lezat Rasa Ayam.',
+        '4. Tambahkan air, lalu masak hingga mendidih. Masukkan kailan rebus.',
+        '5.  Masukkan larutan maizena, lalu masak hingga mengental. Sajikan..'
+      ]),
+
+  Resep(
+      menuId: 33,
+      menuImage: 'assets/images/foods/resep/tinggiprotein3.jpg',
+      menuName: 'Dada Ayam Panggang',
+      menuPortion: '2 Porsi',
+      menuPrice: 'Rp30.000',
+      menuPreference: 'Protein Tinggi',
+      menuDuration: '20 min',
+      menuDescription:
+          'Dada ayam dikenal akan kandungan protein yang tinggi. Dalam 100 gram dada ayam terkandung sebsar 31 gram protein. Berikut resep makanan tinggi protein dari dada ayam.',
+      menuIngredients: [
+        'Dada ayam tanpa tulang, besar sesuai selera',
+        'Merica secukupnya',
+        'Garam secukupnya',
+        'Minyak zaitun atau canola',
+      ],
+      menuTools: ['Pisau', 'Telenan', 'Sutil', 'Panggangan', 'wajan'],
+      menuReview: '4,7',
+      menuProcedure: [
+        '1. Tabur merica dan garam pada dada ayam, lalu baluri sampai merata.',
+        '2. Panaskan teflon dengan api sedang, lalu oles sedikit dengan minyak zaitun atau canola.',
+        '3. Panggang dada ayam bolak-balik sampai matang.',
+        '4. Tambahkan air, lalu masak hingga mendidih. Masukkan kailan rebus.',
+        '5.  Jika sudah dirasa benar-benar matang, matikan api dan diamkan di atas wajan terlebih dahulu selama 5 menit.',
+        '6.  Sajikan.'
+      ]),
+
+  Resep(
+      menuId: 34,
+      menuImage: 'assets/images/foods/resep/tinggiprotein4.jpg',
+      menuName: 'Roti Gandum Telur dan Alpukat',
+      menuPortion: '2 Porsi',
+      menuPrice: 'Rp20.000',
+      menuPreference: 'Protein Tinggi',
+      menuDuration: '15 min',
+      menuDescription:
+          'Mungkin makanan ini kandungan proteinnya tidak setinggi resep makanan tinggi protein sebelumnya. Namun makanan ini sangat sehat karena kaya serat dari gandum dan juga menggunakan buah alpukat. Di dalam buah alpukat sendiri terdapat 2 gram protein tiap 100 gram.',
+      menuIngredients: [
+        '2 lembar roti gandum',
+        '4 buah telur rebus',
+        '1 sdm air lemon',
+        ' 1 sdt garam',
+        '1 sdm Minyak zaitun'
+      ],
+      menuTools: ['Pisau', 'Telenan', 'Sendok', 'Panggangan'],
+      menuReview: '4,2',
+      menuProcedure: [
+        '1. Panggang roti gandum hingga kering, sisihkan.',
+        '2. Haluskan alpukat yang telah dipotong kecil, lalu beri garam dan air lemon.',
+        '3. Masukkan telur rebus yang telah dipotong kecil, kemudian aduk rata bersama dengan alpukat.',
+        '4. Susun campuran alpukat dan telur di atas roti gandum.',
+        '5.  Tambahkan minyak zaitun.',
+        '6.  Sajikan.'
+      ]),
+
+  Resep(
+      menuId: 35,
+      menuImage: 'assets/images/foods/resep/tinggiprotein5.jpg',
+      menuName: 'Salad Telur dan Tomat ',
+      menuPortion: '2 Porsi',
+      menuPrice: 'Rp22.000',
+      menuPreference: 'Protein Tinggi',
+      menuDuration: '18 min',
+      menuDescription:
+          'Jika Anda pecinta telur, maka salad ini sangat cocok untuk Anda. Telur adalah sumber protein yang sangat baik.',
+      menuIngredients: [
+        '4 tomat sedang dicincang',
+        '2 bawang bombai sedang dicincang',
+        '3 siung bawang putih',
+        ' 4 butir telur direbus dan dicincang',
+        ' 1 sendok teh (sdt) garam batu',
+        ' 1 sdt lada hitam',
+        ' 1 sdm minyak zaitun'
+      ],
+      menuTools: ['Mangkuk', 'Pisau', 'Sendok', 'Telenan'],
+      menuReview: '4,2',
+      menuProcedure: [
+        '1. Masukkan bawang bombai, tomat, dan bawang putih ke dalam mangkuk besar.',
+        '2. Setelah itu, tambahkan telur rebus, garam, lada hitam, dan minyak zaitun, lalu aduk rata.',
+        '3. Jika ingin lebih gurih, Anda bisa menaburkan beberapa biji wijen panggang.',
+        '4. Susun campuran alpukat dan telur di atas roti gandum.',
+        '5.  Sajikan.'
       ]),
 
   Resep(
