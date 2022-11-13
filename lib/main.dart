@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:meal_kit_flutter/model/Preferensi.dart';
+import 'package:meal_kit_flutter/model/Resep.dart';
 import 'package:meal_kit_flutter/services/Auth.dart';
 import 'package:meal_kit_flutter/views/Pembayaran_Berhasil_Page.dart';
 import 'package:meal_kit_flutter/views/Wrapper.dart';
@@ -54,7 +55,9 @@ class MyApp extends StatelessWidget {
           InformasiPengirimanPage.routeName: (context) =>
               InformasiPengirimanPage(),
           PreferensiPage.routeName: (context) => PreferensiPage(),
-          InformasiResepPage.routeName: (context) => InformasiResepPage(),
+          InformasiResepPage.routeName: (context) => InformasiResepPage(
+                resep: ModalRoute.of(context)?.settings.arguments as Resep,
+              ),
           DaftarResepPage.routeName: (context) => DaftarResepPage(
                 preferensi:
                     ModalRoute.of(context)?.settings.arguments as Preferensi,

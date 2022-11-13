@@ -93,6 +93,10 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
                       for (var i = 36; i < 42; i++) ...[
                         CardResep(resep: widget.daftarResep[i])
                       ]
+                    ] else ...[
+                      for (var i = 42; i < 48; i++) ...[
+                        CardResep(resep: widget.daftarResep[i])
+                      ]
                     ]
                   ],
                 ),

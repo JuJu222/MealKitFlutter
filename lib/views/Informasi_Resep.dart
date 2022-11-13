@@ -2,7 +2,9 @@ part of 'pages.dart';
 
 class InformasiResepPage extends StatefulWidget {
   static const routeName = "/InformasiResepPage";
-  const InformasiResepPage({super.key});
+
+  Resep? resep;
+  InformasiResepPage({super.key, required this.resep});
 
   @override
   State<InformasiResepPage> createState() => _InformasiResepPageState();
@@ -29,15 +31,14 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.8), BlendMode.dstATop),
-                  image: AssetImage('assets/images/detail_bg.png'),
+                  image: AssetImage('${widget.resep!.menuImage}'),
                 ))),
                 Align(
                   alignment: Alignment.topLeft,
                   child: Container(
                     decoration: BoxDecoration(
                       // border: Border.all(color: darkblue, width: 8),
-                      color: Colors.white,
-                      shape: BoxShape.circle,
+                      color: Colors.transparent,
                     ),
                     margin: EdgeInsets.only(top: 48, left: 24),
                     child: FloatingActionButton(
@@ -92,7 +93,8 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                           child: Container(
                                             // color: Colors.red,
                                             child: Container(
-                                                child: Text("Grilled Salmon",
+                                                child: Text(
+                                                    "${widget.resep!.menuName}",
                                                     style: TextStyle(
                                                       fontSize: 18,
                                                       fontWeight:
@@ -107,7 +109,8 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                               child: Container(
                                                   padding: EdgeInsets.only(
                                                       right: 24),
-                                                  child: Text("Rp40.000",
+                                                  child: Text(
+                                                      "${widget.resep!.menuPrice}",
                                                       style: TextStyle(
                                                         fontSize: 24,
                                                         fontWeight:
@@ -127,7 +130,7 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                       flex: 2,
                                       child: Container(
                                           child: Text(
-                                        "Daging dan Sayur",
+                                        "${widget.resep!.menuPreference}",
                                         textAlign: TextAlign.left,
                                         style: TextStyle(
                                             fontSize: 14,
@@ -140,7 +143,8 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                       flex: 2,
                                       child: Container(
                                           padding: EdgeInsets.only(right: 56),
-                                          child: Text("/2 Porsi",
+                                          child: Text(
+                                              "${widget.resep!.menuPortion}",
                                               // textAlign: TextAlign.right,
                                               style: TextStyle(
                                                 // color: Colors.grey,
@@ -163,7 +167,7 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                       width: double.infinity,
                                       alignment: Alignment.topLeft,
                                       child: Text(
-                                        "Di samping menjadi salah satu sumber protein yang berkualitas tinggi, ikan salmon juga kaya akan asam lemak omega-3. Asam lemak omega-3 sangat berguna bagi kesehatan jantung, otak, dan organ tubuh lainnya. Selain itu rasanya lezat dan mudah diolah.",
+                                        "${widget.resep!.menuDescription}",
                                         textAlign: TextAlign.justify,
                                         style: TextStyle(
                                           fontSize: 12,
@@ -192,65 +196,38 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                                 ))
                                           ]),
                                           Container(
-                                            width: double.infinity,
-                                            child: ListView(
-                                              shrinkWrap: true,
-                                              physics:
-                                                  NeverScrollableScrollPhysics(),
-                                              padding: EdgeInsets.only(
-                                                  top: 0, left: 24, bottom: 0),
-                                              children: [
-                                                SizedBox(height: 8),
-                                                Text(
-                                                    "${bullet} 4 potong (@ 200 g) fillet ikan salmon",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text("${bullet} 1 sdt garam",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 1 sdt merica hitam butiran, gerus kasar",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 2 sdm minyak zaitun",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text("${bullet} 2 sdm mentega",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 4 siung bawang putih, iris tipis",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 4 sdm air jeruk lemon",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                              ],
-                                            ),
-                                          )
+                                              width: double.infinity,
+                                              child: ListView.builder(
+                                                  shrinkWrap: true,
+                                                  physics:
+                                                      NeverScrollableScrollPhysics(),
+                                                  padding: EdgeInsets.only(
+                                                      top: 0,
+                                                      left: 20,
+                                                      bottom: 0),
+                                                  itemCount: widget.resep!
+                                                      .menuIngredients!.length,
+                                                  itemBuilder:
+                                                      ((context, index) {
+                                                    return Container(
+                                                      child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            SizedBox(height: 8),
+                                                            Text(
+                                                                "${bullet} ${widget.resep!.menuIngredients![index]}",
+                                                                style:
+                                                                    TextStyle(
+                                                                  // fontWeight: FontWeight.bold,
+                                                                  fontSize: 12,
+                                                                  fontFamily:
+                                                                      'Quicksand',
+                                                                ))
+                                                          ]),
+                                                    );
+                                                  })))
                                         ],
                                       )),
                                   SizedBox(
@@ -271,65 +248,38 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                                 ))
                                           ]),
                                           Container(
-                                            width: double.infinity,
-                                            child: ListView(
-                                              shrinkWrap: true,
-                                              physics:
-                                                  NeverScrollableScrollPhysics(),
-                                              padding: EdgeInsets.only(
-                                                  top: 0, left: 24, bottom: 0),
-                                              children: [
-                                                SizedBox(height: 8),
-                                                Text(
-                                                    "${bullet} 4 potong (@ 200 g) fillet ikan salmon",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text("${bullet} 1 sdt garam",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 1 sdt merica hitam butiran, gerus kasar",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 2 sdm minyak zaitun",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text("${bullet} 2 sdm mentega",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 4 siung bawang putih, iris tipis",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 4 sdm air jeruk lemon",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                              ],
-                                            ),
-                                          )
+                                              width: double.infinity,
+                                              child: ListView.builder(
+                                                  shrinkWrap: true,
+                                                  physics:
+                                                      NeverScrollableScrollPhysics(),
+                                                  padding: EdgeInsets.only(
+                                                      top: 0,
+                                                      left: 24,
+                                                      bottom: 0),
+                                                  itemCount: widget
+                                                      .resep!.menuTools!.length,
+                                                  itemBuilder:
+                                                      ((context, index) {
+                                                    return Container(
+                                                      child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            SizedBox(height: 8),
+                                                            Text(
+                                                                "${bullet} ${widget.resep!.menuTools![index]}",
+                                                                style:
+                                                                    TextStyle(
+                                                                  // fontWeight: FontWeight.bold,
+                                                                  fontSize: 12,
+                                                                  fontFamily:
+                                                                      'Quicksand',
+                                                                ))
+                                                          ]),
+                                                    );
+                                                  })))
                                         ],
                                       )),
                                   SizedBox(
@@ -351,7 +301,7 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                             child: Row(children: [
                                               Icon(Icons.star, color: yellow),
                                               Text(
-                                                "4.8",
+                                                "${widget.resep!.menuReview}",
                                                 style: TextStyle(
                                                     fontFamily: "Quicksand",
                                                     color: Colors.black45),
@@ -371,10 +321,9 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                             style: TextStyle(color: Colors.white),
                           ),
                           onPressed: (() {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TambahResepPage()));
+                            Navigator.pushNamed(
+                                context, TambahResepPage.routeName,
+                                arguments: widget.resep);
                           }),
                         ),
                       )

@@ -11,7 +11,8 @@ class CardResep extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, InformasiResepPage.routeName);
+        Navigator.pushNamed(context, InformasiResepPage.routeName,
+            arguments: resep);
       },
       child: Column(
         // mainAxisAlignment: Alignment.,
