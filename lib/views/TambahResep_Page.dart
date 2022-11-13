@@ -17,8 +17,9 @@ class _TambahResepPageState extends State<TambahResepPage> {
 
   String bullet = "\u2022 ";
 
-  DateFormat dateFormat = DateFormat("y MMMM d");
+  DateFormat dateFormat = DateFormat("E, d MMMM y");
   DateTime? _dateTime = DateTime.now();
+  DateTime initialDate = DateTime.now().add(const Duration(days: 1));
 
   bool selected_first = false;
   bool selected_second = false;
@@ -218,9 +219,10 @@ class _TambahResepPageState extends State<TambahResepPage> {
                           onTap: () async {
                             await showDatePicker(
                               context: context,
-                              initialDate: DateTime.now(),
-                              firstDate: DateTime.now(),
-                              lastDate: DateTime(DateTime.now().year + 1),
+                              initialDate: initialDate,
+                              firstDate: initialDate,
+                              lastDate: initialDate.add(
+                                  Duration(days: DateTime.now().weekday - 1)),
                             ).then((date) {
                               setState(() {
                                 _dateTime = date;
