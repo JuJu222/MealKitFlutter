@@ -13,23 +13,24 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Profil",
-              style: Theme.of(context)!
-                  .textTheme
-                  .headline6!
-                  .copyWith(color: Colors.black, fontWeight: FontWeight.w500)),
-          iconTheme: IconThemeData(color: primaryColor),
-          backgroundColor: Colors.transparent,
-        ),
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Flexible(
-                    flex: 7,
+      appBar: AppBar(
+        title: Text("Profil",
+            style: Theme.of(context)!
+                .textTheme
+                .headline6!
+                .copyWith(color: Colors.black, fontWeight: FontWeight.w500)),
+        iconTheme: IconThemeData(color: primaryColor),
+        backgroundColor: Colors.transparent,
+      ),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                  flex: 7,
+                  child: SingleChildScrollView(
                     child: Container(
                       child: Column(children: [
                         Container(
@@ -77,7 +78,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 child: Column(
                                   children: [
                                     Text(
-                                      "Kenny Jinhiro",
+                                      listProfile[0].name.toString(),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           color: Color(0xff1C9FE2),
@@ -85,7 +86,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      "kenny@gmail.com",
+                                      listProfile[0].email.toString(),
                                       textAlign: TextAlign.center,
                                     )
                                   ],
@@ -252,60 +253,61 @@ class _ProfilePageState extends State<ProfilePage> {
                           padding: const EdgeInsets.all(16),
                         ),
                       ]),
-                    )),
-                Expanded(
-                    child: Container(
-                  // color: Colors.green,
-                  padding: const EdgeInsets.all(6),
-                  margin: const EdgeInsets.only(bottom: 6, left: 18, right: 18),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Ink(
-                          decoration: BoxDecoration(
-                              color: Color(0xFFA80000),
-                              borderRadius: BorderRadius.circular(8),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey,
-                                    spreadRadius: 0.1,
-                                    blurRadius: 0.1,
-                                    offset: Offset(0, 0.8))
-                              ]),
-                          child: InkWell(
-                            child: Container(
-                              padding: const EdgeInsets.all(5),
-                              height: 54.08,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text("Keluar",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium!
-                                          .copyWith(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w700))
-                                ],
-                              ),
-                            ),
-                            onTap: () async {
-                              // Navigator.pushReplacement(
-                              //     context,
-                              //     MaterialPageRoute<dynamic>(
-                              //         builder: (context) => LoginPage()));
-                              setState(() {
-                                // isLoading = true;
-                              });
-                              await Future.delayed(const Duration(seconds: 2));
-                              await AuthService().signOutApp();
-                              await AuthService().googleSignOutApp();
-                            },
-                          ),
+                    ),
+                  )),
+              Expanded(
+                  child: Container(
+                // color: Colors.green,
+                padding: const EdgeInsets.all(6),
+                margin: const EdgeInsets.only(bottom: 6, left: 18, right: 18),
+                child:
+                    Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+                  Ink(
+                    decoration: BoxDecoration(
+                        color: Color(0xFFA80000),
+                        borderRadius: BorderRadius.circular(8),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              spreadRadius: 0.1,
+                              blurRadius: 0.1,
+                              offset: Offset(0, 0.8))
+                        ]),
+                    child: InkWell(
+                      child: Container(
+                        padding: const EdgeInsets.all(5),
+                        height: 54.08,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Keluar",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w700))
+                          ],
                         ),
-                      ]),
-                ))
-              ]),
-        ));
+                      ),
+                      onTap: () async {
+                        // Navigator.pushReplacement(
+                        //     context,
+                        //     MaterialPageRoute<dynamic>(
+                        //         builder: (context) => LoginPage()));
+                        setState(() {
+                          // isLoading = true;
+                        });
+                        await Future.delayed(const Duration(seconds: 2));
+                        await AuthService().signOutApp();
+                        await AuthService().googleSignOutApp();
+                      },
+                    ),
+                  ),
+                ]),
+              ))
+            ]),
+      ),
+    );
   }
 }

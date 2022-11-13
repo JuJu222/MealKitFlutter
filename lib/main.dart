@@ -61,7 +61,10 @@ class MyApp extends StatelessWidget {
               ),
           TambahResepPage.routeName: (context) => TambahResepPage(),
           PembayaranBerhasil.routeName: (context) => PembayaranBerhasil(),
-          StepMasak.routeName: (context) => StepMasak()
+          StepMasak.routeName: (context) => StepMasak(),
+          ProfilePage.routeName: (context) => ProfilePage(),
+          UbahProfilPage.routeName: (context) => UbahProfilPage(),
+          UbahPreferensiPage.routeName: (context) => UbahPreferensiPage(),
         },
       ),
     );
