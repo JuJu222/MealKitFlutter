@@ -18,9 +18,7 @@ void main() async {
   await Firebase.initializeApp();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-      statusBarIconBrightness: Brightness.dark
-    ),
+        statusBarColor: Colors.white, statusBarIconBrightness: Brightness.dark),
   );
   runApp(const MyApp());
 }
@@ -40,16 +38,21 @@ class MyApp extends StatelessWidget {
         title: 'MealKit',
         theme: ThemeData(
             //Pergantian Warna dan Text pada bar
+            scaffoldBackgroundColor: const Color(0xFFFFFFFF),
             colorScheme: Theme.of(context).colorScheme.copyWith(
                 primary: primaryColor,
                 onPrimary: secondaryColor,
                 secondary: secondaryColor),
-            appBarTheme: AppBarTheme(elevation: 0),
+            appBarTheme: const AppBarTheme(
+                elevation: 0,
+                systemOverlayStyle: SystemUiOverlayStyle(
+                    statusBarColor: Colors.white,
+                    statusBarIconBrightness: Brightness.dark)),
             textTheme: myTextTheme),
         initialRoute: Wrapper.routeName,
         routes: {
-          ResetPasswordPage.routeName: (context) => ResetPasswordPage(),
-          BerandaPage.routeName: (context) => BerandaPage(),
+          ResetPasswordPage.routeName: (context) => const ResetPasswordPage(),
+          BerandaPage.routeName: (context) => const BerandaPage(),
           KeteranganPesananPage.routeName: (context) => KeteranganPesananPage(),
           BerhasilPembayaranPage.routeName: (context) =>
               BerhasilPembayaranPage(),
