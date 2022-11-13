@@ -31,6 +31,10 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: primaryColor),
+        backgroundColor: Colors.transparent,
+      ),
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
@@ -43,35 +47,31 @@ class _RegisterPageState extends State<RegisterPage> {
                 Flexible(
                   child: Container(
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Container(
                             child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
                               children: [
-                                Text(
-                                  "Daftar ke",
-                                  style: Theme.of(context)!
-                                      .textTheme
-                                      .headline5!
-                                      .copyWith(fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  "Kukoki",
-                                  style: Theme.of(context)!
-                                      .textTheme
-                                      .headline5!
-                                      .copyWith(fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
+                                Row(
+                                  children: [
+                                    Text("Daftar ke",
+                                        style: TextStyle(
+                                            fontFamily: "Quicksand",
+                                            fontSize: 27,
+                                            fontWeight: FontWeight.bold))
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Kukoki",
+                                      style: TextStyle(
+                                          fontFamily: "Quicksand",
+                                          fontSize: 27,
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                ),
                             SizedBox(
                               height: 20,
                             ),
@@ -100,13 +100,11 @@ class _RegisterPageState extends State<RegisterPage> {
                                     )
                                   ]),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 35,
                             ),
                             Container(
                                 // color: Colors.amber,
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
                                 child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -220,6 +218,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                     ])),
                           ],
                         )),
+                        const SizedBox(
+                          height: 80,
+                        ),
                         Ink(
                           decoration: BoxDecoration(
                               color: primaryColor,
@@ -239,11 +240,12 @@ class _RegisterPageState extends State<RegisterPage> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("Daftar",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyLarge!
-                                          .copyWith(color: Colors.white))
+                                  Text("Selanjutnya",
+                                      style: TextStyle(
+                                          fontFamily: "Quicksand",
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold))
                                 ],
                               ),
                             ),

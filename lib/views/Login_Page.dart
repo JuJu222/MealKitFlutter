@@ -2,6 +2,7 @@ part of 'pages.dart';
 
 class LoginPage extends StatefulWidget {
   static const routeName = "/LoginPage";
+
   const LoginPage({Key? key}) : super(key: key);
 
   @override
@@ -80,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                                       style: TextStyle(
                                           fontFamily: "Quicksand",
                                           fontSize: 27,
-                                          fontWeight: FontWeight.w700))
+                                          fontWeight: FontWeight.bold))
                                 ],
                               ),
                               Row(
@@ -90,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                                     style: TextStyle(
                                         fontFamily: "Quicksand",
                                         fontSize: 27,
-                                        fontWeight: FontWeight.w700),
+                                        fontWeight: FontWeight.bold),
                                   )
                                 ],
                               ),
@@ -318,33 +319,36 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                 ],
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 50,
                               ),
                               InkWell(
                                 child: Container(
                                   padding: const EdgeInsets.all(5),
                                   height: 54.08,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text("Login",
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodyMedium!
-                                              .copyWith(color: Colors.white))
-                                    ],
-                                  ),
                                   decoration: BoxDecoration(
                                       color: primaryColor,
                                       borderRadius: BorderRadius.circular(8),
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                             color: Colors.grey,
                                             spreadRadius: 0.1,
                                             blurRadius: 0.1,
                                             offset: Offset(0, 0.8))
                                       ]),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Text(
+                                        "Masuk",
+                                        style: TextStyle(
+                                            fontFamily: "Quicksand",
+                                            fontSize: 14,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold)
+                                      )
+                                    ],
+                                  ),
                                 ),
                                 onTap: () async {
                                   if (_formKey.currentState!.validate()) {

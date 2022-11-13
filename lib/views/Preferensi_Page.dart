@@ -191,7 +191,11 @@ class _PreferensiPageState extends State<PreferensiPage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushReplacementNamed(context, LoginPage.routeName);
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+                    builder: (context) {
+                      return const HomePage();
+                    },
+                  ), (route) => false);
                 },
               ),
             ),
