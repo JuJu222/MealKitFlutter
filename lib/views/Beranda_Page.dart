@@ -40,7 +40,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                 .headline5!
                                 .copyWith(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 16,
+                                    fontSize: 14,
                                     fontFamily: "Quicksand",
                                     color: Color(0xFFA8A8A8))),
                       ],
