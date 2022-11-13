@@ -220,7 +220,9 @@ class _TambahResepPageState extends State<TambahResepPage> {
                               context: context,
                               initialDate: DateTime.now(),
                               firstDate: DateTime.now(),
-                              lastDate: DateTime(DateTime.now().year + 1),
+                              lastDate: DateTime.now().add(Duration(
+                                  days: DateTime.daysPerWeek -
+                                      DateTime.now().weekday)),
                             ).then((date) {
                               setState(() {
                                 _dateTime = date;
