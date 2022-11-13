@@ -117,11 +117,11 @@ class _CheckoutTileWithIconState extends State<CheckoutTileWithIcon> {
             borderRadius: BorderRadius.circular(10.0),
             child: Image.asset('${widget.pesan.images}', width: 79, height: 79),
           ),
-          title: Row(
+          title: Column(
             children: [
-              Row(
+              const SizedBox(width: 5.0),
+              Wrap(
                 children: [
-                  const SizedBox(width: 5.0),
                   Text(widget.pesan.menuName!,
                       style: Theme.of(context).textTheme.headline5!.copyWith(
                           fontWeight: FontWeight.bold,
