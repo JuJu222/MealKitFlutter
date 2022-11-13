@@ -17,7 +17,7 @@ class _TambahResepPageState extends State<TambahResepPage> {
 
   String bullet = "\u2022 ";
 
-  DateFormat dateFormat = DateFormat("y MMMM d");
+  DateFormat dateFormat = DateFormat("E, d MMMM y");
   DateTime? _dateTime = DateTime.now();
 
   bool selected_first = false;
