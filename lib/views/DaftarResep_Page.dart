@@ -79,8 +79,7 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
                                   ),
                                   image: DecorationImage(
                                     fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        'assets/images/detail_bg.png'),
+                                    image: AssetImage("${url.menuImage}"),
                                   )),
                             ),
                           ),
@@ -94,7 +93,7 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("Grilled Salmon",
+                                  Text("${url.menuName}",
                                       style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,
@@ -131,7 +130,8 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
                                 height: 12,
                                 child: Container(
                                   child: Center(
-                                    child: Text("Rp40.000/2 porsi",
+                                    child: Text(
+                                        "${url.menuPrice} /${url.menuPortion}",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           color: Colors.white,
