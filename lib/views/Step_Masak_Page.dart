@@ -358,20 +358,6 @@ class _StepMasakState extends State<StepMasak> {
                               ))),
                             ]),
                           )),
-                      Flexible(
-                        child: ElevatedButton(
-                          child: Text(
-                            "Pesan",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          onPressed: (() {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TambahResepPage()));
-                          }),
-                        ),
-                      )
                     ]),
               ))
 

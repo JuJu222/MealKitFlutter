@@ -10,10 +10,12 @@ class PesananPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "Pesanan",
-          style: Theme.of(context)!
-              .textTheme
-              .headline6!
-              .copyWith(fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontFamily: 'Quicksand',
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              color: Colors.black
+          ),
         ),
         backgroundColor: Colors.transparent,
       ),

@@ -20,7 +20,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     return Scaffold(
         body: SafeArea(
       child: Container(
-          padding: const EdgeInsets.all(21),
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
           width: double.infinity,
           height: double.infinity,
           child: Column(

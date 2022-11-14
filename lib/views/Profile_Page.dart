@@ -15,10 +15,12 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Profil",
-            style: Theme.of(context)!
-                .textTheme
-                .headline6!
-                .copyWith(color: Colors.black, fontWeight: FontWeight.w500)),
+            style: TextStyle(
+                fontFamily: 'Quicksand',
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: Colors.black
+            )),
         iconTheme: IconThemeData(color: primaryColor),
         backgroundColor: Colors.transparent,
       ),

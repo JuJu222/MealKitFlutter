@@ -11,10 +11,12 @@ class CardPesananParent extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(
           "Sedang Berlangsung",
-          style: Theme.of(context)!
-              .textTheme
-              .headline6!
-              .copyWith(color: primaryColor, fontWeight: FontWeight.w700),
+          style: TextStyle(
+              fontFamily: 'Quicksand',
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              color: Color(0xFF1C9FE2)
+          ),
         ),
         Divider(
           thickness: 2,

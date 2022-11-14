@@ -10,12 +10,12 @@ class RencanaPage extends StatefulWidget {
 
 class _RencanaPageState extends State<RencanaPage> {
   int? currentSelectedIndex = 3;
+  List<Pesan> tempList = [];
   double totalPricing = 0;
   late int isWeek = 3;
 
   List<int> noWeek = [1, 2, 3, 4, 5];
-  List<String> week = ["Week 1","Week 2", "Week 3", "Week 4", "Week 5"];
-
+  List<String> week = ["1-6 November 2022","7-12 November 2022", "13-18 November 2022", "19-24 November 2022", "25-30 November 2022"];
 
   List<CardRencana> cardRencanaWeek1 = [
     CardRencana(
@@ -93,6 +93,20 @@ class _RencanaPageState extends State<RencanaPage> {
   ];
 
   @override
+  initState() {
+    super.initState();
+    // Add listeners to this class
+    for (var item in listKeranjang) {
+      if (item.date!.substring(0, 2) ==
+          checkWeek()[currentSelectedIndex!].date) {
+        tempList.add(listKeranjang.firstWhere((item) =>
+            (item.date!.substring(0, 2) ==
+                checkWeek()[currentSelectedIndex!].date)));
+      }
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -105,7 +119,7 @@ class _RencanaPageState extends State<RencanaPage> {
                   "${checkWeek()[0].date}-${checkWeek()[checkWeek().length - 1].date} November 2022",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                       fontWeight: FontWeight.bold,
-                      fontSize: 22,
+                      fontSize: 18,
                       fontFamily: "Quicksand"),
                 ),
                 const SizedBox(width: 5),
@@ -113,10 +127,17 @@ class _RencanaPageState extends State<RencanaPage> {
                   onSelected: (value) {
                     setState(() {
                       isWeek = value;
+                      tempList = [];
+                      for (var item in listKeranjang) {
+                        if (item.date!.substring(0, 2) ==
+                            checkWeek()[currentSelectedIndex!].date) {
+                          tempList.add(item);
+                        }
+                      }
                     });
                   },
                   child: const Icon(Icons.keyboard_arrow_down,
-                      size: 32, color: Colors.black),
+                      size: 24, color: Colors.black),
                   itemBuilder: (context) {
                     return week
                         .mapIndexed((index, item) => PopupMenuItem(
@@ -133,7 +154,7 @@ class _RencanaPageState extends State<RencanaPage> {
         body: SlidingUpPanel(
           key: UniqueKey(),
           maxHeight: 100,
-          boxShadow: const [BoxShadow(blurRadius: 10, color: Color(0xF000000))],
+          boxShadow: const [BoxShadow(blurRadius: 10, color: Color(0x0f000000))],
           borderRadius: const BorderRadius.horizontal(
               left: Radius.circular(22), right: Radius.circular(22)),
           panel: Padding(
@@ -153,7 +174,7 @@ class _RencanaPageState extends State<RencanaPage> {
                     Text(
                         (listKeranjang.isEmpty)
                             ? "0"
-                            : "Rp${totalPrice(listKeranjang).toString()}00",
+                            : "Rp${totalPrice(tempList).toString()}00",
                         style: Theme.of(context).textTheme.headline5!.copyWith(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -182,10 +203,17 @@ class _RencanaPageState extends State<RencanaPage> {
                                   color: Colors.white,
                                   fontFamily: "Quicksand")),
                       onPressed: () {
-                        if (listKeranjang.isEmpty) {
-                        } else {
-                          //navigate to checkout
-                          Navigator.pushNamed(context, CheckoutPage.routeName);
+                        if (listKeranjang.isNotEmpty) {
+                          for (var item in listKeranjang) {
+                            if (item.date!.substring(0, 2) ==
+                                checkWeek()[currentSelectedIndex!].date) {
+                              Navigator.pushNamed(
+                                  context, CheckoutPage.routeName,
+                                  arguments: {
+                                    "currentList": tempList,
+                                  });
+                            }
+                          }
                         }
                       },
                     ),
@@ -213,6 +241,13 @@ class _RencanaPageState extends State<RencanaPage> {
                         onSelect: (() {
                           setState(() {
                             currentSelectedIndex = index;
+                            tempList = [];
+                            for (var itm in listKeranjang) {
+                              if (itm.date!.substring(0, 2) ==
+                                  checkWeek()[currentSelectedIndex!].date) {
+                                tempList.add(itm);
+                              }
+                            }
                           });
                         }));
                   }).toList()),
@@ -249,10 +284,6 @@ class _RencanaPageState extends State<RencanaPage> {
                               : Column(
                                   children: listPesan.mapIndexed(
                                   (index, item) {
-                                    print(item.date!.substring(0, 2));
-                                    print(
-                                        checkWeek()[currentSelectedIndex!]
-                                            .date);
                                     if (item.date!.substring(0, 2) ==
                                         checkWeek()[currentSelectedIndex!]
                                             .date) {
@@ -290,10 +321,19 @@ class _RencanaPageState extends State<RencanaPage> {
                                     (index, item) {
                                       //item yang datenya sama
                                       //filter cuman date yang sama
-                                      return CheckoutTileWithIcon(
-                                        onDelete: () => removeItem(index),
-                                        pesan: listKeranjang[index],
-                                      );
+                                      if (item.date!.substring(0, 2) ==
+                                          checkWeek()[currentSelectedIndex!]
+                                              .date) {
+                                        // setState(() {
+                                        //   tempList.add(item);
+                                        // });
+                                        return CheckoutTileWithIcon(
+                                          onDelete: () => removeItem(index),
+                                          pesan: listKeranjang[index],
+                                        );
+                                      } else {
+                                        return Container();
+                                      }
                                     },
                                   ).toList(),
                                 ))
@@ -313,9 +353,9 @@ class _RencanaPageState extends State<RencanaPage> {
     });
   }
 
-  double totalPrice(List<Pesan> listKeranjang) {
+  double totalPrice(List<Pesan> tempList) {
     totalPricing = 0;
-    listKeranjang.forEach((e) {
+    tempList.forEach((e) {
       setState(() {
         totalPricing += double.parse(e.menuPrice!);
       });

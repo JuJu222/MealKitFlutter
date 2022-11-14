@@ -9,6 +9,8 @@ class KeteranganPesananPage extends StatefulWidget {
 }
 
 class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
+  double totalPricingFull = 0;
+  double totalPricing = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,7 +131,7 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                                                     fontSize: 18,
                                                     fontFamily: "Quicksand")),
                                         SizedBox(width: 2.0),
-                                        Text("110.000",
+                                        Text("${(totalPrice(totalPriceFood,20.000).toString())}00",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .headline5!
@@ -290,14 +292,13 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                             ],
                           ),
                           SizedBox(height: 5),
-                          // ...listPesan.mapIndexed(
-                          //   (index, e) {
-                          //     return CheckoutTile(
-                          //       indexOfItem: index,
-                          //       pesan: listPesan[index],
-                          //     );
-                          //   },
-                          // )
+                          ...listPesan.mapIndexed(
+                            (index, e) {
+                              return CheckoutTile(
+                                pesan: listPesan[index],
+                              );
+                            },
+                          )
                         ],
                       )),
                       SizedBox(height: 15.0),
@@ -342,7 +343,7 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                                                     color: Colors.black,
                                                     fontSize: 14,
                                                     fontFamily: "Quicksand")),
-                                        Text("Rp200.000",
+                                        Text("Rp${totalPriceFood(listKeranjang).toString()}00",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .headline5!
@@ -395,7 +396,7 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                                                     color: Color(0xFF1C9FE2),
                                                     fontSize: 16,
                                                     fontFamily: "Quicksand")),
-                                        Text("Rp220.000",
+                                        Text("Rp${(totalPrice(totalPriceFood, 20.000).toString())}00",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .headline5!
@@ -423,5 +424,21 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
         ),
       ),
     );
+  }
+
+  double totalPriceFood(List<Pesan> listKeranjang) {
+    totalPricing = 0;
+    listKeranjang.forEach((e) {
+      setState(() {
+        totalPricing += double.parse(e.menuPrice!);
+      });
+    });
+    return totalPricing;
+  }
+
+  double totalPrice(Function totalPriceFood, double ongkosKirim) {
+    totalPricingFull = 0;
+    totalPricingFull = totalPriceFood(listKeranjang) + ongkosKirim;
+    return totalPricingFull;
   }
 }

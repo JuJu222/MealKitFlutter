@@ -45,16 +45,18 @@ class _InformasiPengirimanPageState extends State<InformasiPengirimanPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Informasi Pengiriman",
-            style: Theme.of(context)!
-                .textTheme
-                .headline6!
-                .copyWith(color: Colors.black, fontWeight: FontWeight.w500)),
+            style: TextStyle(
+              fontFamily: 'Quicksand',
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              color: Colors.black
+            )),
         centerTitle: true,
         iconTheme: IconThemeData(color: primaryColor),
         backgroundColor: Colors.transparent,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(21),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
         child: Container(
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,

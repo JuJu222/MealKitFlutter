@@ -68,7 +68,7 @@ class _UbahInformasiPengirimanPageState
         backgroundColor: Colors.transparent,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(21),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
         child: Container(
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -38,7 +38,7 @@ class _RegisterPageState extends State<RegisterPage> {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
-            padding: const EdgeInsets.all(21),
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
             width: double.infinity,
             height: double.infinity,
             child: Column(
@@ -158,6 +158,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                         style: Theme.of(context)!
                                             .textTheme
                                             .subtitle2,
+                                        keyboardType: TextInputType.emailAddress,
                                         autofocus: false,
                                         decoration: InputDecoration(
                                           border: OutlineInputBorder(
@@ -186,7 +187,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                         ),
                                       ),
                                       TextFormField(
-                                        obscureText: _passwordVisible,
+                                        obscureText: !_passwordVisible,
                                         autofocus: false,
                                         controller: controller,
                                         style: Theme.of(context)!
@@ -203,8 +204,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                             suffixIcon: IconButton(
                                               icon: Icon(
                                                 _passwordVisible
-                                                    ? Icons.visibility
-                                                    : Icons.visibility_off,
+                                                    ? Icons.visibility_off
+                                                    : Icons.visibility,
                                                 color: Colors.black,
                                               ),
                                               onPressed: () {
