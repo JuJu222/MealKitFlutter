@@ -78,7 +78,7 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
-                          flex: 8,
+                          flex: 10,
                           child: Container(
                             child: Column(children: [
                               Container(
@@ -335,16 +335,26 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                             ]),
                           )),
                       Flexible(
-                        child: ElevatedButton(
-                          child: Text(
-                            "Pesan",
-                            style: TextStyle(color: Colors.white),
+                        flex: 2,
+                        child: SizedBox(
+                          height: 50,
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                                // minimum: Size.fromHeight(30.0),
+                                shape: MaterialStateProperty.all(
+                                    RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(8))))),
+                            child: Text(
+                              "Pesan",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            onPressed: (() {
+                              Navigator.pushNamed(
+                                  context, TambahResepPage.routeName,
+                                  arguments: widget.resep);
+                            }),
                           ),
-                          onPressed: (() {
-                            Navigator.pushNamed(
-                                context, TambahResepPage.routeName,
-                                arguments: widget.resep);
-                          }),
                         ),
                       )
                     ]),

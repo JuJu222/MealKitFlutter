@@ -55,12 +55,10 @@ class _TambahResepPageState extends State<TambahResepPage> {
                   child: Container(
                     decoration: BoxDecoration(
                       // border: Border.all(color: darkblue, width: 8),
-                      color: Colors.white,
-                      shape: BoxShape.circle,
+                      color: Colors.transparent,
                     ),
-                    margin: EdgeInsets.only(top: 48, left: 24),
-                    child: FloatingActionButton(
-                      heroTag: "btn1",
+                    margin: EdgeInsets.only(top: 40, left: 10),
+                    child: FloatingActionButton.small(
                       backgroundColor: Colors.white,
                       onPressed: () {
                         setState(() {
@@ -336,14 +334,14 @@ class _TambahResepPageState extends State<TambahResepPage> {
                         ),
                       ),
                     ),
-                    Flexible(
-                      flex: 1,
+                    Container(
+                      // flex: 1,
                       child: Align(
                         alignment: Alignment.center,
                         child: Container(
                           margin: EdgeInsets.only(top: 18, left: 24, right: 24),
                           width: double.infinity,
-                          height: double.infinity,
+                          height: 50,
                           // decoration: BoxDecoration(
                           // border: Border.all(color: Colors.transparent),
                           // borderRadius: BorderRadius.all(Radius.circular(8)),
@@ -352,6 +350,8 @@ class _TambahResepPageState extends State<TambahResepPage> {
                           // ),
                           // margin: EdgeInsets.all(4),
                           child: FloatingActionButton.extended(
+                            // height: 50,
+                            elevation: 2,
                             shape: RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(8))),
