@@ -3,6 +3,7 @@ part of 'pages.dart';
 class ProfilePage extends StatefulWidget {
   static const pageName = "Profil";
   static final routeName = "/ProfilePage";
+
   const ProfilePage({super.key});
 
   @override
@@ -19,8 +20,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 fontFamily: 'Quicksand',
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
-                color: Colors.black
-            )),
+                color: Colors.black)),
         iconTheme: IconThemeData(color: primaryColor),
         backgroundColor: Colors.transparent,
       ),
@@ -105,8 +105,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                             height: 25,
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(
-                                                3), //apply padding to all four sides
+                                            padding: EdgeInsets.all(3),
+                                            //apply padding to all four sides
                                             child: Text(
                                               "Pesanan\nSelesai",
                                               textAlign: TextAlign.center,
@@ -115,8 +115,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                             ),
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(
-                                                5), //apply padding to all four sides
+                                            padding: EdgeInsets.all(5),
+                                            //apply padding to all four sides
                                             child: Text(
                                               "50",
                                               style: TextStyle(
@@ -134,8 +134,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                             height: 25,
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(
-                                                3), //apply padding to all four sides
+                                            padding: EdgeInsets.all(3),
+                                            //apply padding to all four sides
                                             child: Text(
                                               "Streak\n",
                                               textAlign: TextAlign.center,
@@ -144,8 +144,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                             ),
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(
-                                                5), //apply padding to all four sides
+                                            padding: EdgeInsets.all(5),
+                                            //apply padding to all four sides
                                             child: Text(
                                               "4 minggu",
                                               style: TextStyle(
@@ -163,8 +163,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                             height: 25,
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(
-                                                3), //apply padding to all four sides
+                                            padding: EdgeInsets.all(3),
+                                            //apply padding to all four sides
                                             child: Text(
                                               "Pengiriman\nSelanjutnya",
                                               textAlign: TextAlign.center,
@@ -173,8 +173,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                             ),
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(
-                                                5), //apply padding to all four sides
+                                            padding: EdgeInsets.all(5),
+                                            //apply padding to all four sides
                                             child: Text(
                                               "3 Okt",
                                               style: TextStyle(
@@ -197,7 +197,9 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                   Text("Informasi Pengiriman",
                                       style: TextStyle(
-                                        fontSize: 16,
+                                        fontFamily: 'Quicksand',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13,
                                       )),
                                   Spacer(),
                                   ElevatedButton(
@@ -212,7 +214,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                         width: 50,
                                         child: Text("Ubah",
                                             style:
-                                                TextStyle(color: Colors.white),
+                                                TextStyle(
+                                                  fontSize: 12,
+                                                  fontFamily: 'Quicksand',
+                                                  fontWeight: FontWeight.bold,
+                                                    color: Colors.white
+                                                ),
                                             textAlign: TextAlign.center),
                                       ))
                                 ],
@@ -228,7 +235,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                     width: 10,
                                   ),
                                   Text("Preferensi Saya",
-                                      style: TextStyle(fontSize: 16)),
+                                      style: TextStyle(
+                                        fontFamily: 'Quicksand',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13,
+                                      )),
                                   Spacer(),
                                   ElevatedButton(
                                       onPressed: () {
@@ -242,7 +253,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                         width: 50,
                                         child: Text("Ubah",
                                             style:
-                                                TextStyle(color: Colors.white),
+                                            TextStyle(
+                                                fontSize: 12,
+                                                fontFamily: 'Quicksand',
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white
+                                            ),
                                             textAlign: TextAlign.center),
                                       ))
                                 ],
@@ -283,12 +299,12 @@ class _ProfilePageState extends State<ProfilePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text("Keluar",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w700))
+                                style:                                                 TextStyle(
+                                    fontSize: 14,
+                                    fontFamily: 'Quicksand',
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white
+                                ))
                           ],
                         ),
                       ),
