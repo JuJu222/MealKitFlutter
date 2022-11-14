@@ -33,7 +33,7 @@ class Resep {
 List<Resep> listResep = [
   Resep(
       menuId: 0,
-      menuImage: 'assets/images/foods/imagefood1.png',
+      menuImage: 'assets/images/foods/resep/salmon.png',
       menuName: 'Grilled Salmon',
       menuPortion: '2 Porsi',
       menuPrice: 'Rp40.000',
