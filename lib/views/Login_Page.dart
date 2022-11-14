@@ -149,6 +149,7 @@ class _LoginPageState extends State<LoginPage> {
                                           ),
                                         ),
                                         TextFormField(
+                                          keyboardType: TextInputType.emailAddress,
                                           controller: controllerEmail,
                                           style: Theme.of(context)!
                                               .textTheme
@@ -181,7 +182,8 @@ class _LoginPageState extends State<LoginPage> {
                                           ),
                                         ),
                                         TextFormField(
-                                          obscureText: _passwordVisible,
+                                          keyboardType: TextInputType.visiblePassword,
+                                          obscureText: !_passwordVisible,
                                           autofocus: false,
                                           controller: controllerPassword,
                                           style: Theme.of(context)!
@@ -198,8 +200,8 @@ class _LoginPageState extends State<LoginPage> {
                                               suffixIcon: IconButton(
                                                 icon: Icon(
                                                   _passwordVisible
-                                                      ? Icons.visibility
-                                                      : Icons.visibility_off,
+                                                      ? Icons.visibility_off
+                                                      : Icons.visibility,
                                                   color: Colors.black,
                                                 ),
                                                 onPressed: () {
