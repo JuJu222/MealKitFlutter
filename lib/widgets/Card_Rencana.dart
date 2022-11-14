@@ -6,6 +6,7 @@ class CardRencana extends StatefulWidget {
   VoidCallback onSelect;
   final String day;
   final String date;
+
   CardRencana({
     super.key,
     required this.index,
@@ -40,24 +41,28 @@ class _CardRencanaState extends State<CardRencana> {
               child: Column(children: [
                 Text(widget.day,
                     style: (widget.isSelected)
-                        ? Theme.of(context).textTheme.headline5!.copyWith(
-                            fontWeight: FontWeight.w400,
+                        ? TextStyle(
                             fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Quicksand',
                             color: Colors.white)
-                        : Theme.of(context).textTheme.headline5!.copyWith(
-                            fontWeight: FontWeight.w400,
+                        : TextStyle(
                             fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Quicksand',
                             color: Color(0xF6A6A6A).withOpacity(1.0))),
                 SizedBox(height: 3.0),
                 Text(widget.date,
                     style: (widget.isSelected)
-                        ? Theme.of(context).textTheme.headline5!.copyWith(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16,
+                        ? TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            fontFamily: 'Quicksand',
                             color: Colors.white)
-                        : Theme.of(context).textTheme.headline5!.copyWith(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16,
+                        : TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            fontFamily: 'Quicksand',
                             color: Color(0xF6A6A6A).withOpacity(1.0))),
               ]),
             ),

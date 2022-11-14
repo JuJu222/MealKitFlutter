@@ -268,8 +268,8 @@ class _RencanaPageState extends State<RencanaPage> {
                                       .textTheme
                                       .headline5!
                                       .copyWith(
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
                                           fontFamily: "Quicksand")),
                             ],
                           )),
@@ -305,7 +305,7 @@ class _RencanaPageState extends State<RencanaPage> {
                                   .headline5!
                                   .copyWith(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 22,
+                                      fontSize: 18,
                                       fontFamily: "Quicksand")),
                         ],
                       ),
