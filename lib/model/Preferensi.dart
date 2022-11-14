@@ -12,7 +12,7 @@ List<Preferensi> listPreferensi = [
   Preferensi(
       nama: "Daging & Sayur",
       color: Color(0XFFFCEAB2),
-      images: "assets/images/daging&sayur.png"),
+      images: "assets/images/dagingsayur.png"),
   Preferensi(
       nama: "Sayur",
       color: Color(0XFFF8D1B7),
