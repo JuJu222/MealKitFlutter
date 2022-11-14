@@ -14,9 +14,8 @@ class _RencanaPageState extends State<RencanaPage> {
   late int isWeek = 3;
 
   List<int> noWeek = [1, 2, 3, 4, 5];
-  List<String> week = ["Week 1","Week 2", "Week 3", "Week 4", "Week 5"];
-
-
+  List<String> week = ["1-6 November 2022","7-12 November 2022", "13-18 November 2022", "19-24 November 2022", "25-30 November 2022"];
+  
   List<CardRencana> cardRencanaWeek1 = [
     CardRencana(
         date: "1", day: "Sel", isSelected: false, onSelect: () {}, index: 0),
