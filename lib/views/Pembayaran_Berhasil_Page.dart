@@ -138,7 +138,18 @@ class PembayaranBerhasil extends StatelessWidget {
                                     fontSize: 14),
                           )
                         ]),
-                  )
+                  ),
+                  SizedBox(height:15.0),
+                  ElevatedButton(
+                    style:
+                        ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)) , backgroundColor: primaryColor, padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10.0)),
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(context, HomePage.routeName, (route) => false);
+                    },
+                    child: Text("Ok", style: Theme.of(context)!.textTheme.headline6!.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18)))
                 ]),
               )
             ]),

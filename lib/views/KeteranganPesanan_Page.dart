@@ -9,10 +9,12 @@ class KeteranganPesananPage extends StatefulWidget {
 }
 
 class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
-  double totalPricingFull = 0;
   double totalPricing = 0;
+  List<Pesan> pesan = [];
   @override
   Widget build(BuildContext context) {
+    Map data = ModalRoute.of(context)!.settings.arguments as Map;
+    pesan = data["pesan"];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -131,7 +133,8 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                                                     fontSize: 18,
                                                     fontFamily: "Quicksand")),
                                         SizedBox(width: 2.0),
-                                        Text("${(totalPrice(totalPriceFood,20.000).toString())}00",
+                                        Text(
+                                            data["totalPembayaran"].toString(),
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .headline5!
@@ -147,7 +150,7 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                             ),
                             Column(
                               children: [
-                                Text("Senin, 3 Oktober 2022",
+                                Text("Senin, ${data["waktuTransaksi"]}",
                                     style: Theme.of(context)
                                         .textTheme
                                         .headline5!
@@ -292,7 +295,7 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                             ],
                           ),
                           SizedBox(height: 5),
-                          ...listPesan.mapIndexed(
+                          ...pesan.mapIndexed(
                             (index, e) {
                               return CheckoutTile(
                                 pesan: listPesan[index],
@@ -343,7 +346,8 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                                                     color: Colors.black,
                                                     fontSize: 14,
                                                     fontFamily: "Quicksand")),
-                                        Text("Rp${totalPriceFood(listKeranjang).toString()}00",
+                                        Text(
+                                            "Rp${totalPriceFood(data["pesan"]).toString()}00",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .headline5!
@@ -396,7 +400,8 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                                                     color: Color(0xFF1C9FE2),
                                                     fontSize: 16,
                                                     fontFamily: "Quicksand")),
-                                        Text("Rp${(totalPrice(totalPriceFood, 20.000).toString())}00",
+                                        Text(
+                                            data["totalPembayaran"].toString(),
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .headline5!
@@ -425,20 +430,13 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
       ),
     );
   }
-
-  double totalPriceFood(List<Pesan> listKeranjang) {
+  double totalPriceFood(List<Pesan> tempList) {
     totalPricing = 0;
-    listKeranjang.forEach((e) {
+    tempList.forEach((e) {
       setState(() {
         totalPricing += double.parse(e.menuPrice!);
       });
     });
     return totalPricing;
-  }
-
-  double totalPrice(Function totalPriceFood, double ongkosKirim) {
-    totalPricingFull = 0;
-    totalPricingFull = totalPriceFood(listKeranjang) + ongkosKirim;
-    return totalPricingFull;
   }
 }

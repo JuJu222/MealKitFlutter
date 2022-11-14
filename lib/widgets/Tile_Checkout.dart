@@ -19,7 +19,7 @@ class CheckoutTile extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  const SizedBox(width: 5.0),
+                  // const SizedBox(width: 5.0),
                   Text(pesan.menuName!,
                       style: Theme.of(context).textTheme.headline5!.copyWith(
                           fontWeight: FontWeight.bold,
@@ -37,7 +37,7 @@ class CheckoutTile extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const SizedBox(width: 5.0),
+                  // const SizedBox(width: 5.0),
                   Row(
                     children: [
                       const Icon(Icons.group,
@@ -74,7 +74,7 @@ class CheckoutTile extends StatelessWidget {
               const SizedBox(height: 4.0),
               Row(
                 children: [
-                  const SizedBox(width: 5.0),
+                  // const SizedBox(width: 5.0),
                   Text("Rp.${pesan.menuPrice}",
                       style: Theme.of(context).textTheme.headline5!.copyWith(
                           fontWeight: FontWeight.w500,
@@ -121,7 +121,7 @@ class _CheckoutTileWithIconState extends State<CheckoutTileWithIcon> {
             children: [
               Row(
                 children: [
-                  const SizedBox(width: 5.0),
+                  // const SizedBox(width: 5.0),
                   Text(widget.pesan.menuName!,
                       style: Theme.of(context).textTheme.headline5!.copyWith(
                           fontWeight: FontWeight.bold,
@@ -139,7 +139,7 @@ class _CheckoutTileWithIconState extends State<CheckoutTileWithIcon> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const SizedBox(width: 5.0),
+                  // const SizedBox(width: 5.0),
                   Row(
                     children: [
                       const Icon(Icons.group,
@@ -176,7 +176,7 @@ class _CheckoutTileWithIconState extends State<CheckoutTileWithIcon> {
               const SizedBox(height: 4.0),
               Row(
                 children: [
-                  const SizedBox(width: 5.0),
+                  // const SizedBox(width: 5.0),
                   Text("Rp.${widget.pesan.menuPrice}",
                       style: Theme.of(context).textTheme.headline5!.copyWith(
                           fontWeight: FontWeight.w500,

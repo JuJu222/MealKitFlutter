@@ -136,8 +136,16 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                           color: Colors.white,
                                           fontFamily: "Quicksand")),
                               onPressed: () {
-                                Navigator.pushReplacementNamed(
-                                    context, PembayaranBerhasil.routeName,
+                                setState((){
+                                  listPesan.addAll(tempList);
+                                  for (var item in tempList) {
+                                    listKeranjang.removeWhere((element) => element == item);
+                                  }
+                                });
+
+                                Navigator.pushNamedAndRemoveUntil(
+
+                                    context, PembayaranBerhasil.routeName, (route) => false,
                                     arguments: {
                                       "totalPembayaran":
                                           "${totalPrice(totalPriceFood, 20.000, tempList).toString()}00",

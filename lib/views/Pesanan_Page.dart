@@ -28,18 +28,9 @@ class PesananPage extends StatelessWidget {
               physics: BouncingScrollPhysics(),
               child: Container(
                 child: Column(children: [
-                  CardPesananParent(),
-                  // ElevatedButton(
-                  //     onPressed: (() {
-                  //       Navigator.pushNamed(
-                  //           context, PembayaranBerhasil.routeName);
-                  //     }),
-                  //     child: Text(
-                  //       "lottie test",
-                  //       style: TextStyle(color: Colors.white),
-                  //     ))
-                  // CardPesananParent(),
-                  // CardPesananParent(),
+                  CardPesananParentDalamPerjalanan(pesan: listPesan),
+                  SizedBox(height: 20.0),
+                  CardPesananParentSelesai(pesan: listPesan),
                 ]),
               ),
             ))
