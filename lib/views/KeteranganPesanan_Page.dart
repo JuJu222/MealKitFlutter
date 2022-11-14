@@ -298,7 +298,7 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                           ...pesan.mapIndexed(
                             (index, e) {
                               return CheckoutTile(
-                                pesan: listPesan[index],
+                                pesan: pesan[index],
                               );
                             },
                           )
