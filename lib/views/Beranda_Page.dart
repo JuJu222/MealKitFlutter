@@ -129,11 +129,16 @@ class _BerandaPageState extends State<BerandaPage> {
                               Container(
                                 height: 200,
                                 child: ListView(
+
                                   scrollDirection: Axis.horizontal,
-                                  children:
-                                      listPreferensi.mapIndexed((index, value) {
-                                    return CardBeranda(preferensi: value);
-                                  }).toList(),
+                                  children:[     
+                                    ...listPreferensi.mapIndexed((index, value) {
+                                    return Padding(
+                                      padding: const EdgeInsets.fromLTRB(0,0,12,0),
+                                      child: CardBeranda(preferensi: value),
+                                    );
+                                  }),
+                                  ],
                                 ),
                               )
                             ],

@@ -13,6 +13,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
   double totalPricing = 0;
   @override
   Widget build(BuildContext context) {
+    Map data = ModalRoute.of(context)!.settings.arguments as Map;
+    List<Pesan> tempList = data["currentList"];
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: primaryColor),
@@ -106,7 +108,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                             fontFamily: "Quicksand")),
                                 SizedBox(width: 2.0),
                                 Text(
-                                    "${(totalPrice(totalPriceFood, 20.000).toString())}00",
+                                    "${(totalPrice(totalPriceFood, 20.000, tempList).toString())}00",
                                     style: Theme.of(context)
                                         .textTheme
                                         .headline5!
@@ -139,7 +141,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                     context, PembayaranBerhasil.routeName,
                                     arguments: {
                                       "totalPembayaran":
-                                          "${totalPrice(totalPriceFood, 20.000).toString()}00",
+                                          "${totalPrice(totalPriceFood, 20.000, tempList).toString()}00",
                                       "waktuTransaksi": DateTime.now()
                                     });
                               },
@@ -270,10 +272,10 @@ class _CheckoutPageState extends State<CheckoutPage> {
                             ],
                           ),
                           SizedBox(height: 5),
-                          ...listPesan.mapIndexed(
+                          ...tempList.mapIndexed(
                             (index, e) {
                               return CheckoutTile(
-                                pesan: listPesan[index],
+                                pesan: tempList[index],
                               );
                             },
                           )
@@ -322,7 +324,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                                     fontSize: 14,
                                                     fontFamily: "Quicksand")),
                                         Text(
-                                            "Rp${totalPriceFood(listKeranjang).toString()}00",
+                                            "Rp${totalPriceFood(tempList).toString()}00",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .headline5!
@@ -376,7 +378,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                                     fontSize: 16,
                                                     fontFamily: "Quicksand")),
                                         Text(
-                                            "Rp${(totalPrice(totalPriceFood, 20.000).toString())}00",
+                                            "Rp${(totalPrice(totalPriceFood, 20.000, tempList).toString())}00",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .headline5!
@@ -407,9 +409,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
     );
   }
 
-  double totalPriceFood(List<Pesan> listKeranjang) {
+  double totalPriceFood(List<Pesan> tempList) {
     totalPricing = 0;
-    listKeranjang.forEach((e) {
+    tempList.forEach((e) {
       setState(() {
         totalPricing += double.parse(e.menuPrice!);
       });
@@ -417,9 +419,10 @@ class _CheckoutPageState extends State<CheckoutPage> {
     return totalPricing;
   }
 
-  double totalPrice(Function totalPriceFood, double ongkosKirim) {
+  double totalPrice(
+      Function totalPriceFood, double ongkosKirim, List<Pesan> tempList) {
     totalPricingFull = 0;
-    totalPricingFull = totalPriceFood(listKeranjang) + ongkosKirim;
+    totalPricingFull = totalPriceFood(tempList) + ongkosKirim;
     return totalPricingFull;
   }
 }
