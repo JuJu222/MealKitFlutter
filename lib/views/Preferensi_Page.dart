@@ -11,23 +11,23 @@ class PreferensiPage extends StatefulWidget {
 
 class _PreferensiPageState extends State<PreferensiPage> {
   List<Preferensi> _pickedItems = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Preferensi",
-          style: Theme.of(context)!
-              .textTheme
-              .headline6!
-              .copyWith(fontWeight: FontWeight.w700),
-        ),
+        title: const Text("Preferensi",
+            style: TextStyle(
+                fontFamily: 'Quicksand',
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: Colors.black)),
         centerTitle: true,
         iconTheme: IconThemeData(color: primaryColor),
         backgroundColor: Colors.transparent,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(18),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
         child: Container(
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -38,55 +38,49 @@ class _PreferensiPageState extends State<PreferensiPage> {
                 Flexible(
                     child: Container(
                   child: Column(children: [
-                    Text(
+                    const Text(
                       "Resep Seperti Apa Yang",
-                      style: Theme.of(context)!
-                          .textTheme
-                          .headline5!
-                          .copyWith(fontWeight: FontWeight.w700),
+                      style: TextStyle(
+                          fontFamily: 'Quicksand',
+                          color: Colors.black,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 8,
                     ),
-                    Text(
-                      "Anda Sukai?",
-                      style: Theme.of(context)!
-                          .textTheme
-                          .headline5!
-                          .copyWith(fontWeight: FontWeight.w700),
-                    ),
-                    SizedBox(
+                    const Text("Anda Sukai?",
+                        style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            color: Colors.black,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold)),
+                    const SizedBox(
                       height: 8,
                     ),
-                    Container(
-                      child: Column(children: [
-                        Text(
-                          "Pilihlah jenis resep yang anda sukai. Anda masih",
-                          textAlign: TextAlign.center,
-                          style:
-                              Theme.of(context)!.textTheme.bodyMedium!.copyWith(
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black.withOpacity(0.4),
-                                  ),
-                        ),
-                        Text(
-                          "memiliki akses ke semua resep setiap minggu.",
-                          style: Theme.of(context)!
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black.withOpacity(0.4)),
-                        )
-                      ]),
-                    ),
+                    Column(children: const [
+                      Text(
+                        "Pilihlah jenis resep yang anda sukai. Anda masih",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            color: Color(0xFF171930),
+                            fontSize: 13),
+                      ),
+                      Text(
+                        "memiliki akses ke semua resep setiap minggu.",
+                        style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            color: Color(0xFF171930),
+                            fontSize: 13),
+                      )
+                    ]),
                   ]),
                 )),
                 Flexible(
                   flex: 3,
                   child: SingleChildScrollView(
                     child: Container(
-                      padding: EdgeInsets.all(5),
                       child: Column(children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -175,7 +169,6 @@ class _PreferensiPageState extends State<PreferensiPage> {
                   ]),
               child: InkWell(
                 child: Container(
-                  padding: const EdgeInsets.all(5),
                   height: 54.08,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
