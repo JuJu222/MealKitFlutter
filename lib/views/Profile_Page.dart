@@ -245,7 +245,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       ))
                                 ],
                               ),
-                              Divider(color: Colors.black),
+                              Divider(color: Color(0xFFD9D9D9)),
                               Row(
                                 children: [
                                   Image.asset(

@@ -186,6 +186,12 @@ class _PreferensiPageState extends State<PreferensiPage> {
                 onTap: () {
                   Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
                     builder: (context) {
+                      Fluttertoast.showToast(
+                          msg: "Daftar Akun Berhasil",
+                          toastLength: Toast.LENGTH_SHORT,
+                          backgroundColor: Color(0xEE1C9FE2),
+                          textColor: Colors.white,
+                          fontSize: 14.0);
                       return const HomePage();
                     },
                   ), (route) => false);
