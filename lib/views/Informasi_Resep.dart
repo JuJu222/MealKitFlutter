@@ -29,8 +29,6 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                     decoration: BoxDecoration(
                         image: DecorationImage(
                   fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.8), BlendMode.dstATop),
                   image: AssetImage('${widget.resep!.menuImage}'),
                 ))),
                 Align(
@@ -40,8 +38,8 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                       // border: Border.all(color: darkblue, width: 8),
                       color: Colors.transparent,
                     ),
-                    margin: EdgeInsets.only(top: 48, left: 24),
-                    child: FloatingActionButton(
+                    margin: EdgeInsets.only(top: 40, left: 10),
+                    child: FloatingActionButton.small(
                       backgroundColor: Colors.white,
                       onPressed: () {
                         setState(() {

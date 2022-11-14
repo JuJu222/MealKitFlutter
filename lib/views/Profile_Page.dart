@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
 class ProfilePage extends StatefulWidget {
-  static const pageName = "Profile";
+  static const pageName = "Profil";
   static final routeName = "/ProfilePage";
   const ProfilePage({super.key});
 
@@ -266,7 +266,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Column(mainAxisAlignment: MainAxisAlignment.end, children: [
                   Ink(
                     decoration: BoxDecoration(
-                        color: Color(0xFFA80000),
+                        color: Color(0xFF703900),
                         borderRadius: BorderRadius.circular(8),
                         boxShadow: [
                           BoxShadow(
