@@ -15,6 +15,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: primaryColor),
         backgroundColor: Colors.transparent,
         centerTitle: true,
         title: Text(
@@ -104,7 +105,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                             fontSize: 18,
                                             fontFamily: "Quicksand")),
                                 SizedBox(width: 2.0),
-                                Text("${(totalPrice(totalPriceFood,20.000).toString())}00",
+                                Text(
+                                    "${(totalPrice(totalPriceFood, 20.000).toString())}00",
                                     style: Theme.of(context)
                                         .textTheme
                                         .headline5!
@@ -133,10 +135,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                           color: Colors.white,
                                           fontFamily: "Quicksand")),
                               onPressed: () {
-                                Navigator.pushReplacementNamed(context, PembayaranBerhasil.routeName, arguments: {
-                                  "totalPembayaran": "${totalPrice(totalPriceFood,20.000).toString()}00",
-                                  "waktuTransaksi": DateTime.now()
-                                });
+                                Navigator.pushReplacementNamed(
+                                    context, PembayaranBerhasil.routeName,
+                                    arguments: {
+                                      "totalPembayaran":
+                                          "${totalPrice(totalPriceFood, 20.000).toString()}00",
+                                      "waktuTransaksi": DateTime.now()
+                                    });
                               },
                             ),
                           ],
@@ -316,7 +321,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                                     color: Colors.black,
                                                     fontSize: 14,
                                                     fontFamily: "Quicksand")),
-                                        Text("Rp${totalPriceFood(listKeranjang).toString()}00",
+                                        Text(
+                                            "Rp${totalPriceFood(listKeranjang).toString()}00",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .headline5!
@@ -369,7 +375,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                                     color: Color(0xFF1C9FE2),
                                                     fontSize: 16,
                                                     fontFamily: "Quicksand")),
-                                        Text("Rp${(totalPrice(totalPriceFood, 20.000).toString())}00",
+                                        Text(
+                                            "Rp${(totalPrice(totalPriceFood, 20.000).toString())}00",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .headline5!

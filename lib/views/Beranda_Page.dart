@@ -54,7 +54,6 @@ class _BerandaPageState extends State<BerandaPage> {
             child: Column(
               children: [
                 Expanded(
-                    child: SingleChildScrollView(
                   child: Container(
                       child: Column(
                     children: [
@@ -110,79 +109,89 @@ class _BerandaPageState extends State<BerandaPage> {
                           )
                         ],
                       )),
-                      SizedBox(height: 20.0),
-                      Container(
-                          alignment: Alignment.topLeft,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Untuk Anda",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headline5!
-                                      .copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 22,
-                                          fontFamily: "Quicksand",
-                                          color: Colors.black)),
-                              SizedBox(height: 15.0),
-                              Container(
-                                height: 200,
-                                child: ListView(
-                                  scrollDirection: Axis.horizontal,
-                                  children:
-                                      listPreferensi.mapIndexed((index, value) {
-                                    return CardBeranda(preferensi: value);
-                                  }).toList(),
-                                ),
-                              )
-                            ],
-                          )),
-                      SizedBox(height: 20.0),
-                      Container(
-                          alignment: Alignment.topLeft,
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Coba yang Lainnya",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline5!
-                                        .copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 22,
-                                            fontFamily: "Quicksand",
-                                            color: Colors.black)),
-                                SizedBox(height: 15.0),
-                                Container(
-                                    child: MasonryGridView.builder(
-                                        shrinkWrap: true,
-                                        itemCount: reversedList.length,
-                                        gridDelegate:
-                                            SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                                                crossAxisCount: 2),
-                                        physics: NeverScrollableScrollPhysics(),
-                                        scrollDirection: Axis.vertical,
-                                        crossAxisSpacing: 12,
-                                        mainAxisSpacing: 12,
-                                        itemBuilder: (context, index) {
-                                          if (index == 0 ||
-                                              index == 3 ||
-                                              index == 4 ||
-                                              index == 7) {
-                                            return CardBeranda(
-                                              preferensi: reversedList[index],
-                                            );
-                                          } else {
-                                            return CardBerandaLong(
-                                              preferensi: reversedList[index],
-                                            );
-                                          }
-                                        }))
-                              ]))
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Expanded(
+                          child: SingleChildScrollView(
+                        child: Column(children: [
+                          Container(
+                              alignment: Alignment.topLeft,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Untuk Anda",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline5!
+                                          .copyWith(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 22,
+                                              fontFamily: "Quicksand",
+                                              color: Colors.black)),
+                                  SizedBox(height: 15.0),
+                                  Container(
+                                    height: 200,
+                                    child: ListView(
+                                      scrollDirection: Axis.horizontal,
+                                      children: listPreferensi
+                                          .mapIndexed((index, value) {
+                                        return CardBeranda(preferensi: value);
+                                      }).toList(),
+                                    ),
+                                  )
+                                ],
+                              )),
+                          SizedBox(height: 20.0),
+                          Container(
+                              alignment: Alignment.topLeft,
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("Coba yang Lainnya",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline5!
+                                            .copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 22,
+                                                fontFamily: "Quicksand",
+                                                color: Colors.black)),
+                                    SizedBox(height: 15.0),
+                                    Container(
+                                        child: MasonryGridView.builder(
+                                            shrinkWrap: true,
+                                            itemCount: reversedList.length,
+                                            gridDelegate:
+                                                SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                                    crossAxisCount: 2),
+                                            physics:
+                                                NeverScrollableScrollPhysics(),
+                                            scrollDirection: Axis.vertical,
+                                            crossAxisSpacing: 12,
+                                            mainAxisSpacing: 12,
+                                            itemBuilder: (context, index) {
+                                              if (index == 0 ||
+                                                  index == 3 ||
+                                                  index == 4 ||
+                                                  index == 7) {
+                                                return CardBeranda(
+                                                  preferensi:
+                                                      reversedList[index],
+                                                );
+                                              } else {
+                                                return CardBerandaLong(
+                                                  preferensi:
+                                                      reversedList[index],
+                                                );
+                                              }
+                                            }))
+                                  ]))
+                        ]),
+                      ))
                     ],
                   )),
-                ))
+                )
               ],
             )));
   }

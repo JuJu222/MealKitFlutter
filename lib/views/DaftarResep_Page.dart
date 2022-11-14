@@ -1,7 +1,6 @@
 part of 'pages.dart';
 
 class DaftarResepPage extends StatefulWidget {
-  List<Resep> daftarResep = List.from(listResep);
   Resep? resep;
   final Preferensi preferensi;
 
@@ -15,6 +14,18 @@ class DaftarResepPage extends StatefulWidget {
 class _DaftarResepPageState extends State<DaftarResepPage> {
   Color near_black = Color(0xFF2A2A2A);
   Color blue = Color(0xFF1C9FE2);
+
+  List<Resep> daftarResep = List.from(listResep);
+
+  void SearchList(String value) {
+    setState(() {
+      daftarResep = listResep
+          .where((element) =>
+              element.menuName!.toLowerCase().contains(value.toLowerCase()))
+          .toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +49,9 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
                   // height: double.infinity,
                   margin: EdgeInsets.only(left: 18, right: 18, bottom: 24),
                   child: TextField(
+                    onChanged: (value) {
+                      return SearchList(value);
+                    },
                     style: TextStyle(fontSize: 12),
                     decoration: InputDecoration(
                       contentPadding: // Text Field height
@@ -67,35 +81,35 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
                   children: [
                     if (widget.preferensi.nama == "Daging & Sayur") ...[
                       for (var i = 0; i < 6; i++) ...[
-                        CardResep(resep: widget.daftarResep[i])
+                        CardResep(resep: daftarResep[i])
                       ]
                     ] else if (widget.preferensi.nama == "Sayur") ...[
                       for (var i = 6; i < 12; i++) ...[
-                        CardResep(resep: widget.daftarResep[i])
+                        CardResep(resep: daftarResep[i])
                       ]
                     ] else if (widget.preferensi.nama == "Produk Susu") ...[
                       for (var i = 12; i < 18; i++) ...[
-                        CardResep(resep: widget.daftarResep[i])
+                        CardResep(resep: daftarResep[i])
                       ]
                     ] else if (widget.preferensi.nama == "Cepat & Mudah") ...[
                       for (var i = 18; i < 24; i++) ...[
-                        CardResep(resep: widget.daftarResep[i])
+                        CardResep(resep: daftarResep[i])
                       ]
                     ] else if (widget.preferensi.nama == "Roti") ...[
                       for (var i = 24; i < 30; i++) ...[
-                        CardResep(resep: widget.daftarResep[i])
+                        CardResep(resep: daftarResep[i])
                       ]
                     ] else if (widget.preferensi.nama == "Protein Tinggi") ...[
                       for (var i = 30; i < 36; i++) ...[
-                        CardResep(resep: widget.daftarResep[i])
+                        CardResep(resep: daftarResep[i])
                       ]
                     ] else if (widget.preferensi.nama == "Makanan Laut") ...[
                       for (var i = 36; i < 42; i++) ...[
-                        CardResep(resep: widget.daftarResep[i])
+                        CardResep(resep: daftarResep[i])
                       ]
                     ] else ...[
                       for (var i = 42; i < 48; i++) ...[
-                        CardResep(resep: widget.daftarResep[i])
+                        CardResep(resep: daftarResep[i])
                       ]
                     ]
                   ],
