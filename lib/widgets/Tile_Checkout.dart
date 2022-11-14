@@ -15,18 +15,14 @@ class CheckoutTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
             child: Image.asset('${pesan.images}', width: 79, height: 79),
           ),
-          title: Row(
+          title: Column(
             children: [
-              Row(
-                children: [
-                  const SizedBox(width: 5.0),
-                  Text(pesan.menuName!,
-                      style: Theme.of(context).textTheme.headline5!.copyWith(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          fontFamily: "Quicksand")),
-                ],
-              ),
+              const SizedBox(width: 5.0),
+              Text(pesan.menuName!,
+                  style: Theme.of(context).textTheme.headline5!.copyWith(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      fontFamily: "Quicksand")),
             ],
           ),
           subTitle: Column(
@@ -120,15 +116,11 @@ class _CheckoutTileWithIconState extends State<CheckoutTileWithIcon> {
           title: Column(
             children: [
               const SizedBox(width: 5.0),
-              Wrap(
-                children: [
-                  Text(widget.pesan.menuName!,
-                      style: Theme.of(context).textTheme.headline5!.copyWith(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          fontFamily: "Quicksand")),
-                ],
-              ),
+              Text(widget.pesan.menuName!,
+                  style: Theme.of(context).textTheme.headline5!.copyWith(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      fontFamily: "Quicksand")),
             ],
           ),
           subTitle: Column(

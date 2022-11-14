@@ -142,7 +142,7 @@ class _UbahProfilPageState extends State<UbahProfilPage> {
                         listProfile[0].name = name;
                         listProfile[0].email = email;
                         Navigator.of(context).pushNamedAndRemoveUntil(
-                            ProfilePage.routeName, (route) => false);
+                            HomePage.routeName, (route) => false);
                       },
                     ),
                   ),
