@@ -127,14 +127,25 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                   Flexible(
                                       flex: 2,
                                       child: Container(
-                                          child: Text(
-                                        "${widget.resep!.menuPreference}",
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
+                                          child: Text.rich(
+                                        TextSpan(
+                                          style: TextStyle(
                                             fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                            fontFamily: 'Quicksand',
-                                            color: blue),
+                                            color: Color(0xFF1C9FE2),
+                                          ),
+                                          children: [
+                                            WidgetSpan(
+                                              child: ImageIcon(
+                                                  AssetImage(
+                                                      "assets/images/square-icon.png"),
+                                                  color: Color(0xFF1C9FE2)),
+                                            ),
+                                            TextSpan(
+                                              text:
+                                                  "${widget.resep!.menuPreference}",
+                                            )
+                                          ],
+                                        ),
                                       ))),
                                   // SizedBox(width: 90),
                                   Flexible(
@@ -253,7 +264,7 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                                       NeverScrollableScrollPhysics(),
                                                   padding: EdgeInsets.only(
                                                       top: 0,
-                                                      left: 24,
+                                                      left: 20,
                                                       bottom: 0),
                                                   itemCount: widget
                                                       .resep!.menuTools!.length,
