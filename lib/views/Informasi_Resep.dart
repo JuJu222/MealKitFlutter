@@ -105,8 +105,8 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                           child: Container(
                                               // color: Colors.yellow,
                                               child: Container(
-                                                  padding: EdgeInsets.only(
-                                                      right: 24),
+                                                  // padding:
+                                                  // EdgeInsets.only(right: 4),
                                                   child: Text(
                                                       "${widget.resep!.menuPrice}",
                                                       style: TextStyle(
@@ -120,6 +120,7 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                               //row 2
 
                               Container(
+                                  // margin: EdgeInsets.only(right: 20),
                                   child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -127,33 +128,42 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                   Flexible(
                                       flex: 2,
                                       child: Container(
-                                          child: Text.rich(
-                                        TextSpan(
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            color: Color(0xFF1C9FE2),
-                                          ),
-                                          children: [
-                                            WidgetSpan(
-                                              child: ImageIcon(
-                                                  AssetImage(
-                                                      "assets/images/square-icon.png"),
-                                                  color: Color(0xFF1C9FE2)),
+                                        alignment: Alignment.centerLeft,
+                                        // padding: EdgeInsets.only(right: 12),
+                                        child: Text.rich(
+                                          textAlign: TextAlign.left,
+                                          TextSpan(
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              color: Color(0xFF1C9FE2),
                                             ),
-                                            TextSpan(
-                                              text:
-                                                  "${widget.resep!.menuPreference}",
-                                            )
-                                          ],
+                                            children: [
+                                              WidgetSpan(
+                                                alignment:
+                                                    PlaceholderAlignment.middle,
+                                                child: ImageIcon(
+                                                    AssetImage(
+                                                        "assets/images/square-icon.png"),
+                                                    color: Color(0xFF1C9FE2)),
+                                              ),
+                                              TextSpan(
+                                                text:
+                                                    "${widget.resep!.menuPreference}",
+                                              )
+                                            ],
+                                            // textAlign: TextAlign.center,
+                                          ),
+                                          // textAlign: TextAlign.center,
                                         ),
-                                      ))),
+                                        // margin: EdgeInsets.only(right: 20),
+                                      )),
                                   // SizedBox(width: 90),
                                   Flexible(
                                       flex: 2,
                                       child: Container(
-                                          padding: EdgeInsets.only(right: 56),
+                                          padding: EdgeInsets.only(right: 32),
                                           child: Text(
-                                              "${widget.resep!.menuPortion}",
+                                              "/${widget.resep!.menuPortion}",
                                               // textAlign: TextAlign.right,
                                               style: TextStyle(
                                                 // color: Colors.grey,
@@ -212,7 +222,7 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                                       NeverScrollableScrollPhysics(),
                                                   padding: EdgeInsets.only(
                                                       top: 0,
-                                                      left: 20,
+                                                      left: 6,
                                                       bottom: 0),
                                                   itemCount: widget.resep!
                                                       .menuIngredients!.length,
@@ -264,7 +274,7 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                                       NeverScrollableScrollPhysics(),
                                                   padding: EdgeInsets.only(
                                                       top: 0,
-                                                      left: 20,
+                                                      left: 6,
                                                       bottom: 0),
                                                   itemCount: widget
                                                       .resep!.menuTools!.length,
@@ -307,6 +317,7 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                                 fontFamily: 'Quicksand',
                                               )),
                                           Container(
+                                            // margin: EdgeInsets.only(right: 36),
                                             child: Row(children: [
                                               Icon(Icons.star, color: yellow),
                                               Text(
