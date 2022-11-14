@@ -127,6 +127,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                             .textTheme
                                             .subtitle2,
                                         autofocus: false,
+                                        initialValue: 'Kenny J',
                                         keyboardType: TextInputType.name,
                                         decoration: InputDecoration(
                                           border: OutlineInputBorder(
@@ -159,6 +160,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                             .textTheme
                                             .subtitle2,
                                         keyboardType: TextInputType.emailAddress,
+                                        initialValue: 'kenny@gmail.com',
                                         autofocus: false,
                                         decoration: InputDecoration(
                                           border: OutlineInputBorder(

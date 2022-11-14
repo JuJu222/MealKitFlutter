@@ -79,13 +79,12 @@ class PembayaranBerhasil extends StatelessWidget {
                                 children: [
                                   Text(
                                     "Rp.",
-                                    style: Theme.of(context)!
-                                        .textTheme
-                                        .headline3!
-                                        .copyWith(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w600,
-                                            color: Colors.black),
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontFamily: 'Quicksand',
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black
+                                    ),
                                   ),
                                 ],
                               ))),
@@ -128,14 +127,13 @@ class PembayaranBerhasil extends StatelessWidget {
                             width: 8,
                           ),
                           Text(
-                            "081231149830",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyText2!
-                                .copyWith(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14),
+                            "0821*****4821",
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: 'Quicksand',
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black
+                            ),
                           )
                         ]),
                   )

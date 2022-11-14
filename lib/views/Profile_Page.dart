@@ -303,6 +303,11 @@ class _ProfilePageState extends State<ProfilePage> {
                         await Future.delayed(const Duration(seconds: 2));
                         await AuthService().signOutApp();
                         await AuthService().googleSignOutApp();
+                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+                          builder: (context) {
+                            return const LoginPage();
+                          },
+                        ), (route) => false);
                       },
                     ),
                   ),

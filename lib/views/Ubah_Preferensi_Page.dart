@@ -191,10 +191,7 @@ class _UbahPreferensiPageState extends State<UbahPreferensiPage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute<dynamic>(
-                          builder: (context) => ProfilePage()));
+                  Navigator.pop(context);
                 },
               ),
             ),
