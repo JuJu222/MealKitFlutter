@@ -46,8 +46,8 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
               child: Container(
                   // margin: EdgeInsets.only(bottom: 24),
                   width: double.infinity,
-                  // height: double.infinity,
-                  margin: EdgeInsets.only(left: 18, right: 18, bottom: 24),
+                  height: double.infinity,
+                  margin: EdgeInsets.only(left: 18, right: 18),
                   child: TextField(
                     onChanged: (value) {
                       return SearchList(value);
@@ -64,7 +64,7 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
                   ))),
           //GridView
           Flexible(
-              flex: 5,
+              flex: 9,
               child: Container(
                 width: double.infinity,
                 height: double.infinity,

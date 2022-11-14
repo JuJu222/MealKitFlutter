@@ -112,7 +112,7 @@ class _RencanaPageState extends State<RencanaPage> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Container(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.all(4),
             child: Row(
               children: [
                 Text(
@@ -224,7 +224,7 @@ class _RencanaPageState extends State<RencanaPage> {
           ),
           body: SafeArea(
             child: Container(
-              padding: const EdgeInsets.all(17),
+              padding: const EdgeInsets.all(12),
               width: double.infinity,
               height: double.infinity,
               child: SingleChildScrollView(

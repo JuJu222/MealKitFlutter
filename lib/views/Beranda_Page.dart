@@ -50,7 +50,6 @@ class _BerandaPageState extends State<BerandaPage> {
           ),
         ),
         body: Container(
-            padding: EdgeInsets.all(20),
             child: Column(
               children: [
                 Expanded(
@@ -59,6 +58,7 @@ class _BerandaPageState extends State<BerandaPage> {
                       child: Column(
                     children: [
                       Container(
+                          padding: EdgeInsets.only(left: 20, right: 20, top: 20),
                           child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -112,6 +112,7 @@ class _BerandaPageState extends State<BerandaPage> {
                       )),
                       SizedBox(height: 20.0),
                       Container(
+                          padding: EdgeInsets.only(left: 20, right: 20),
                           alignment: Alignment.topLeft,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,6 +146,7 @@ class _BerandaPageState extends State<BerandaPage> {
                           )),
                       SizedBox(height: 20.0),
                       Container(
+                          padding: EdgeInsets.only(left: 20, right: 20),
                           alignment: Alignment.topLeft,
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
