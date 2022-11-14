@@ -55,6 +55,7 @@ class CheckoutTile extends StatelessWidget {
                       const Icon(Icons.date_range_outlined,
                           size: 22, color: Color(0xFF6A6A6A)),
                       Text("${pesan.date}",
+                          overflow: TextOverflow.ellipsis,
                           style: Theme.of(context)
                               .textTheme
                               .headline5!
@@ -153,6 +154,7 @@ class _CheckoutTileWithIconState extends State<CheckoutTileWithIcon> {
                       const Icon(Icons.date_range_outlined,
                           size: 22, color: Color(0xFF6A6A6A)),
                       Text("${widget.pesan.date}",
+                          overflow: TextOverflow.ellipsis,
                           style: Theme.of(context)
                               .textTheme
                               .headline5!
