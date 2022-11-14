@@ -119,7 +119,7 @@ class _RencanaPageState extends State<RencanaPage> {
                   "${checkWeek()[0].date}-${checkWeek()[checkWeek().length - 1].date} November 2022",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                       fontWeight: FontWeight.bold,
-                      fontSize: 22,
+                      fontSize: 18,
                       fontFamily: "Quicksand"),
                 ),
                 const SizedBox(width: 5),
@@ -137,7 +137,7 @@ class _RencanaPageState extends State<RencanaPage> {
                     });
                   },
                   child: const Icon(Icons.keyboard_arrow_down,
-                      size: 32, color: Colors.black),
+                      size: 24, color: Colors.black),
                   itemBuilder: (context) {
                     return week
                         .mapIndexed((index, item) => PopupMenuItem(
