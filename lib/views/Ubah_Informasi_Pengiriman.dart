@@ -464,8 +464,13 @@ class _UbahInformasiPengirimanPageState
                                   listPengiriman[0].city = city;
                                   listPengiriman[0].province = province;
                                   listPengiriman[0].phone = phone;
-                                  Navigator.of(context).pushNamedAndRemoveUntil(
-                                      ProfilePage.routeName, (route) => false);
+                                  Navigator.pop(context);
+                                  Fluttertoast.showToast(
+                                      msg: "Informasi Pengiriman Berhasil Disimpan",
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      backgroundColor: Color(0xEE1C9FE2),
+                                      textColor: Colors.white,
+                                      fontSize: 14.0);
                                 },
                               ),
                             ),

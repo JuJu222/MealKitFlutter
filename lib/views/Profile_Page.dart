@@ -83,13 +83,21 @@ class _ProfilePageState extends State<ProfilePage> {
                                       listProfile[0].name.toString(),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          color: Color(0xff1C9FE2),
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.bold),
+                                        fontFamily: 'Quicksand',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 22,
+                                        color: Color(0xff1C9FE2),
+                                      ),
                                     ),
                                     Text(
                                       listProfile[0].email.toString(),
                                       textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Quicksand',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                        color: Color(0xFF707070),
+                                      ),
                                     )
                                   ],
                                 ),
@@ -111,6 +119,9 @@ class _ProfilePageState extends State<ProfilePage> {
                                               "Pesanan\nSelesai",
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontFamily: 'Quicksand',
+                                                  fontWeight: FontWeight.bold,
                                                   color: Color(0xff1C9FE2)),
                                             ),
                                           ),
@@ -120,6 +131,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                             child: Text(
                                               "50",
                                               style: TextStyle(
+                                                  fontFamily: 'Quicksand',
+                                                  color: Color(0xFF707070),
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.bold),
                                             ),
@@ -134,12 +147,15 @@ class _ProfilePageState extends State<ProfilePage> {
                                             height: 25,
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(3),
+                                            padding: EdgeInsets.all(10),
                                             //apply padding to all four sides
                                             child: Text(
-                                              "Streak\n",
+                                              "Streak",
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontFamily: 'Quicksand',
+                                                  fontWeight: FontWeight.bold,
                                                   color: Color(0xff1C9FE2)),
                                             ),
                                           ),
@@ -149,6 +165,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                             child: Text(
                                               "4 minggu",
                                               style: TextStyle(
+                                                  fontFamily: 'Quicksand',
+                                                  color: Color(0xFF707070),
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.bold),
                                             ),
@@ -169,6 +187,9 @@ class _ProfilePageState extends State<ProfilePage> {
                                               "Pengiriman\nSelanjutnya",
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontFamily: 'Quicksand',
+                                                  fontWeight: FontWeight.bold,
                                                   color: Color(0xff1C9FE2)),
                                             ),
                                           ),
@@ -178,6 +199,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                             child: Text(
                                               "3 Okt",
                                               style: TextStyle(
+                                                  fontFamily: 'Quicksand',
+                                                  color: Color(0xFF707070),
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.bold),
                                             ),
@@ -213,13 +236,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                       child: SizedBox(
                                         width: 50,
                                         child: Text("Ubah",
-                                            style:
-                                                TextStyle(
-                                                  fontSize: 12,
-                                                  fontFamily: 'Quicksand',
-                                                  fontWeight: FontWeight.bold,
-                                                    color: Colors.white
-                                                ),
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontFamily: 'Quicksand',
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white),
                                             textAlign: TextAlign.center),
                                       ))
                                 ],
@@ -252,13 +273,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                       child: SizedBox(
                                         width: 50,
                                         child: Text("Ubah",
-                                            style:
-                                            TextStyle(
+                                            style: TextStyle(
                                                 fontSize: 12,
                                                 fontFamily: 'Quicksand',
                                                 fontWeight: FontWeight.bold,
-                                                color: Colors.white
-                                            ),
+                                                color: Colors.white),
                                             textAlign: TextAlign.center),
                                       ))
                                 ],
@@ -299,12 +318,11 @@ class _ProfilePageState extends State<ProfilePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text("Keluar",
-                                style:                                                 TextStyle(
+                                style: TextStyle(
                                     fontSize: 14,
                                     fontFamily: 'Quicksand',
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.white
-                                ))
+                                    color: Colors.white))
                           ],
                         ),
                       ),

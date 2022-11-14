@@ -192,6 +192,12 @@ class _UbahPreferensiPageState extends State<UbahPreferensiPage> {
                 ),
                 onTap: () {
                   Navigator.pop(context);
+                  Fluttertoast.showToast(
+                      msg: "Preferensi Berhasil Disimpan",
+                      toastLength: Toast.LENGTH_SHORT,
+                      backgroundColor: Color(0xEE1C9FE2),
+                      textColor: Colors.white,
+                      fontSize: 14.0);
                 },
               ),
             ),
