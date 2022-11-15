@@ -13,7 +13,7 @@ class CheckoutTile extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 0.0),
           avatar: ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
-            child: Image.asset('${pesan.images}', width: 79, height: 79),
+            child: Image.asset('${pesan.images}', width: 79, height: 79, fit: BoxFit.fill,),
           ),
           title: Row(
             children: [
@@ -115,7 +115,7 @@ class _CheckoutTileWithIconState extends State<CheckoutTileWithIcon> {
           padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 0.0),
           avatar: ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
-            child: Image.asset('${widget.pesan.images}', width: 79, height: 79),
+            child: Image.asset('${widget.pesan.images}', width: 79, height: 79, fit: BoxFit.fill),
           ),
           title: Row(
             children: [
