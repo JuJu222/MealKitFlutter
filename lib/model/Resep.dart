@@ -327,7 +327,7 @@ List<Resep> listResep = [
         '1 cm terasi',
         '3 lembar daun jeruk',
         '2 siung bawang putih',
-        '200 gr kepala parut',
+        '200 gr kelapa parut',
       ],
       menuTools: ['Pisau', 'Wajan datar', 'Gelas ukur', 'Panci'],
       menuReview: '4,4',
