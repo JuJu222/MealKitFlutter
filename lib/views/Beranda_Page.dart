@@ -34,7 +34,7 @@ class _BerandaPageState extends State<BerandaPage> {
                     child: Column(
                       children: [
                         SizedBox(height: 5.0),
-                        Text("Minggu, 2 Oktober 2022",
+                        Text("Rabu, 16 November 2022",
                             style: Theme.of(context)
                                 .textTheme
                                 .headline5!
