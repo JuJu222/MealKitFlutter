@@ -32,13 +32,13 @@ List<Preferensi> listPreferensi = [
       color: Color(0XFFF8CDD5),
       images: "assets/images/meat01.png"),
   Preferensi(
-      nama: "Untuk Diabetes",
+      nama: "Makanan Laut",
       color: Color(0xffDFFCFB),
-      images: "assets/images/diabetes.png"),
+      images: "assets/images/seafood.png"),
   Preferensi(
-      nama: "Untuk Hipertensi",
+      nama: "Menu Diet",
       color: Color(0XFFD9E8FB),
-      images: "assets/images/hipertensi.png")
+      images: "assets/images/almond.png")
 ];
 
 final reversedList = List.from(listPreferensi.reversed);
