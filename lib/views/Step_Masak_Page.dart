@@ -206,53 +206,12 @@ class _StepMasakState extends State<StepMasak> {
                                                   top: 0, left: 8, bottom: 0),
                                               children: [
                                                 SizedBox(height: 8),
-                                                Text(
-                                                    "${bullet} 4 potong (@ 200 g) fillet ikan salmon",
-                                                    style: TextStyle(
+                                                ...resep.menuIngredients!.map((item) {
+                                                  return Text("${bullet} ${item.toString()}", style: TextStyle(
                                                       // fontWeight: FontWeight.bold,
                                                       fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text("${bullet} 1 sdt garam",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 1 sdt merica hitam butiran, gerus kasar",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 2 sdm minyak zaitun",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text("${bullet} 2 sdm mentega",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 4 siung bawang putih, iris tipis",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 4 sdm air jeruk lemon",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
+                                                      fontFamily: 'Quicksand'));
+                                                },)
                                               ],
                                             ),
                                           )
@@ -285,53 +244,12 @@ class _StepMasakState extends State<StepMasak> {
                                                   top: 0, left: 8, bottom: 0),
                                               children: [
                                                 SizedBox(height: 8),
-                                                Text(
-                                                    "${bullet} 4 potong (@ 200 g) fillet ikan salmon",
-                                                    style: TextStyle(
+                                                ...resep.menuTools!.map((item) {
+                                                  return Text("${bullet} ${item.toString()}", style: TextStyle(
                                                       // fontWeight: FontWeight.bold,
                                                       fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text("${bullet} 1 sdt garam",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 1 sdt merica hitam butiran, gerus kasar",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 2 sdm minyak zaitun",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text("${bullet} 2 sdm mentega",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 4 siung bawang putih, iris tipis",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
-                                                Text(
-                                                    "${bullet} 4 sdm air jeruk lemon",
-                                                    style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Quicksand',
-                                                    )),
+                                                      fontFamily: 'Quicksand'));
+                                                },)
                                               ],
                                             ),
                                           )
