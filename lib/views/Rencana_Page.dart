@@ -308,7 +308,8 @@ class _RencanaPageState extends State<RencanaPage> {
                           )),
                       const SizedBox(height: 15.0),
                       SingleChildScrollView(
-                          child: (listPesan.isEmpty)
+                          child: 
+                          (listPesan.isEmpty)
                               ? const Align(
                                   alignment: Alignment.center,
                                   child: Text(
