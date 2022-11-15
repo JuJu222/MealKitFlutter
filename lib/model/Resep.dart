@@ -967,7 +967,7 @@ List<Resep> listResep = [
   Resep(
       menuId: 29,
       menuImage: 'assets/images/foods/resep/roti5.jpg',
-      menuName: ' Kebab Roti Tawar',
+      menuName: 'Kebab Roti Tawar',
       menuPortion: '2 Porsi',
       menuPrice: 'Rp21.000',
       menuPreference: 'Roti',

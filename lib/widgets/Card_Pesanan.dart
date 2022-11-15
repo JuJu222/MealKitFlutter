@@ -64,8 +64,9 @@ class _CardPesananDalamPerjalananState
               ),
             ),
           ),
+          SizedBox(height: 15.0),
           Expanded(
-            flex: 3,
+            flex: 4,
             child: Container(
               child: Row(children: [
                 Expanded(
@@ -85,7 +86,7 @@ class _CardPesananDalamPerjalananState
                         ).toList(),
                       ),
                     )),
-                SizedBox(width: 10.0),
+                SizedBox(height: 10.0),
                 Expanded(
                     flex: 3,
                     child: SingleChildScrollView(
@@ -164,6 +165,7 @@ class _CardPesananDalamPerjalananState
               ]),
             ),
           ),
+          
           Expanded(
             flex: 2,
             child: Container(
@@ -277,8 +279,9 @@ class _CardPesananSelesaiState
               ),
             ),
           ),
+          SizedBox(height: 15.0),
           Expanded(
-            flex: 3,
+            flex: 4,
             child: Container(
               child: Row(children: [
                 Expanded(
@@ -293,7 +296,7 @@ class _CardPesananSelesaiState
                         children: widget.pesan.map(
                           (element) {
                             return Container(
-                                child: Image.asset(element.images!));
+                                child: Image.asset(element.images!, fit: BoxFit.fill));
                           },
                         ).toList(),
                       ),
