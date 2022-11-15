@@ -156,6 +156,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                           // var t = tempList;
                                           listPesan.insertAll(0, tempList);
                                           // listPesan = t;
+                                          listPesan.insertAll(0, tempList);
                                           for (var item in tempList) {
                                             listKeranjang.removeWhere(
                                                 (element) => element == item);
@@ -244,7 +245,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                           Icons.phone_outlined,
                                           color: Color(0xFF707070)),
                                       SizedBox(width: 10),
-                                      Text("089537867595",
+                                      Text("0812345678901",
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline5!

@@ -239,8 +239,9 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                                                 "${bullet} ${widget.resep!.menuIngredients![index]}",
                                                                 style:
                                                                     TextStyle(
-                                                                  // fontWeight: FontWeight.bold,
-                                                                  fontSize: 12,
+                                                                      fontWeight: FontWeight.w500,
+
+                                                                      fontSize: 12,
                                                                   fontFamily:
                                                                       'Quicksand',
                                                                 ))
@@ -291,8 +292,9 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                                                 "${bullet} ${widget.resep!.menuTools![index]}",
                                                                 style:
                                                                     TextStyle(
-                                                                  // fontWeight: FontWeight.bold,
-                                                                  fontSize: 12,
+                                                                      fontWeight: FontWeight.w500,
+
+                                                                      fontSize: 12,
                                                                   fontFamily:
                                                                       'Quicksand',
                                                                 ))

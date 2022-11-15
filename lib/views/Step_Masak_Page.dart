@@ -31,8 +31,6 @@ class _StepMasakState extends State<StepMasak> {
                     decoration: BoxDecoration(
                         image: DecorationImage(
                   fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.8), BlendMode.dstATop),
                   image: AssetImage('${resep!.menuImage}'),
                 ))),
                 Align(
@@ -44,7 +42,7 @@ class _StepMasakState extends State<StepMasak> {
                       shape: BoxShape.circle,
                     ),
                     margin: EdgeInsets.only(top: 48, left: 24),
-                    child: FloatingActionButton(
+                    child: FloatingActionButton.small(
                       backgroundColor: Colors.white,
                       onPressed: () {
                         setState(() {
@@ -208,7 +206,8 @@ class _StepMasakState extends State<StepMasak> {
                                                 SizedBox(height: 8),
                                                 ...resep.menuIngredients!.map((item) {
                                                   return Text("${bullet} ${item.toString()}", style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
+                                                      fontWeight: FontWeight.w500,
+
                                                       fontSize: 12,
                                                       fontFamily: 'Quicksand'));
                                                 },)
@@ -246,7 +245,7 @@ class _StepMasakState extends State<StepMasak> {
                                                 SizedBox(height: 8),
                                                 ...resep.menuTools!.map((item) {
                                                   return Text("${bullet} ${item.toString()}", style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
+                                                      fontWeight: FontWeight.w500,
                                                       fontSize: 12,
                                                       fontFamily: 'Quicksand'));
                                                 },)
@@ -284,8 +283,10 @@ class _StepMasakState extends State<StepMasak> {
                                               padding: EdgeInsets.only(
                                                   top: 0, left: 8, bottom: 0),
                                               children: [
-                                                ProsedurTile(context),
-                                                ProsedurTile(context)
+                                                ProsedurTile(context, '1. Buat Bumbunya', 'Di dalam mangkuk, masukkan semua bumbu rendaman, aduk-aduk hingga tercampur rata.'),
+                                                ProsedurTile(context, '2. Balurkan Bumbun', 'Balurkan bahan yang sudah dicampur di ikan salmon, boleh dimarinasi selama 20 menit.'),
+                                                ProsedurTile(context, '3. Masak Salmon', 'Tanpa minyak, masak salmon di atas teflon anti lengket yang sudah dipanaskan dengan api kecil.'),
+                                                ProsedurTile(context, '4. Hidangkan', 'Masak sesuai selera. Hidangkan dengan sayuran kukus sesuai selera.')
                                               ],
                                             ),
                                           )
@@ -305,15 +306,14 @@ class _StepMasakState extends State<StepMasak> {
   }
 }
 
-Widget ProsedurTile(BuildContext context) {
+Widget ProsedurTile(BuildContext context, String a, String b) {
   return Container(
     child: Column(children: [
       SizedBox(height: 8),
       Container(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text("1. Cuci Semua Sayur",
+          Text(a,
               style: TextStyle(
-                // fontWeight: FontWeight.bold,
                 fontSize: 14,
                 fontWeight: FontWeight.w700,
                 fontFamily: 'Quicksand',
@@ -322,7 +322,10 @@ Widget ProsedurTile(BuildContext context) {
             height: 8,
           ),
           Text(
-              "Cuci semua sayur terlebih dahulu untuk menghilangkan segala pestisida.")
+              b, style: TextStyle(
+            fontSize: 12,
+            fontFamily: 'Quicksand',
+          ),)
         ]),
       ),
       SizedBox(height: 4),

@@ -339,6 +339,12 @@ class _ProfilePageState extends State<ProfilePage> {
                         await AuthService().googleSignOutApp();
                         Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
                           builder: (context) {
+                            Fluttertoast.showToast(
+                                msg: "Berhasil Keluar dari Akun",
+                                toastLength: Toast.LENGTH_SHORT,
+                                backgroundColor: Color(0xFF703900),
+                                textColor: Colors.white,
+                                fontSize: 14.0);
                             return const LoginPage();
                           },
                         ), (route) => false);
