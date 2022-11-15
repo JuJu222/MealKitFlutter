@@ -118,12 +118,12 @@ class Onboarding extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text("Mulai",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyMedium!
-                                      .copyWith(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w700))
+                                  style: TextStyle(
+                                      fontFamily: "Quicksand",
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold)
+                              )
                             ],
                           ),
                         ),
