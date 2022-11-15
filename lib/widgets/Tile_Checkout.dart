@@ -87,7 +87,9 @@ class CheckoutTile extends StatelessWidget {
           ),
           icon: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, StepMasak.routeName);
+              Navigator.pushNamed(context, StepMasak.routeName, arguments: {
+                "resep": listResep.firstWhere((element) => element.menuId == pesan.menuId)
+              });
             },
             child: Icon(Icons.keyboard_arrow_right_rounded),
           )),

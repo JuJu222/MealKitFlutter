@@ -76,8 +76,7 @@ class MyApp extends StatelessWidget {
                 resep: ModalRoute.of(context)?.settings.arguments as Resep,
               ),
           PembayaranBerhasil.routeName: (context) => PembayaranBerhasil(),
-          StepMasak.routeName: (context) => StepMasak(
-              resep: ModalRoute.of(context)?.settings.arguments as Resep),
+          StepMasak.routeName: (context) => StepMasak(),
           ProfilePage.routeName: (context) => ProfilePage(),
           UbahProfilPage.routeName: (context) => UbahProfilPage(),
           UbahPreferensiPage.routeName: (context) => UbahPreferensiPage(),

@@ -3,8 +3,7 @@ part of 'pages.dart';
 class StepMasak extends StatefulWidget {
   static const routeName = "/StepMasak";
   //Resep resep;
-  Resep? resep;
-  StepMasak({super.key, required this.resep});
+  StepMasak({super.key});
 
   @override
   State<StepMasak> createState() => _StepMasakState();
@@ -15,8 +14,11 @@ class _StepMasakState extends State<StepMasak> {
   Color light_gray = Color(0xFFF6F8FA);
   Color yellow = Color(0xFFF8E545);
   String bullet = "\u2022 ";
+
   @override
   Widget build(BuildContext context) {
+    Map data = ModalRoute.of(context)!.settings.arguments as Map;
+    Resep resep = data["resep"];
     return Scaffold(
         body: Stack(
       children: [
@@ -31,7 +33,7 @@ class _StepMasakState extends State<StepMasak> {
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.8), BlendMode.dstATop),
-                  image: AssetImage('${widget.resep!.menuImage}'),
+                  image: AssetImage('${resep!.menuImage}'),
                 ))),
                 Align(
                   alignment: Alignment.topLeft,
@@ -94,7 +96,7 @@ class _StepMasakState extends State<StepMasak> {
                                           child: Container(
                                             child: Container(
                                                 child: Text(
-                                                    "${widget.resep!.menuName}",
+                                                    "${resep!.menuName}",
                                                     style: TextStyle(
                                                       fontSize: 18,
                                                       fontWeight:
@@ -106,10 +108,8 @@ class _StepMasakState extends State<StepMasak> {
                                           flex: 3,
                                           child: Container(
                                               child: Container(
-                                                  padding: EdgeInsets.only(
-                                                      right: 24),
                                                   child: Text(
-                                                      "${widget.resep!.menuPortion}",
+                                                      "${resep!.menuPortion}",
                                                       style: TextStyle(
                                                         fontSize: 24,
                                                         fontWeight:
@@ -128,14 +128,29 @@ class _StepMasakState extends State<StepMasak> {
                                   Flexible(
                                       flex: 2,
                                       child: Container(
-                                          child: Text(
-                                        "${widget.resep!.menuPreference}",
+                                          child: Text.rich(
                                         textAlign: TextAlign.left,
-                                        style: TextStyle(
+                                        TextSpan(
+                                          style: TextStyle(
                                             fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                            fontFamily: 'Quicksand',
-                                            color: blue),
+                                            color: Color(0xFF1C9FE2),
+                                          ),
+                                          children: [
+                                            WidgetSpan(
+                                              alignment:
+                                                  PlaceholderAlignment.middle,
+                                              child: ImageIcon(
+                                                  AssetImage(
+                                                      "assets/images/square-icon.png"),
+                                                  color: Color(0xFF1C9FE2)),
+                                            ),
+                                            TextSpan(
+                                              text: "${resep.menuPreference}",
+                                            )
+                                          ],
+                                          // textAlign: TextAlign.center,
+                                        ),
+                                        // textAlign: TextAlign.center,
                                       ))),
                                   // SizedBox(width: 90),
                                 ],
@@ -153,7 +168,7 @@ class _StepMasakState extends State<StepMasak> {
                                       width: double.infinity,
                                       alignment: Alignment.topLeft,
                                       child: Text(
-                                        "${widget.resep!.menuDescription}",
+                                        "${resep!.menuDescription}",
                                         textAlign: TextAlign.justify,
                                         style: TextStyle(
                                           fontSize: 12,
@@ -188,7 +203,7 @@ class _StepMasakState extends State<StepMasak> {
                                               physics:
                                                   NeverScrollableScrollPhysics(),
                                               padding: EdgeInsets.only(
-                                                  top: 0, left: 24, bottom: 0),
+                                                  top: 0, left: 8, bottom: 0),
                                               children: [
                                                 SizedBox(height: 8),
                                                 Text(
@@ -267,7 +282,7 @@ class _StepMasakState extends State<StepMasak> {
                                               physics:
                                                   NeverScrollableScrollPhysics(),
                                               padding: EdgeInsets.only(
-                                                  top: 0, left: 24, bottom: 0),
+                                                  top: 0, left: 8, bottom: 0),
                                               children: [
                                                 SizedBox(height: 8),
                                                 Text(
@@ -349,7 +364,7 @@ class _StepMasakState extends State<StepMasak> {
                                               physics:
                                                   NeverScrollableScrollPhysics(),
                                               padding: EdgeInsets.only(
-                                                  top: 0, left: 18, bottom: 0),
+                                                  top: 0, left: 8, bottom: 0),
                                               children: [
                                                 ProsedurTile(context),
                                                 ProsedurTile(context)

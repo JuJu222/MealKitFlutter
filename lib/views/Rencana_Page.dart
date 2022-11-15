@@ -325,7 +325,7 @@ class _RencanaPageState extends State<RencanaPage> {
                                           checkWeek()[currentSelectedIndex!]
                                               .date) {
                                         return CheckoutTile(
-                                          pesan: listPesan[index],
+                                          pesan: item,
                                         );
                                       } else {
                                         return Container();
@@ -335,7 +335,7 @@ class _RencanaPageState extends State<RencanaPage> {
                                           checkWeek()[currentSelectedIndex!]
                                               .date) {
                                         return CheckoutTile(
-                                          pesan: listPesan[index],
+                                          pesan: item,
                                         );
                                       } else {
                                         return Container();

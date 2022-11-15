@@ -7,11 +7,12 @@ class Pesan {
   String? menuPrice;
   String? date;
   String? preparationTime;
+  int? menuId;
   Pesan(
       {required this.images,
       required this.menuName,
       required this.numberOfPeople,
-      required this.menuPrice, required this.date});
+      required this.menuPrice, required this.date, this.menuId});
 }
 
 List<Pesan> listPesan = [
@@ -22,6 +23,7 @@ List<Pesan> listPesan = [
     menuPrice: "80.000",
     images: "assets/images/foods/imagefood4.png",
     numberOfPeople: "4",
+    menuId: 0,
   ),
 
   Pesan(
@@ -30,6 +32,7 @@ List<Pesan> listPesan = [
     menuPrice: "50.000",
     images: "assets/images/foods/imagefood3.png",
     numberOfPeople: "4",
+    menuId: 0,
   ),
 
   Pesan(
@@ -38,6 +41,7 @@ List<Pesan> listPesan = [
     menuPrice: "60.000",
     images: "assets/images/foods/imagefood5.png",
     numberOfPeople: "4",
+    menuId: 0,
   ),
 
 
@@ -47,6 +51,7 @@ List<Pesan> listPesan = [
     menuPrice: "80.000",
     images: "assets/images/foods/imagefood1.png",
     numberOfPeople: "4",
+    menuId: 0,
   ),
   Pesan(
     date: "16 November 2022",
@@ -54,6 +59,7 @@ List<Pesan> listPesan = [
     menuPrice: "50.000",
     images: "assets/images/foods/imagefood3.png",
     numberOfPeople: "4",
+    menuId: 0,
   ),
   Pesan(
     date: "16 November 2022",
@@ -61,6 +67,7 @@ List<Pesan> listPesan = [
     menuPrice: "60.000",
     images: "assets/images/foods/imagefood5.png",
     numberOfPeople: "4",
+    menuId: 0,
   ),
 ];
 
@@ -72,6 +79,7 @@ List<Pesan> listKeranjang = [
     menuPrice: "60.000",
     images: "assets/images/foods/imagefood5.png",
     numberOfPeople: "4",
+    menuId: 0,
   ),
   Pesan(
     date: "17 November 2022",
@@ -79,6 +87,7 @@ List<Pesan> listKeranjang = [
     menuPrice: "30.000",
     images: "assets/images/foods/imagefood2.png",
     numberOfPeople: "2",
+    menuId: 0,
   ),
   Pesan(
     date: "17 November 2022",
@@ -86,6 +95,7 @@ List<Pesan> listKeranjang = [
     menuPrice: "50.000",
     images: "assets/images/foods/imagefood3.png",
     numberOfPeople: "4",
+    menuId: 0,
   ),
 ];
 

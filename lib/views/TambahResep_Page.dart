@@ -358,29 +358,31 @@ class _TambahResepPageState extends State<TambahResepPage> {
                             onPressed: () {
                               if (selected_first || selected_second != false) {
                                 if (isDoublePrice) {
-                                  Pesan? pesan = new Pesan(
+                                  Pesan pesan = new Pesan(
                                       images: widget.resep!.menuImage,
                                       menuName: widget.resep!.menuName,
                                       numberOfPeople: portion,
                                       menuPrice:
                                           "${(priceConvert * 2).toString()}.000"
                                               .toString(),
+                                      menuId: widget.resep!.menuId,
                                       date: dateFormatOrder
                                           .format(_dateTime as DateTime)
                                           .toString());
-                                  listKeranjang.add(pesan!);
+                                  listKeranjang.add(pesan);
                                 } else {
-                                  Pesan? pesan = new Pesan(
+                                  Pesan pesan = new Pesan(
                                       images: widget.resep!.menuImage,
                                       menuName: widget.resep!.menuName,
                                       numberOfPeople: portion,
                                       menuPrice:
                                           "${priceConvert.toString()}.000"
                                               .toString(),
+                                      menuId: widget.resep!.menuId,
                                       date: dateFormatOrder
                                           .format(_dateTime as DateTime)
                                           .toString());
-                                  listKeranjang.add(pesan!);
+                                  listKeranjang.add(pesan);
                                 }
 
                                 Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
