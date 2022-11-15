@@ -39,7 +39,7 @@ class _CardPesananDalamPerjalananState
                   blurRadius: 14,
                   offset: Offset(0, 0.2))
             ]),
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(20),
         child: Column(children: [
           Expanded(
             child: Container(
@@ -120,12 +120,11 @@ class _CardPesananDalamPerjalananState
                           children: [
                             Text(
                               "Total",
-                              style: Theme.of(context)!
-                                  .textTheme
-                                  .titleMedium!
-                                  .copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12),
+                              style: TextStyle(
+                                  fontFamily: 'Quicksand',
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold
+                              ),
                             ),
                             SizedBox(
                               height: 21,
@@ -135,13 +134,12 @@ class _CardPesananDalamPerjalananState
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Rp. ",
-                                  style: Theme.of(context)!
-                                      .textTheme
-                                      .subtitle2!
-                                      .copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 12),
+                                  "Rp ",
+                                  style: TextStyle(
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold
+                                  ),
                                 ),
                                 Flexible(
                                   child: Text(
@@ -175,7 +173,7 @@ class _CardPesananDalamPerjalananState
                   padding: const EdgeInsets.all(4),
                   child: Icon(
                     Icons.location_on_rounded,
-                    color: Colors.black,
+                    color: Color(0xFFB3B3B3),
                   ),
                 )),
                 Flexible(
@@ -184,7 +182,6 @@ class _CardPesananDalamPerjalananState
                       margin: const EdgeInsets.only(
                         left: 8,
                       ),
-                      padding: const EdgeInsets.all(4),
                       child: Text(
                         "Citraland CBD Boulevard, Made, Kec. Sambikerep, Kota SBY, Jawa Timur 60219",
                         style: Theme.of(context)!.textTheme.subtitle2,
@@ -335,10 +332,11 @@ class _CardPesananSelesaiState extends State<CardPesananSelesai> {
                           children: [
                             Text(
                               "Total",
-                              style: Theme.of(context)!
-                                  .textTheme
-                                  .titleMedium!
-                                  .copyWith(fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  fontFamily: 'Quicksand',
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold
+                              ),
                             ),
                             SizedBox(
                               height: 28,
@@ -348,13 +346,12 @@ class _CardPesananSelesaiState extends State<CardPesananSelesai> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Rp. ",
-                                  style: Theme.of(context)!
-                                      .textTheme
-                                      .subtitle2!
-                                      .copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 12),
+                                  "Rp ",
+                                  style: TextStyle(
+                                      fontFamily: 'Quicksand',
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold
+                                  ),
                                 ),
                                 Flexible(
                                   child: Text(
@@ -388,7 +385,7 @@ class _CardPesananSelesaiState extends State<CardPesananSelesai> {
                   padding: const EdgeInsets.all(4),
                   child: Icon(
                     Icons.location_on_rounded,
-                    color: Colors.black,
+                    color: Color(0xFFB3B3B3),
                   ),
                 )),
                 Flexible(

@@ -36,7 +36,7 @@ class _DaftarResepPageState extends State<DaftarResepPage> {
           title: Text(
             widget.preferensi.nama.toString(),
             style: TextStyle(
-                fontSize: 18, fontWeight: FontWeight.bold, color: near_black),
+                fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: 'Quicksand'),
           )),
       body: Column(
         children: [
