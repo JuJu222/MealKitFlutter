@@ -19,11 +19,19 @@ class _TambahResepPageState extends State<TambahResepPage> {
   String bullet = "\u2022 ";
 
   DateFormat dateFormat = DateFormat("E, d MMMM y");
+  DateFormat dateFormatOrder = DateFormat("d MMMM y");
   DateTime _dateTime = DateTime.now().add(Duration(days: 1));
   DateTime initialDate = DateTime.now().add(Duration(days: 1));
 
   bool selected_first = false;
   bool selected_second = false;
+  bool isDoublePrice = false;
+  String? portion;
+
+  late var price = widget.resep!.menuPrice!
+      .substring(2, widget.resep!.menuPrice!.indexOf("."));
+  late var priceConvert = int.parse(price);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,19 +48,17 @@ class _TambahResepPageState extends State<TambahResepPage> {
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.8), BlendMode.dstATop),
-                  image: AssetImage('assets/images/detail_bg.png'),
+                  image: AssetImage('${widget.resep!.menuImage}'),
                 ))),
                 Align(
                   alignment: Alignment.topLeft,
                   child: Container(
                     decoration: BoxDecoration(
                       // border: Border.all(color: darkblue, width: 8),
-                      color: Colors.white,
-                      shape: BoxShape.circle,
+                      color: Colors.transparent,
                     ),
-                    margin: EdgeInsets.only(top: 48, left: 24),
-                    child: FloatingActionButton(
-                      heroTag: "btn1",
+                    margin: EdgeInsets.only(top: 40, left: 10),
+                    child: FloatingActionButton.small(
                       backgroundColor: Colors.white,
                       onPressed: () {
                         setState(() {
@@ -90,7 +96,7 @@ class _TambahResepPageState extends State<TambahResepPage> {
                         width: double.infinity,
                         height: double.infinity,
                         child: Center(
-                            child: Text("Grilled Salmon",
+                            child: Text("${widget.resep!.menuName}",
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -135,7 +141,10 @@ class _TambahResepPageState extends State<TambahResepPage> {
                                     onTap: () {
                                       setState(() {
                                         selected_first = true;
+                                        portion = "2";
                                         selected_second = false;
+
+                                        isDoublePrice = false;
                                       });
                                     },
                                     child: Container(
@@ -162,6 +171,8 @@ class _TambahResepPageState extends State<TambahResepPage> {
                                       setState(() {
                                         selected_first = false;
                                         selected_second = true;
+                                        portion = "4";
+                                        isDoublePrice = true;
                                       });
                                     },
                                     child: Container(
@@ -222,8 +233,7 @@ class _TambahResepPageState extends State<TambahResepPage> {
                               context: context,
                               initialDate: initialDate,
                               firstDate: initialDate,
-                              lastDate: initialDate.add(
-                                  Duration(days: DateTime.now().weekday - 1)),
+                              lastDate: initialDate.add(Duration(days: 6)),
                             ).then((date) {
                               setState(() {
                                 date == null
@@ -263,22 +273,27 @@ class _TambahResepPageState extends State<TambahResepPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            // Text("${dateFormatOrder.format(_dateTime as DateTime).toString()}"),
                             Center(
-                                child: Text("2 Porsi Grilled Salmon",
-                                    style: TextStyle(
-                                      color: blue,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: "Quicksand",
-                                    ))),
+                                child: portion != null
+                                    ? Text("${portion} Porsi Grilled Salmon",
+                                        style: TextStyle(
+                                          color: blue,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: "Quicksand",
+                                        ))
+                                    : null),
                             Center(
-                                child: Text("Minggu, 3 Oktober 2022",
+                                child: Text(
+                                    "${dateFormat.format(_dateTime as DateTime).toString()}",
                                     style: TextStyle(
                                       color: blue,
                                       fontSize: 12,
                                       fontFamily: "Quicksand",
                                       // fontWeight: FontWeight.bold,
                                     ))),
+
                             Center(
                               child: Divider(
                                 color: line_gray,
@@ -302,7 +317,10 @@ class _TambahResepPageState extends State<TambahResepPage> {
                                 ),
                                 Container(
                                   padding: EdgeInsets.only(right: 24),
-                                  child: Text("Rp40.000",
+                                  child: Text(
+                                      isDoublePrice
+                                          ? "Rp${(priceConvert * 2).toString()}.000"
+                                          : "Rp${priceConvert.toString()}.000",
                                       style: TextStyle(
                                         color: blue,
                                         fontWeight: FontWeight.bold,
@@ -316,25 +334,71 @@ class _TambahResepPageState extends State<TambahResepPage> {
                         ),
                       ),
                     ),
-                    Flexible(
-                      flex: 1,
+                    Container(
+                      // flex: 1,
                       child: Align(
                         alignment: Alignment.center,
                         child: Container(
                           margin: EdgeInsets.only(top: 18, left: 24, right: 24),
                           width: double.infinity,
-                          height: double.infinity,
-                          decoration: BoxDecoration(
-                            // border: Border.all(color: Colors.transparent),
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
-                            color: blue,
-                            // shape: BoxShape.rectangle,
-                          ),
+                          height: 50,
+                          // decoration: BoxDecoration(
+                          // border: Border.all(color: Colors.transparent),
+                          // borderRadius: BorderRadius.all(Radius.circular(8)),
+                          // color: blue,
+                          // shape: BoxShape.rectangle,
+                          // ),
                           // margin: EdgeInsets.all(4),
                           child: FloatingActionButton.extended(
+                            // height: 50,
+                            elevation: 2,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(8))),
                             heroTag: "btn2",
                             backgroundColor: blue,
-                            onPressed: () {},
+                            onPressed: () {
+                              if (selected_first || selected_second != false) {
+                                if (isDoublePrice) {
+                                  Pesan? pesan = new Pesan(
+                                      images: widget.resep!.menuImage,
+                                      menuName: widget.resep!.menuName,
+                                      numberOfPeople: portion,
+                                      menuPrice:
+                                          "${(priceConvert * 2).toString()}.000"
+                                              .toString(),
+                                      date: dateFormatOrder
+                                          .format(_dateTime as DateTime)
+                                          .toString());
+                                  listKeranjang.add(pesan!);
+                                } else {
+                                  Pesan? pesan = new Pesan(
+                                      images: widget.resep!.menuImage,
+                                      menuName: widget.resep!.menuName,
+                                      numberOfPeople: portion,
+                                      menuPrice:
+                                          "${priceConvert.toString()}.000"
+                                              .toString(),
+                                      date: dateFormatOrder
+                                          .format(_dateTime as DateTime)
+                                          .toString());
+                                  listKeranjang.add(pesan!);
+                                }
+
+                                Navigator.pushNamedAndRemoveUntil(context,
+                                    HomePage.routeName, (route) => false);
+                              } else {
+                                Fluttertoast.showToast(
+                                    msg:
+                                        "Silahkan pilih jumlah porsi terlebih dahulu",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.BOTTOM,
+                                    timeInSecForIosWeb: 1,
+                                    backgroundColor: primaryColor,
+                                    textColor: Colors.white,
+                                    fontSize: 16.0);
+                              }
+                            },
                             label: Text("Tambah ke Rencana",
                                 style: TextStyle(
                                   color: Colors.white,
