@@ -150,7 +150,7 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                             ),
                             Column(
                               children: [
-                                Text("Senin, ${data["waktuTransaksi"]}",
+                                Text("Rabu, ${data["waktuTransaksi"]}",
                                     style: Theme.of(context)
                                         .textTheme
                                         .headline5!
