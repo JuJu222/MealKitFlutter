@@ -169,6 +169,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                                   "${totalPrice(totalPriceFood, 20.000, tempList).toString()}00",
                                               "waktuTransaksi": DateTime.now()
                                             });
+                                          tempList = [];
                                       },
                                     ),
                                   ],
@@ -452,6 +453,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
       Function totalPriceFood, double ongkosKirim, List<Pesan> tempList) {
     totalPricingFull = 0;
     totalPricingFull = totalPriceFood(tempList) + ongkosKirim;
+    tempList = [];
     return totalPricingFull;
   }
 }
