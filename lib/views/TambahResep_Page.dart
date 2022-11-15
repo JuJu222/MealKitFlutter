@@ -46,8 +46,6 @@ class _TambahResepPageState extends State<TambahResepPage> {
                     decoration: BoxDecoration(
                         image: DecorationImage(
                   fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.8), BlendMode.dstATop),
                   image: AssetImage('${widget.resep!.menuImage}'),
                 ))),
                 Align(
@@ -385,8 +383,17 @@ class _TambahResepPageState extends State<TambahResepPage> {
                                   listKeranjang.add(pesan!);
                                 }
 
-                                Navigator.pushNamedAndRemoveUntil(context,
-                                    HomePage.routeName, (route) => false);
+                                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+                                  builder: (context) {
+                                    Fluttertoast.showToast(
+                                        msg: "Resep telah Ditambahkan ke Rencana",
+                                        toastLength: Toast.LENGTH_SHORT,
+                                        backgroundColor: Color(0xEE1C9FE2),
+                                        textColor: Colors.white,
+                                        fontSize: 14.0);
+                                    return const RencanaPage();
+                                  },
+                                ), (route) => false);
                               } else {
                                 Fluttertoast.showToast(
                                     msg:

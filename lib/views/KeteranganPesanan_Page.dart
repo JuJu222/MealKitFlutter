@@ -157,7 +157,7 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                                         .copyWith(
                                             fontWeight: FontWeight.w500,
                                             color: Colors.black,
-                                            fontSize: 16,
+                                            fontSize: 13,
                                             fontFamily: "Quicksand")),
                                 Text("13:30",
                                     style: Theme.of(context)
