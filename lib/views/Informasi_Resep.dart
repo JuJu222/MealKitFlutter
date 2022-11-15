@@ -347,7 +347,11 @@ class _InformasiResepPageState extends State<InformasiResepPage> {
                                             Radius.circular(8))))),
                             child: Text(
                               "Pesan",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(
+                                  fontFamily: "Quicksand",
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
                             ),
                             onPressed: (() {
                               Navigator.pushNamed(
