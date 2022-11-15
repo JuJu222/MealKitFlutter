@@ -86,7 +86,7 @@ class _CardBerandaLongState extends State<CardBerandaLong> {
               top: 100,
               left: 50,
               child: Container(
-                width: 150,
+                width: widget.preferensi.nama == "Makanan Laut" ? 180 : 150,
                 height: 150,
                 decoration: BoxDecoration(
                     image: DecorationImage(

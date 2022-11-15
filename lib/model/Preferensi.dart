@@ -34,7 +34,7 @@ List<Preferensi> listPreferensi = [
   Preferensi(
       nama: "Makanan Laut",
       color: Color(0xffDFFCFB),
-      images: "assets/images/seafood.png"),
+      images: "assets/images/shrimp.png"),
   Preferensi(
       nama: "Menu Diet",
       color: Color(0XFFD9E8FB),
