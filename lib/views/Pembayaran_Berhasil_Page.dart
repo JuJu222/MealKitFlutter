@@ -96,13 +96,12 @@ class PembayaranBerhasil extends StatelessWidget {
                                 // color: Colors.yellow,
                                 child: Text(
                                   "${data["totalPembayaran"]}",
-                                  style: Theme.of(context)!
-                                      .textTheme
-                                      .headline3!
-                                      .copyWith(
-                                          fontSize: 32,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black),
+                                  style: TextStyle(
+                                      fontSize: 32,
+                                      fontFamily: 'Quicksand',
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black
+                                  ),
                                 ),
                               ))
                         ]),
