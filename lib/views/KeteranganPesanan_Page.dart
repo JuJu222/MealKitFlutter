@@ -63,7 +63,7 @@ class _KeteranganPesananPageState extends State<KeteranganPesananPage> {
                                             fontFamily: "Quicksand",
                                             color: Colors.purple[900])),
                                 SizedBox(width: 8.0),
-                                Text("0821*****4821",
+                                Text("0812*****8901",
                                     style: Theme.of(context)
                                         .textTheme
                                         .headline5!

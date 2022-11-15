@@ -127,7 +127,7 @@ class PembayaranBerhasil extends StatelessWidget {
                             width: 8,
                           ),
                           Text(
-                            "0821*****4821",
+                            "0812*****8901",
                             style: TextStyle(
                                 fontSize: 14,
                                 fontFamily: 'Quicksand',

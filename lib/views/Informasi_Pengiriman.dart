@@ -23,12 +23,12 @@ class _InformasiPengirimanPageState extends State<InformasiPengirimanPage> {
   bool? isCheckedProvinsi;
   bool? isCheckedTelepon;
 
-  TextEditingController alamatController = TextEditingController();
-  TextEditingController kelurahanController = TextEditingController();
-  TextEditingController kecamatanController = TextEditingController();
-  TextEditingController kotaController = TextEditingController();
-  TextEditingController provinsiController = TextEditingController();
-  TextEditingController teleponController = TextEditingController();
+  TextEditingController alamatController = TextEditingController(text: 'Jl. CitraLand CBD Boulevard');
+  TextEditingController kelurahanController = TextEditingController(text: 'Lidah Kulon');
+  TextEditingController kecamatanController = TextEditingController(text: 'Sambikerep');
+  TextEditingController kotaController = TextEditingController(text: 'Surabaya');
+  TextEditingController provinsiController = TextEditingController(text: 'Jawa Timur');
+  TextEditingController teleponController = TextEditingController(text: '0812345678901');
   @override
   @override
   void dispose() {
