@@ -72,7 +72,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                       fontFamily: "Quicksand",
                                       color: Colors.black)),
                           SizedBox(height: 15.0),
-                          Text("3 meal kit akan dikirim pada 16 November 2022",
+                          Text("4 meal kit akan dikirim pada 16 November 2022",
                               style: Theme.of(context)
                                   .textTheme
                                   .headline5!

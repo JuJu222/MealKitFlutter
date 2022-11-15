@@ -153,7 +153,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                                   fontFamily: "Quicksand")),
                                       onPressed: () {
                                         setState(() {
-                                          listPesan.addAll(tempList);
+                                          var t = tempList;
+                                          t.addAll(listPesan);
+                                          listPesan = t;
                                           for (var item in tempList) {
                                             listKeranjang.removeWhere(
                                                 (element) => element == item);

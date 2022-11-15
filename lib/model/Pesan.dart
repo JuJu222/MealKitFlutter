@@ -69,6 +69,14 @@ List<Pesan> listPesan = [
     numberOfPeople: "4",
     menuId: 50,
   ),
+  Pesan(
+    date: "16 November 2022",
+    menuName: "Unagi Ramen",
+    menuPrice: "30.000",
+    images: "assets/images/foods/imagefood2.png",
+    numberOfPeople: "2",
+    menuId: 48,
+  ),
 ];
 
 List<Pesan> listKeranjang = [
