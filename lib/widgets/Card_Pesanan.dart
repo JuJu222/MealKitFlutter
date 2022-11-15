@@ -146,12 +146,11 @@ class _CardPesananDalamPerjalananState
                                   child: Text(
                                     "${totalPrice(totalPriceFood, 20.000, widget.pesan).toString()}00",
                                     overflow: TextOverflow.visible,
-                                    style: Theme.of(context)!
-                                        .textTheme
-                                        .subtitle2!
-                                        .copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16),
+                                    style: TextStyle(
+                                        fontFamily: 'Quicksand',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold
+                                    ),
                                   ),
                                 )
                               ],
