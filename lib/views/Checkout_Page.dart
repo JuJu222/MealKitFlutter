@@ -242,7 +242,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                           Icons.phone_outlined,
                                           color: Color(0xFF707070)),
                                       SizedBox(width: 10),
-                                      Text("089537867595",
+                                      Text("0812345678901",
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline5!
