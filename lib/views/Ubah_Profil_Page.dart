@@ -141,8 +141,13 @@ class _UbahProfilPageState extends State<UbahProfilPage> {
                       onTap: () {
                         listProfile[0].name = name;
                         listProfile[0].email = email;
-                        Navigator.of(context).pushNamedAndRemoveUntil(
-                            HomePage.routeName, (route) => false);
+                        Fluttertoast.showToast(
+                            msg: "Profil Berhasil Disimpan",
+                            toastLength: Toast.LENGTH_SHORT,
+                            backgroundColor: Color(0xEE1C9FE2),
+                            textColor: Colors.white,
+                            fontSize: 14.0);
+                        Navigator.pop(context);
                       },
                     ),
                   ),

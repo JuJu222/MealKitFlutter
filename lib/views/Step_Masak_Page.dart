@@ -206,7 +206,8 @@ class _StepMasakState extends State<StepMasak> {
                                                 SizedBox(height: 8),
                                                 ...resep.menuIngredients!.map((item) {
                                                   return Text("${bullet} ${item.toString()}", style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
+                                                      fontWeight: FontWeight.w500,
+
                                                       fontSize: 12,
                                                       fontFamily: 'Quicksand'));
                                                 },)
@@ -244,7 +245,7 @@ class _StepMasakState extends State<StepMasak> {
                                                 SizedBox(height: 8),
                                                 ...resep.menuTools!.map((item) {
                                                   return Text("${bullet} ${item.toString()}", style: TextStyle(
-                                                      // fontWeight: FontWeight.bold,
+                                                      fontWeight: FontWeight.w500,
                                                       fontSize: 12,
                                                       fontFamily: 'Quicksand'));
                                                 },)
@@ -285,7 +286,7 @@ class _StepMasakState extends State<StepMasak> {
                                                 ProsedurTile(context, '1. Buat Bumbunya', 'Di dalam mangkuk, masukkan semua bumbu rendaman, aduk-aduk hingga tercampur rata.'),
                                                 ProsedurTile(context, '2. Balurkan Bumbun', 'Balurkan bahan yang sudah dicampur di ikan salmon, boleh dimarinasi selama 20 menit.'),
                                                 ProsedurTile(context, '3. Masak Salmon', 'Tanpa minyak, masak salmon di atas teflon anti lengket yang sudah dipanaskan dengan api kecil.'),
-                                                ProsedurTile(context, '4. Hidangkan', 'Masak sesuai selera. Hidangkan dengan sayuran kukus.')
+                                                ProsedurTile(context, '4. Hidangkan', 'Masak sesuai selera. Hidangkan dengan sayuran kukus sesuai selera.')
                                               ],
                                             ),
                                           )
@@ -313,7 +314,6 @@ Widget ProsedurTile(BuildContext context, String a, String b) {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(a,
               style: TextStyle(
-                // fontWeight: FontWeight.bold,
                 fontSize: 14,
                 fontWeight: FontWeight.w700,
                 fontFamily: 'Quicksand',
@@ -322,7 +322,10 @@ Widget ProsedurTile(BuildContext context, String a, String b) {
             height: 8,
           ),
           Text(
-              b)
+              b, style: TextStyle(
+            fontSize: 12,
+            fontFamily: 'Quicksand',
+          ),)
         ]),
       ),
       SizedBox(height: 4),
