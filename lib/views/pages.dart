@@ -53,3 +53,4 @@ part 'KeteranganPesanan_Page.dart';
 part 'TambahResep_Page.dart';
 part 'Step_Masak_Page.dart';
 part 'Onboarding_Page.dart';
+part 'Metode_Pembayaran.dart';

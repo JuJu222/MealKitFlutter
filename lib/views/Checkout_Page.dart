@@ -77,7 +77,15 @@ class _CheckoutPageState extends State<CheckoutPage> {
                             ),
                           ],
                         ),
-                        Icon(Icons.keyboard_arrow_right_outlined)
+                        Ink(
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, MetodePembayaran.routeName);
+                            },
+                            child: Icon(Icons.keyboard_arrow_right_outlined),
+                          ),
+                        )
                       ],
                     ),
                     SizedBox(height: 22.0),
@@ -96,63 +104,76 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              children: [
-                                Text("Rp.",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline5!
-                                        .copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18,
-                                            fontFamily: "Quicksand")),
-                                SizedBox(width: 2.0),
-                                Text(
-                                    "${(totalPrice(totalPriceFood, 20.000, tempList).toString())}00",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline5!
-                                        .copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 34,
-                                            fontFamily: "Quicksand")),
-                              ],
-                            ),
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 55.0, vertical: 16.0),
-                                  backgroundColor: Color(0xFF1C9FE2),
-                                  elevation: 0.0,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(12.0))),
-                              child: Text("Pesan",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headline5!
-                                      .copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16,
-                                          color: Colors.white,
-                                          fontFamily: "Quicksand")),
-                              onPressed: () {
-                                setState((){
-                                  listPesan.addAll(tempList);
-                                  for (var item in tempList) {
-                                    listKeranjang.removeWhere((element) => element == item);
-                                  }
-                                });
+                            Expanded(
+                              child: Container(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      child: Row(children: [
+                                        Text("Rp.",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .headline5!
+                                                .copyWith(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 18,
+                                                    fontFamily: "Quicksand")),
+                                        SizedBox(width: 2.0),
+                                        Text(
+                                            "${(totalPrice(totalPriceFood, 20.000, tempList).toString())}00",
+                                            overflow: TextOverflow.fade,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .headline5!
+                                                .copyWith(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 32,
+                                                    fontFamily: "Quicksand")),
+                                      ]),
+                                    ),
+                                    ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 40.0, vertical: 12.0),
+                                          backgroundColor: Color(0xFF1C9FE2),
+                                          elevation: 0.0,
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0))),
+                                      child: Text("Pesan",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline5!
+                                              .copyWith(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 16,
+                                                  color: Colors.white,
+                                                  fontFamily: "Quicksand")),
+                                      onPressed: () {
+                                        setState(() {
+                                          listPesan.addAll(tempList);
+                                          for (var item in tempList) {
+                                            listKeranjang.removeWhere(
+                                                (element) => element == item);
+                                          }
+                                        });
 
-                                Navigator.pushNamedAndRemoveUntil(
-
-                                    context, PembayaranBerhasil.routeName, (route) => false,
-                                    arguments: {
-                                      "totalPembayaran":
-                                          "${totalPrice(totalPriceFood, 20.000, tempList).toString()}00",
-                                      "waktuTransaksi": DateTime.now()
-                                    });
-                              },
+                                        Navigator.pushNamedAndRemoveUntil(
+                                            context,
+                                            PembayaranBerhasil.routeName,
+                                            (route) => false,
+                                            arguments: {
+                                              "totalPembayaran":
+                                                  "${totalPrice(totalPriceFood, 20.000, tempList).toString()}00",
+                                              "waktuTransaksi": DateTime.now()
+                                            });
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ],
                         )
