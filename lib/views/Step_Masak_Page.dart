@@ -2,7 +2,9 @@ part of 'pages.dart';
 
 class StepMasak extends StatefulWidget {
   static const routeName = "/StepMasak";
-  const StepMasak({super.key});
+  //Resep resep;
+  Resep? resep;
+  StepMasak({super.key, required this.resep});
 
   @override
   State<StepMasak> createState() => _StepMasakState();
@@ -29,7 +31,7 @@ class _StepMasakState extends State<StepMasak> {
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.8), BlendMode.dstATop),
-                  image: AssetImage('assets/images/detail_bg.png'),
+                  image: AssetImage('${widget.resep!.menuImage}'),
                 ))),
                 Align(
                   alignment: Alignment.topLeft,
@@ -91,7 +93,8 @@ class _StepMasakState extends State<StepMasak> {
                                           flex: 2,
                                           child: Container(
                                             child: Container(
-                                                child: Text("Grilled Salmon",
+                                                child: Text(
+                                                    "${widget.resep!.menuName}",
                                                     style: TextStyle(
                                                       fontSize: 18,
                                                       fontWeight:
@@ -105,7 +108,8 @@ class _StepMasakState extends State<StepMasak> {
                                               child: Container(
                                                   padding: EdgeInsets.only(
                                                       right: 24),
-                                                  child: Text("4 Porsi ",
+                                                  child: Text(
+                                                      "${widget.resep!.menuPortion}",
                                                       style: TextStyle(
                                                         fontSize: 24,
                                                         fontWeight:
@@ -125,7 +129,7 @@ class _StepMasakState extends State<StepMasak> {
                                       flex: 2,
                                       child: Container(
                                           child: Text(
-                                        "Daging dan Sayur",
+                                        "${widget.resep!.menuPreference}",
                                         textAlign: TextAlign.left,
                                         style: TextStyle(
                                             fontSize: 14,
@@ -149,7 +153,7 @@ class _StepMasakState extends State<StepMasak> {
                                       width: double.infinity,
                                       alignment: Alignment.topLeft,
                                       child: Text(
-                                        "Di samping menjadi salah satu sumber protein yang berkualitas tinggi, ikan salmon juga kaya akan asam lemak omega-3. Asam lemak omega-3 sangat berguna bagi kesehatan jantung, otak, dan organ tubuh lainnya. Selain itu rasanya lezat dan mudah diolah.",
+                                        "${widget.resep!.menuDescription}",
                                         textAlign: TextAlign.justify,
                                         style: TextStyle(
                                           fontSize: 12,
