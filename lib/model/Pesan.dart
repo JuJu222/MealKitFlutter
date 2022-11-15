@@ -32,7 +32,7 @@ List<Pesan> listPesan = [
     menuPrice: "50.000",
     images: "assets/images/foods/imagefood3.png",
     numberOfPeople: "4",
-    menuId: 0,
+    menuId: 49,
   ),
 
   Pesan(
@@ -41,7 +41,7 @@ List<Pesan> listPesan = [
     menuPrice: "60.000",
     images: "assets/images/foods/imagefood5.png",
     numberOfPeople: "4",
-    menuId: 0,
+    menuId: 50,
   ),
 
 
@@ -59,7 +59,7 @@ List<Pesan> listPesan = [
     menuPrice: "50.000",
     images: "assets/images/foods/imagefood3.png",
     numberOfPeople: "4",
-    menuId: 0,
+    menuId: 49,
   ),
   Pesan(
     date: "16 November 2022",
@@ -67,7 +67,7 @@ List<Pesan> listPesan = [
     menuPrice: "60.000",
     images: "assets/images/foods/imagefood5.png",
     numberOfPeople: "4",
-    menuId: 0,
+    menuId: 50,
   ),
 ];
 
@@ -79,7 +79,7 @@ List<Pesan> listKeranjang = [
     menuPrice: "60.000",
     images: "assets/images/foods/imagefood5.png",
     numberOfPeople: "4",
-    menuId: 0,
+    menuId: 50,
   ),
   Pesan(
     date: "17 November 2022",
@@ -87,7 +87,7 @@ List<Pesan> listKeranjang = [
     menuPrice: "30.000",
     images: "assets/images/foods/imagefood2.png",
     numberOfPeople: "2",
-    menuId: 0,
+    menuId: 48,
   ),
   Pesan(
     date: "17 November 2022",
@@ -95,7 +95,7 @@ List<Pesan> listKeranjang = [
     menuPrice: "50.000",
     images: "assets/images/foods/imagefood3.png",
     numberOfPeople: "4",
-    menuId: 0,
+    menuId: 49,
   ),
 ];
 
