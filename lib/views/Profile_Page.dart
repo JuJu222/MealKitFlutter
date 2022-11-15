@@ -129,7 +129,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                             padding: EdgeInsets.all(5),
                                             //apply padding to all four sides
                                             child: Text(
-                                              "50",
+                                              "1",
                                               style: TextStyle(
                                                   fontFamily: 'Quicksand',
                                                   color: Color(0xFF707070),
@@ -197,7 +197,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                             padding: EdgeInsets.all(5),
                                             //apply padding to all four sides
                                             child: Text(
-                                              "3 Okt",
+                                              "16 Nov",
                                               style: TextStyle(
                                                   fontFamily: 'Quicksand',
                                                   color: Color(0xFF707070),
