@@ -31,7 +31,6 @@ class PesananPage extends StatelessWidget {
               child: Container(
                 child: Column(children: [
                   CardPesananParentDalamPerjalanan(pesan: listPesan),
-                  SizedBox(height: 20.0),
                   CardPesananParentSelesai(pesan: listPesan),
                 ]),
               ),

@@ -9,7 +9,7 @@ class RencanaPage extends StatefulWidget {
 }
 
 class _RencanaPageState extends State<RencanaPage> {
-  int? currentSelectedIndex = 3;
+  int? currentSelectedIndex = 4;
   List<Pesan> tempList = [];
   double totalPricing = 0;
   late int isWeek = 3;
