@@ -2,7 +2,7 @@ part of 'pages.dart';
 
 class StepMasak extends StatefulWidget {
   static const routeName = "/StepMasak";
-
+  //Resep resep;
   Resep? resep;
   StepMasak({super.key, required this.resep});
 
