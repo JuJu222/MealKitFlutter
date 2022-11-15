@@ -15,14 +15,18 @@ class CheckoutTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
             child: Image.asset('${pesan.images}', width: 79, height: 79),
           ),
-          title: Column(
+          title: Row(
             children: [
-              const SizedBox(width: 5.0),
-              Text(pesan.menuName!,
-                  style: Theme.of(context).textTheme.headline5!.copyWith(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      fontFamily: "Quicksand")),
+              Row(
+                children: [
+                  // const SizedBox(width: 5.0),
+                  Text(pesan.menuName!,
+                      style: Theme.of(context).textTheme.headline5!.copyWith(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          fontFamily: "Quicksand")),
+                ],
+              ),
             ],
           ),
           subTitle: Column(
@@ -33,7 +37,7 @@ class CheckoutTile extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const SizedBox(width: 5.0),
+                  // const SizedBox(width: 5.0),
                   Row(
                     children: [
                       const Icon(Icons.group,
@@ -55,7 +59,6 @@ class CheckoutTile extends StatelessWidget {
                       const Icon(Icons.date_range_outlined,
                           size: 22, color: Color(0xFF6A6A6A)),
                       Text("${pesan.date}",
-                          overflow: TextOverflow.ellipsis,
                           style: Theme.of(context)
                               .textTheme
                               .headline5!
@@ -71,7 +74,7 @@ class CheckoutTile extends StatelessWidget {
               const SizedBox(height: 4.0),
               Row(
                 children: [
-                  const SizedBox(width: 5.0),
+                  // const SizedBox(width: 5.0),
                   Text("Rp.${pesan.menuPrice}",
                       style: Theme.of(context).textTheme.headline5!.copyWith(
                           fontWeight: FontWeight.w500,
@@ -114,14 +117,18 @@ class _CheckoutTileWithIconState extends State<CheckoutTileWithIcon> {
             borderRadius: BorderRadius.circular(10.0),
             child: Image.asset('${widget.pesan.images}', width: 79, height: 79),
           ),
-          title: Column(
+          title: Row(
             children: [
-              const SizedBox(width: 5.0),
-              Text(widget.pesan.menuName!,
-                  style: Theme.of(context).textTheme.headline5!.copyWith(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      fontFamily: "Quicksand")),
+              Row(
+                children: [
+                  // const SizedBox(width: 5.0),
+                  Text(widget.pesan.menuName!,
+                      style: Theme.of(context).textTheme.headline5!.copyWith(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          fontFamily: "Quicksand")),
+                ],
+              ),
             ],
           ),
           subTitle: Column(
@@ -132,7 +139,7 @@ class _CheckoutTileWithIconState extends State<CheckoutTileWithIcon> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const SizedBox(width: 5.0),
+                  // const SizedBox(width: 5.0),
                   Row(
                     children: [
                       const Icon(Icons.group,
@@ -154,7 +161,6 @@ class _CheckoutTileWithIconState extends State<CheckoutTileWithIcon> {
                       const Icon(Icons.date_range_outlined,
                           size: 22, color: Color(0xFF6A6A6A)),
                       Text("${widget.pesan.date}",
-                          overflow: TextOverflow.ellipsis,
                           style: Theme.of(context)
                               .textTheme
                               .headline5!
@@ -170,7 +176,7 @@ class _CheckoutTileWithIconState extends State<CheckoutTileWithIcon> {
               const SizedBox(height: 4.0),
               Row(
                 children: [
-                  const SizedBox(width: 5.0),
+                  // const SizedBox(width: 5.0),
                   Text("Rp.${widget.pesan.menuPrice}",
                       style: Theme.of(context).textTheme.headline5!.copyWith(
                           fontWeight: FontWeight.w500,

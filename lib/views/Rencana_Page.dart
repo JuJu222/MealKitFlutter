@@ -97,11 +97,20 @@ class _RencanaPageState extends State<RencanaPage> {
     super.initState();
     // Add listeners to this class
     for (var item in listKeranjang) {
-      if (item.date!.substring(0, 2) ==
-          checkWeek()[currentSelectedIndex!].date) {
-        tempList.add(listKeranjang.firstWhere((item) =>
-            (item.date!.substring(0, 2) ==
-                checkWeek()[currentSelectedIndex!].date)));
+      if (item.date![1] == " ") {
+        if (item.date!.substring(0, 1) ==
+            checkWeek()[currentSelectedIndex!].date) {
+          tempList.add(listKeranjang.firstWhere((item) =>
+              (item.date!.substring(0, 1) ==
+                  checkWeek()[currentSelectedIndex!].date)));
+        }
+      } else {
+        if (item.date!.substring(0, 2) ==
+            checkWeek()[currentSelectedIndex!].date) {
+          tempList.add(listKeranjang.firstWhere((item) =>
+              (item.date!.substring(0, 2) ==
+                  checkWeek()[currentSelectedIndex!].date)));
+        }
       }
     }
   }
@@ -129,9 +138,16 @@ class _RencanaPageState extends State<RencanaPage> {
                       isWeek = value;
                       tempList = [];
                       for (var item in listKeranjang) {
-                        if (item.date!.substring(0, 2) ==
-                            checkWeek()[currentSelectedIndex!].date) {
-                          tempList.add(item);
+                        if (item.date![1] == " ") {
+                          if (item.date!.substring(0, 1) ==
+                              checkWeek()[currentSelectedIndex!].date) {
+                            tempList.add(item);
+                          }
+                        } else {
+                          if (item.date!.substring(0, 2) ==
+                              checkWeek()[currentSelectedIndex!].date) {
+                            tempList.add(item);
+                          }
                         }
                       }
                     });
@@ -154,7 +170,9 @@ class _RencanaPageState extends State<RencanaPage> {
         body: SlidingUpPanel(
           key: UniqueKey(),
           maxHeight: 100,
-          boxShadow: const [BoxShadow(blurRadius: 10, color: Color(0x0f000000))],
+          boxShadow: const [
+            BoxShadow(blurRadius: 10, color: Color(0x0f000000))
+          ],
           borderRadius: const BorderRadius.horizontal(
               left: Radius.circular(22), right: Radius.circular(22)),
           panel: Padding(
@@ -205,13 +223,24 @@ class _RencanaPageState extends State<RencanaPage> {
                       onPressed: () {
                         if (listKeranjang.isNotEmpty) {
                           for (var item in listKeranjang) {
-                            if (item.date!.substring(0, 2) ==
-                                checkWeek()[currentSelectedIndex!].date) {
-                              Navigator.pushNamed(
-                                  context, CheckoutPage.routeName,
-                                  arguments: {
-                                    "currentList": tempList,
-                                  });
+                            if (item.date![1] == " ") {
+                              if (item.date!.substring(0, 1) ==
+                                  checkWeek()[currentSelectedIndex!].date) {
+                                Navigator.pushNamed(
+                                    context, CheckoutPage.routeName,
+                                    arguments: {
+                                      "currentList": tempList,
+                                    });
+                              }
+                            } else {
+                              if (item.date!.substring(0, 2) ==
+                                  checkWeek()[currentSelectedIndex!].date) {
+                                Navigator.pushNamed(
+                                    context, CheckoutPage.routeName,
+                                    arguments: {
+                                      "currentList": tempList,
+                                    });
+                              }
                             }
                           }
                         }
@@ -243,9 +272,16 @@ class _RencanaPageState extends State<RencanaPage> {
                             currentSelectedIndex = index;
                             tempList = [];
                             for (var itm in listKeranjang) {
-                              if (itm.date!.substring(0, 2) ==
-                                  checkWeek()[currentSelectedIndex!].date) {
-                                tempList.add(itm);
+                              if (itm.date![1] == " ") {
+                                if (itm.date!.substring(0, 1) ==
+                                    checkWeek()[currentSelectedIndex!].date) {
+                                  tempList.add(itm);
+                                }
+                              } else {
+                                if (itm.date!.substring(0, 2) ==
+                                    checkWeek()[currentSelectedIndex!].date) {
+                                  tempList.add(itm);
+                                }
                               }
                             }
                           });
@@ -279,19 +315,34 @@ class _RencanaPageState extends State<RencanaPage> {
                               ? const Align(
                                   alignment: Alignment.center,
                                   child: Text(
-                                      "Tidak ada meal kit yang telah dipesan"),
+                                      "Tidak ada meal kit yang telah dipesan",
+                                      style: TextStyle(
+                                          fontFamily: "Quicksand",
+                                          fontWeight: FontWeight.w500)),
                                 )
                               : Column(
                                   children: listPesan.mapIndexed(
                                   (index, item) {
-                                    if (item.date!.substring(0, 2) ==
-                                        checkWeek()[currentSelectedIndex!]
-                                            .date) {
-                                      return CheckoutTile(
-                                        pesan: listPesan[index],
-                                      );
+                                    if (item.date![1] == " ") {
+                                      if (item.date!.substring(0, 1) ==
+                                          checkWeek()[currentSelectedIndex!]
+                                              .date) {
+                                        return CheckoutTile(
+                                          pesan: listPesan[index],
+                                        );
+                                      } else {
+                                        return Container();
+                                      }
                                     } else {
-                                      return Container();
+                                      if (item.date!.substring(0, 2) ==
+                                          checkWeek()[currentSelectedIndex!]
+                                              .date) {
+                                        return CheckoutTile(
+                                          pesan: listPesan[index],
+                                        );
+                                      } else {
+                                        return Container();
+                                      }
                                     }
                                   },
                                 ).toList())),
@@ -321,18 +372,29 @@ class _RencanaPageState extends State<RencanaPage> {
                                     (index, item) {
                                       //item yang datenya sama
                                       //filter cuman date yang sama
-                                      if (item.date!.substring(0, 2) ==
-                                          checkWeek()[currentSelectedIndex!]
-                                              .date) {
-                                        // setState(() {
-                                        //   tempList.add(item);
-                                        // });
-                                        return CheckoutTileWithIcon(
-                                          onDelete: () => removeItem(index),
-                                          pesan: listKeranjang[index],
-                                        );
+
+                                      if (item.date![1] == " ") {
+                                        if (item.date!.substring(0, 1) ==
+                                            checkWeek()[currentSelectedIndex!]
+                                                .date) {
+                                          return CheckoutTileWithIcon(
+                                            onDelete: () => removeItem(index),
+                                            pesan: listKeranjang[index],
+                                          );
+                                        } else {
+                                          return Container();
+                                        }
                                       } else {
-                                        return Container();
+                                        if (item.date!.substring(0, 2) ==
+                                            checkWeek()[currentSelectedIndex!]
+                                                .date) {
+                                          return CheckoutTileWithIcon(
+                                            onDelete: () => removeItem(index),
+                                            pesan: listKeranjang[index],
+                                          );
+                                        } else {
+                                          return Container();
+                                        }
                                       }
                                     },
                                   ).toList(),
