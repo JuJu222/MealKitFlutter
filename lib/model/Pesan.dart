@@ -7,11 +7,12 @@ class Pesan {
   String? menuPrice;
   String? date;
   String? preparationTime;
+  int? menuId;
   Pesan(
       {required this.images,
       required this.menuName,
       required this.numberOfPeople,
-      required this.menuPrice, required this.date});
+      required this.menuPrice, required this.date, this.menuId});
 }
 
 List<Pesan> listPesan = [
@@ -20,53 +21,60 @@ List<Pesan> listPesan = [
     date: "6 November 2022",
     menuName: "Grilled Salmon",
     menuPrice: "80.000",
-    images: "assets/images/foods/imagefood1.png",
-    numberOfPeople: "4",
+    images: "assets/images/foods/resep/salmon.png",
+    numberOfPeople: "2",
+    menuId: 0,
   ),
 
   Pesan(
     date: "6 November 2022",
-    menuName: "Nabe Veggie Udon",
-    menuPrice: "50.000",
-    images: "assets/images/foods/imagefood3.png",
-    numberOfPeople: "4",
+    menuName: "Daging Sapi Asam Manis",
+    menuPrice: "22.000",
+    images: "assets/images/foods/resep/dagingsayur4.png",
+    numberOfPeople: "2",
+    menuId: 4,
   ),
 
   Pesan(
     date: "6 November 2022",
-    menuName: "Pesto Pasta Chicken",
-    menuPrice: "60.000",
-    images: "assets/images/foods/imagefood5.png",
-    numberOfPeople: "4",
+    menuName: "Terong Balado",
+    menuPrice: "18.000",
+    images: "assets/images/foods/resep/sayur5.png",
+    numberOfPeople: "2",
+    menuId: 11,
   ),
 
   Pesan(
     date: "16 November 2022",
     menuName: "Grilled Salmon",
     menuPrice: "80.000",
-    images: "assets/images/foods/imagefood4.png",
-    numberOfPeople: "4",
+    images: "assets/images/foods/resep/salmon.png",
+    numberOfPeople: "2",
+    menuId: 0,
   ),
   Pesan(
     date: "16 November 2022",
-    menuName: "Nabe Veggie Udon",
-    menuPrice: "50.000",
+    menuName: "Kebab Roti Tawar",
+    menuPrice: "21.000",
     images: "assets/images/foods/imagefood3.png",
     numberOfPeople: "4",
+    menuId: 29,
   ),
   Pesan(
     date: "17 November 2022",
-    menuName: "Nabe Veggie Udon",
-    menuPrice: "50.000",
-    images: "assets/images/foods/imagefood3.png",
+    menuName: "Spaghetti Brulee",
+    menuPrice: "32.000",
+    images: "assets/images/foods/resep/produksusu1.png",
     numberOfPeople: "2",
+    menuId: 13,
   ),
   Pesan(
     date: "18 November 2022",
-    menuName: "Nabe Veggie Udon",
-    menuPrice: "50.000",
-    images: "assets/images/foods/imagefood3.png",
+    menuName: "Pancake Pizza",
+    menuPrice: "32.000",
+    images: "assets/images/foods/resep/produksusu2.png",
     numberOfPeople: "2",
+    menuId: 14,
   ),
 ];
 
@@ -74,24 +82,27 @@ List<Pesan> listKeranjang = [
   
   Pesan(
     date: "16 November 2022",
-    menuName: "Pesto Pasta Chicken",
-    menuPrice: "60.000",
-    images: "assets/images/foods/imagefood5.png",
-    numberOfPeople: "4",
+    menuName: "Pancake Pizza",
+    menuPrice: "32.000",
+    images: "assets/images/foods/resep/produksusu2.png",
+    numberOfPeople: "2",
+    menuId: 14,
   ),
   Pesan(
     date: "16 November 2022",
-    menuName: "Unagi Ramen",
-    menuPrice: "30.000",
-    images: "assets/images/foods/imagefood2.png",
+    menuName: "Spaghetti Brulee",
+    menuPrice: "32.000",
+    images: "assets/images/foods/resep/produksusu1.png",
     numberOfPeople: "2",
+    menuId: 13,
   ),
   Pesan(
-    date: "18 November 2022",
-    menuName: "Veggie & Bone Broth Ramen",
-    menuPrice: "45.000",
-    images: "assets/images/foods/imagefood2.png",
-    numberOfPeople: "3",
+    date: "6 November 2022",
+    menuName: "Terong Balado",
+    menuPrice: "18.000",
+    images: "assets/images/foods/resep/sayur5.png",
+    numberOfPeople: "2",
+    menuId: 11,
   ),
 ];
 
