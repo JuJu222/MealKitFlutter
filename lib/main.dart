@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
                     statusBarColor: Colors.white,
                     statusBarIconBrightness: Brightness.dark)),
             textTheme: myTextTheme),
-        initialRoute: Onboarding.routeName,
+        initialRoute: HomePage.routeName,
         routes: {
           ResetPasswordPage.routeName: (context) => const ResetPasswordPage(),
           Onboarding.routeName: (context) => Onboarding(),

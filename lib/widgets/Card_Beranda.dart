@@ -84,7 +84,7 @@ class _CardBerandaLongState extends State<CardBerandaLong> {
         child: Stack(children: [
           Positioned(
               top: 100,
-              left: 20,
+              left: 50,
               child: Container(
                 width: 150,
                 height: 150,

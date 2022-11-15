@@ -218,17 +218,18 @@ class CardPesananSelesai extends StatefulWidget {
   const CardPesananSelesai({super.key, required this.pesan});
 
   @override
-  State<CardPesananSelesai> createState() => _CardPesananSelesaiState();
+  State<CardPesananSelesai> createState() =>
+      _CardPesananSelesaiState();
 }
 
-class _CardPesananSelesaiState extends State<CardPesananSelesai> {
+class _CardPesananSelesaiState
+    extends State<CardPesananSelesai> {
   double totalPricingFull = 0;
   double totalPricing = 0;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (() {
-        //using argument cause of by index
         Navigator.pushNamed(context, KeteranganPesananPage.routeName,
             arguments: {
               "pesan": widget.pesan,
@@ -236,6 +237,7 @@ class _CardPesananSelesaiState extends State<CardPesananSelesai> {
                   "${totalPrice(totalPriceFood, 20.000, widget.pesan).toString()}00",
               "waktuTransaksi": widget.pesan[0].date!,
             });
+        //using argument cause of by index
       }),
       child: Container(
         margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
@@ -250,7 +252,7 @@ class _CardPesananSelesaiState extends State<CardPesananSelesai> {
                   blurRadius: 14,
                   offset: Offset(0, 0.2))
             ]),
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(20),
         child: Column(children: [
           Expanded(
             child: Container(
@@ -261,16 +263,14 @@ class _CardPesananSelesaiState extends State<CardPesananSelesai> {
                   Container(
                     child: Text(widget.pesan[0].date!,
                         style: Theme.of(context)!.textTheme.subtitle2!.copyWith(
-                            color: Color(0xFF7A7A7A),
-                            fontWeight: FontWeight.w500)),
+                            color: Colors.grey, fontWeight: FontWeight.w500)),
                   ),
                   //STATUS PESANAN
                   Container(
                     child: Text(
                       "Selesai",
                       style: Theme.of(context)!.textTheme.subtitle2!.copyWith(
-                          color: Color(0xFFB3B3B3),
-                          fontWeight: FontWeight.w700),
+                          color: Colors.grey, fontWeight: FontWeight.w700),
                     ),
                   )
                 ],
@@ -298,8 +298,9 @@ class _CardPesananSelesaiState extends State<CardPesananSelesai> {
                         ).toList(),
                       ),
                     )),
+                SizedBox(width: 10.0),
                 Expanded(
-                    flex: 2,
+                    flex: 3,
                     child: SingleChildScrollView(
                         physics: NeverScrollableScrollPhysics(),
                         child: Container(
@@ -325,7 +326,7 @@ class _CardPesananSelesaiState extends State<CardPesananSelesai> {
                     physics: NeverScrollableScrollPhysics(),
                     child: Container(
                         child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Wrap(
@@ -339,18 +340,18 @@ class _CardPesananSelesaiState extends State<CardPesananSelesai> {
                               ),
                             ),
                             SizedBox(
-                              height: 28,
+                              height: 21,
                             ),
                             Container(
                                 child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
                                   "Rp ",
                                   style: TextStyle(
-                                      fontFamily: 'Quicksand',
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold
                                   ),
                                 ),
                                 Flexible(
@@ -394,7 +395,6 @@ class _CardPesananSelesaiState extends State<CardPesananSelesai> {
                       margin: const EdgeInsets.only(
                         left: 8,
                       ),
-                      padding: const EdgeInsets.all(4),
                       child: Text(
                         "Citraland CBD Boulevard, Made, Kec. Sambikerep, Kota SBY, Jawa Timur 60219",
                         style: Theme.of(context)!.textTheme.subtitle2,

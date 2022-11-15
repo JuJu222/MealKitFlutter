@@ -100,19 +100,16 @@ class _RencanaPageState extends State<RencanaPage> {
       if (item.date![1] == " ") {
         if (item.date!.substring(0, 1) ==
             checkWeek()[currentSelectedIndex!].date) {
-          tempList.add(listKeranjang.firstWhere((item) =>
-              (item.date!.substring(0, 1) ==
-                  checkWeek()[currentSelectedIndex!].date)));
+          tempList.add(item);
         }
       } else {
         if (item.date!.substring(0, 2) ==
             checkWeek()[currentSelectedIndex!].date) {
-          tempList.add(listKeranjang.firstWhere((item) =>
-              (item.date!.substring(0, 2) ==
-                  checkWeek()[currentSelectedIndex!].date)));
+          tempList.add(item);
         }
       }
     }
+    print(tempList);
   }
 
   @override
@@ -411,6 +408,7 @@ class _RencanaPageState extends State<RencanaPage> {
 
   void removeItem(int index) {
     setState(() {
+      tempList.removeAt(index);
       listKeranjang.removeAt(index);
     });
   }
