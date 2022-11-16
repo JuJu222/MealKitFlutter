@@ -55,7 +55,7 @@ class _CardPesananDalamPerjalananState
                   //STATUS PESANAN
                   Container(
                     child: Text(
-                      "Dalam Perjalanan",
+                      "Diproses",
                       style: Theme.of(context)!.textTheme.subtitle2!.copyWith(
                           color: primaryColor, fontWeight: FontWeight.w700),
                     ),
