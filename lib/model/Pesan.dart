@@ -21,7 +21,7 @@ List<Pesan> listPesan = [
     date: "6 November 2022",
     menuName: "Grilled Salmon",
     menuPrice: "80.000",
-    images: "assets/images/foods/imagefood4.png",
+    images: "assets/images/foods/imagefood1.png",
     numberOfPeople: "4",
     menuId: 0,
   ),

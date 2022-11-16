@@ -43,7 +43,7 @@ class _CardPesananParentDalamPerjalananState
               return Container();
             }
           } else {
-            if (int.parse(element.key.substring(0, 2)) > DateTime.now().day) {
+            if (int.parse(element.key.substring(0, 2)) > DateTime.now().day - 1) {
               return CardPesananDalamPerjalanan(pesan: element.value);
             } else {
               return Container();
@@ -97,7 +97,7 @@ class _CardPesananParentSelesaiState extends State<CardPesananParentSelesai> {
               return Container();
             }
           } else {
-            if (int.parse(element.key.substring(0, 2)) <= DateTime.now().day) {
+            if (int.parse(element.key.substring(0, 2)) <= DateTime.now().day - 1) {
               return CardPesananSelesai(pesan: element.value);
             } else {
               return Container();
