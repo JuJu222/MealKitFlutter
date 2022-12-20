@@ -12,11 +12,12 @@ class Pesan {
       {required this.images,
       required this.menuName,
       required this.numberOfPeople,
-      required this.menuPrice, required this.date, this.menuId});
+      required this.menuPrice,
+      required this.date,
+      this.menuId});
 }
 
 List<Pesan> listPesan = [
-
   Pesan(
     date: "6 November 2022",
     menuName: "Grilled Salmon",
@@ -25,7 +26,6 @@ List<Pesan> listPesan = [
     numberOfPeople: "4",
     menuId: 0,
   ),
-
   Pesan(
     date: "6 November 2022",
     menuName: "Nabe Veggie Udon",
@@ -34,7 +34,6 @@ List<Pesan> listPesan = [
     numberOfPeople: "4",
     menuId: 49,
   ),
-
   Pesan(
     date: "6 November 2022",
     menuName: "Pesto Pasta Chicken",
@@ -43,8 +42,6 @@ List<Pesan> listPesan = [
     numberOfPeople: "4",
     menuId: 50,
   ),
-
-
   Pesan(
     date: "16 November 2022",
     menuName: "Grilled Salmon",
@@ -80,7 +77,6 @@ List<Pesan> listPesan = [
 ];
 
 List<Pesan> listKeranjang = [
-  
   Pesan(
     date: "17 November 2022",
     menuName: "Pesto Pasta Chicken",
@@ -106,4 +102,3 @@ List<Pesan> listKeranjang = [
     menuId: 49,
   ),
 ];
-

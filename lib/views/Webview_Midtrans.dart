@@ -34,21 +34,34 @@ class _WebviewMidtransState extends State<WebviewMidtrans> {
 
           //Prevent that url works
           return NavigationDecision.prevent;
-        } else if (request.url.contains("https://kukoki.com/login")) {
+        } else if (request.url
+            .contains("https://kukoki.com/checkout/unfinish")) {
           Navigator.pop(context);
           return NavigationDecision.prevent;
-        } else if (request.url.contains("https://kukoki.com/register")) {
-          setState(() {
-            listPesan.insertAll(0, tempList);
-            for (var item in tempList) {
-              listKeranjang.removeWhere((element) => element == item);
-            }
-          });
-          Navigator.pushReplacementNamed(context, PembayaranBerhasil.routeName,
-              arguments: {
-                "totalPembayaran": data["totalPembayaran"],
-                "waktuTransaksi": DateTime.now()
-              });
+        } else if (request.url.contains("https://kukoki.com/checkout/finish")) {
+          String res = request.url;
+          print("Response :" + res);
+          if (res.contains("transaction_status=settlement")) {
+            print("Success");
+            setState(() {
+              listPesan.insertAll(0, tempList);
+              for (var item in tempList) {
+                listKeranjang.removeWhere((element) => element == item);
+              }
+            });
+            Navigator.pushReplacementNamed(
+                context, PembayaranBerhasil.routeName, arguments: {
+              "totalPembayaran": data["totalPembayaran"],
+              "waktuTransaksi": DateTime.now()
+            });
+          } else {
+            print("Failed");
+            Navigator.pop(context);
+          }
+
+          return NavigationDecision.prevent;
+        } else if (request.url.contains("https://kukoki.com/checkout/error")) {
+          Navigator.pop(context);
           return NavigationDecision.prevent;
         }
         //Any other url works
