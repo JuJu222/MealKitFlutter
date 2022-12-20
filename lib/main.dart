@@ -80,7 +80,8 @@ class MyApp extends StatelessWidget {
           ProfilePage.routeName: (context) => ProfilePage(),
           UbahProfilPage.routeName: (context) => UbahProfilPage(),
           UbahPreferensiPage.routeName: (context) => UbahPreferensiPage(),
-          MetodePembayaran.routeName: (context) => MetodePembayaran()
+          MetodePembayaran.routeName: (context) => MetodePembayaran(),
+          WebviewMidtrans.routeName: (context) => WebviewMidtrans()
         },
       ),
     );

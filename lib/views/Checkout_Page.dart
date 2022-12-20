@@ -9,12 +9,32 @@ class CheckoutPage extends StatefulWidget {
 }
 
 class _CheckoutPageState extends State<CheckoutPage> {
-  double totalPricingFull = 0;
-  double totalPricing = 0;
+  int totalPricingFull = 0;
+  int totalPricing = 0;
   @override
   Widget build(BuildContext context) {
     Map data = ModalRoute.of(context)!.settings.arguments as Map;
     List<Pesan> tempList = data["currentList"];
+    int totalPriceFood(List<Pesan> tempList) {
+      totalPricing = 0;
+      tempList.forEach((e) {
+        setState(() {
+          var menuPrice = e.menuPrice?.replaceAll('.', '');
+          totalPricing += int.parse(menuPrice!);
+        });
+      });
+      print(totalPricing);
+      return totalPricing;
+    }
+
+    int totalPrice(
+        Function totalPriceFood, int ongkosKirim, List<Pesan> tempList) {
+      totalPricingFull = 0;
+      totalPricingFull = totalPriceFood(tempList) + ongkosKirim;
+      tempList = [];
+      return totalPricingFull;
+    }
+
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: primaryColor),
@@ -122,7 +142,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                                     fontFamily: "Quicksand")),
                                         SizedBox(width: 2.0),
                                         Text(
-                                            "${(totalPrice(totalPriceFood, 20.000, tempList).toString())}00",
+                                            "${(totalPrice(totalPriceFood, 20000, tempList).toString())}",
                                             overflow: TextOverflow.fade,
                                             style: Theme.of(context)
                                                 .textTheme
@@ -151,25 +171,37 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                                   fontSize: 16,
                                                   color: Colors.white,
                                                   fontFamily: "Quicksand")),
-                                      onPressed: () {
-                                        setState(() {
-                                          listPesan.insertAll(0, tempList);
-                                          for (var item in tempList) {
-                                            listKeranjang.removeWhere(
-                                                (element) => element == item);
-                                          }
-                                        });
+                                      onPressed: () async {
+                                        var totalPriceVariable =
+                                            "${totalPrice(totalPriceFood, 20000, tempList).toString()}";
 
-                                        Navigator.pushNamedAndRemoveUntil(
-                                            context,
-                                            PembayaranBerhasil.routeName,
-                                            (route) => false,
-                                            arguments: {
-                                              "totalPembayaran":
-                                                  "${totalPrice(totalPriceFood, 20.000, tempList).toString()}00",
-                                              "waktuTransaksi": DateTime.now()
-                                            });
-                                          tempList = [];
+                                        var getpay = await ApiServices.addPayment(
+                                            "${totalPrice(totalPriceFood, 20000, tempList).toString()}");
+
+                                        print(getpay.snapUrl);
+                                        Navigator.pushNamed(
+                                          context,
+                                          WebviewMidtrans.routeName,
+                                          arguments: {
+                                            "snapUrl": getpay.snapUrl,
+                                            "totalPembayaran":
+                                                "$totalPriceVariable",
+                                            "waktuTransaksi": DateTime.now(),
+                                            "tempListKeranjang": tempList
+                                          },
+                                        );
+
+                                        // Navigator.pushNamedAndRemoveUntil(
+                                        //     context,
+                                        //     PembayaranBerhasil.routeName,
+                                        //     (route) => false,
+                                        //     arguments: {
+                                        //       "snapUrl": getpay.snapUrl,
+                                        //       "totalPembayaran":
+                                        //           "${totalPrice(totalPriceFood, 20.000, tempList).toString()}00",
+                                        //       "waktuTransaksi": DateTime.now()
+                                        //     });
+                                        // tempList = [];
                                       },
                                     ),
                                   ],
@@ -354,7 +386,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                                     fontSize: 14,
                                                     fontFamily: "Quicksand")),
                                         Text(
-                                            "Rp${totalPriceFood(tempList).toString()}00",
+                                            "Rp${totalPriceFood(tempList).toString()}",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .headline5!
@@ -408,7 +440,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                                     fontSize: 16,
                                                     fontFamily: "Quicksand")),
                                         Text(
-                                            "Rp${(totalPrice(totalPriceFood, 20.000, tempList).toString())}00",
+                                            "Rp${(totalPrice(totalPriceFood, 20000, tempList).toString())}",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .headline5!
@@ -437,23 +469,5 @@ class _CheckoutPageState extends State<CheckoutPage> {
         ),
       ),
     );
-  }
-
-  double totalPriceFood(List<Pesan> tempList) {
-    totalPricing = 0;
-    tempList.forEach((e) {
-      setState(() {
-        totalPricing += double.parse(e.menuPrice!);
-      });
-    });
-    return totalPricing;
-  }
-
-  double totalPrice(
-      Function totalPriceFood, double ongkosKirim, List<Pesan> tempList) {
-    totalPricingFull = 0;
-    totalPricingFull = totalPriceFood(tempList) + ongkosKirim;
-    tempList = [];
-    return totalPricingFull;
   }
 }
